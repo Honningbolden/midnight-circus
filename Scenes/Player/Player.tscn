@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://2hdgywoyjhx6"]
+
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_k20og"]
+[ext_resource type="Script" path="res://Scripts/Player/camera.gd" id="2_crbs0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rf68g"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en7ah"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rrtll"]
+material = SubResource("StandardMaterial3D_en7ah")
+radius = 0.25
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_k20og")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player", "listener")]
+transform = Transform3D(1, 0, 0, 0, 0.986268, 0.165151, 0, -0.165151, 0.986268, 0, 1.38645, 2.34016)
+current = true
+script = ExtResource("2_crbs0")
+player = NodePath("..")
+listener = NodePath("../AudioListener3D")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_rf68g")
+
+[node name="Temporary Body Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_rrtll")
