@@ -1,15 +1,15 @@
-# files for colelctibles class
+# Collectible Class
 
 
 extends Node3D
 class_name Collectible
 
 
-func _ready():
-	GameManager.total_keys.append(name)
+func _ready():  # when the node is ready
+	GameManager.total_items.append(name)
 
 
-func _collect():
-	GameManager.collected_keys.append(name)
-	queue_free()
-	print(GameManager.collected_keys)
+## Add the collectible
+func collect():
+	GameManager.collected_items.append(name)
+	queue_free()  # delete the item

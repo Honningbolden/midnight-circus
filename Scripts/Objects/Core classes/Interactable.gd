@@ -1,9 +1,10 @@
-# file for interactables class
+# Interactable Class
 
 
 extends Node3D
 class_name Interactable
 
 
-func _use():
+## Abstract method, overridden by inheritors
+func use():
 	pass

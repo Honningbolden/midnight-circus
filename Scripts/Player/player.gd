@@ -96,19 +96,37 @@ func update_gravity() -> void:
 		velocity.y = max(velocity.y + fall_gravity, fall_speed)
 
 
-## function to interact with items
+#region Interactions
+## Interact with oldest nearby item
 func interact():
 	if nearby_interactables.size() > 0:
-		var item = nearby_interactables[0]
+		var item = get_closest_interactable()
 		if item is Collectible:
-			item._collect()
+			item.collect()
 		elif item is Interactable:
-			item._use()
+			item.use()
 
 
-## functions to determine when items can be interacted
+## Get the closest interactable object
+func get_closest_interactable() -> Node3D:
+	var closest_object = null  # declare an object
+	var closest_distance = INF  # declare a distance
+	
+	for object in interactables:  # for each object
+		# find the distance to the player
+		var distance = object.global_position.distance_to(global_position)
+		if distance < closest_distance:  # if the distance is the closest
+			closest_object = object  # save the object
+			closest_distance = distance  # save the distance
+	return closest_object  # return the closest object
+
+
+## Add Interactables
 func _on_interaction_zone_area_entered(area):
 	nearby_interactables.append(area.get_parent())
 
+
+## Remove Interactables
 func _on_interaction_zone_area_exited(area):
 	nearby_interactables.erase(area.get_parent())
+#endregion
