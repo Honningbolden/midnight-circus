@@ -27,6 +27,7 @@ var vertical_direction : float = 0.0  # the player's back and forth input
 var last_direction : float = PI / 2  # the player's most recent direction
 var interactables : Array = []  # a list of interactables near the player
 var spawn_position : Vector3 = Vector3.ZERO  # place the player first starts
+var nearby_interactables = []
 
 # State conditions
 var can_move : bool = false  # can the player move
@@ -54,6 +55,8 @@ func _input(event: InputEvent) -> void:  # every input event
 		speed = running_speed  # run faster
 	elif event.is_action_released("sprint"):  # if 'sprint' is released
 		speed = walking_speed  # run slower
+	elif event.is_action_pressed("interact"):
+		interact()
 
 
 #region Character Helpers
@@ -91,3 +94,21 @@ func update_gravity() -> void:
 	if not is_on_floor() and velocity.y >= fall_speed:
 		# accumulate speed using gravity until reaching max fall speed
 		velocity.y = max(velocity.y + fall_gravity, fall_speed)
+
+
+## function to interact with items
+func interact():
+	if nearby_interactables.size() > 0:
+		var item = nearby_interactables[0]
+		if item is Collectible:
+			item._collect()
+		elif item is Interactable:
+			item._use()
+
+
+## functions to determine when items can be interacted
+func _on_interaction_zone_area_entered(area):
+	nearby_interactables.append(area.get_parent())
+
+func _on_interaction_zone_area_exited(area):
+	nearby_interactables.erase(area.get_parent())

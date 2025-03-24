@@ -3,8 +3,9 @@
 
 extends Node
 
-
 var mouse_mode = false
+var total_keys = []
+var collected_keys = []
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

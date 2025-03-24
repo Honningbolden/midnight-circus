@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://2hdgywoyjhx6"]
+[gd_scene load_steps=7 format=3 uid="uid://2hdgywoyjhx6"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_k20og"]
 [ext_resource type="Script" path="res://Scripts/Player/camera.gd" id="2_crbs0"]
@@ -15,7 +15,10 @@ material = SubResource("StandardMaterial3D_en7ah")
 radius = 0.25
 height = 1.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3gk8"]
+
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 14
 script = ExtResource("1_k20og")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player", "listener")]
@@ -32,3 +35,14 @@ shape = SubResource("CapsuleShape3D_rf68g")
 
 [node name="Temporary Body Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_rrtll")
+
+[node name="Interaction Zone" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 12
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction Zone"]
+shape = SubResource("BoxShape3D_r3gk8")
+
+[connection signal="area_entered" from="Interaction Zone" to="." method="_on_interaction_zone_area_entered"]
+[connection signal="area_exited" from="Interaction Zone" to="." method="_on_interaction_zone_area_exited"]
