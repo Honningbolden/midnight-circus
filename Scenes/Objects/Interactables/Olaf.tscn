@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqs07bb504yqg"]
+
+[ext_resource type="Script" uid="uid://dd88q4phekbiq" path="res://Scripts/Objects/Interactables/olaf.gd" id="1_48o71"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c20hu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_48o71"]
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxdqk"]
+
+[node name="Olaf" type="Node3D"]
+script = ExtResource("1_48o71")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_c20hu")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_48o71")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_wxdqk")

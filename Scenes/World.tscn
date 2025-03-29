@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=6 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="2_cbcgu"]
+[ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="3_5nsto"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -26,3 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8757, 8.45683, 4.6627)
 
 [node name="keys" parent="." instance=ExtResource("2_cbcgu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, 16.0765)
+
+[node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 2.06015, 4.94692)

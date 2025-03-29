@@ -25,7 +25,6 @@ var forward_direction : float = 0.0  # the direction the camera is looking
 var horizontal_direction : float = 0.0  # the player's left and right input
 var vertical_direction : float = 0.0  # the player's back and forth input
 var last_direction : float = PI / 2  # the player's most recent direction
-var interactables : Array = []  # a list of interactables near the player
 var spawn_position : Vector3 = Vector3.ZERO  # place the player first starts
 var nearby_interactables = []
 
@@ -112,7 +111,7 @@ func get_closest_interactable() -> Node3D:
 	var closest_object = null  # declare an object
 	var closest_distance = INF  # declare a distance
 	
-	for object in interactables:  # for each object
+	for object in nearby_interactables:  # for each object
 		# find the distance to the player
 		var distance = object.global_position.distance_to(global_position)
 		if distance < closest_distance:  # if the distance is the closest
