@@ -5,6 +5,9 @@ extends CharacterBody3D
 class_name Player
 
 
+@export_category("Components")
+@export var raycast : RayCast3D
+
 @export_category("Movement Variables")
 @export var walking_threshold : float = 0.1  # minimum speed required to walk
 @export var sprite_segments : int = 8  # how many directions can the player turn
@@ -26,7 +29,8 @@ var horizontal_direction : float = 0.0  # the player's left and right input
 var vertical_direction : float = 0.0  # the player's back and forth input
 var last_direction : float = PI / 2  # the player's most recent direction
 var spawn_position : Vector3 = Vector3.ZERO  # place the player first starts
-var nearby_interactables = []
+var current_interactable : Node3D = null  # current interactable object
+var last_interactable : Node3D = null  # last interactable object
 
 # State conditions
 var can_move : bool = false  # can the player move
@@ -40,22 +44,15 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:  # every graphics frame
-	update_input()  # take the player's horizontal input
+	update_interactable_text()
 
 
 func _physics_process(_delta: float) -> void:  # every physics frame
-	update_velocity()  # move the player laterally
-	update_gravity()  # move the player vertically
 	move_and_slide()  # detect movement and collisions
 
 
 func _input(event: InputEvent) -> void:  # every input event
-	if event.is_action_pressed("sprint"):  # if 'sprint' is pressed
-		speed = running_speed  # run faster
-	elif event.is_action_released("sprint"):  # if 'sprint' is released
-		speed = walking_speed  # run slower
-	elif event.is_action_pressed("interact"):
-		interact()
+	pass
 
 
 #region Character Helpers
@@ -98,34 +95,37 @@ func update_gravity() -> void:
 #region Interactions
 ## Interact with oldest nearby item
 func interact():
-	if nearby_interactables.size() > 0:
-		var item = get_closest_interactable()
-		if item is Collectible:
-			item.collect()
-		elif item is Interactable:
-			item.use()
+	var item = get_interactable()
+	if item is Collectible:
+		item.collect()
+	elif item is Interactable:
+		item.use()
 
 
-## Get the closest interactable object
-func get_closest_interactable() -> Node3D:
-	var closest_object = null  # declare an object
-	var closest_distance = INF  # declare a distance
-	
-	for object in nearby_interactables:  # for each object
-		# find the distance to the player
-		var distance = object.global_position.distance_to(global_position)
-		if distance < closest_distance:  # if the distance is the closest
-			closest_object = object  # save the object
-			closest_distance = distance  # save the distance
-	return closest_object  # return the closest object
+## Get the first interactable the raycast hits
+func get_interactable() -> Node3D:
+	if raycast.is_colliding():
+		var interactable_area = raycast.get_collider()
+		return interactable_area.get_parent()
+	return null
 
 
-## Add Interactables
-func _on_interaction_zone_area_entered(area):
-	nearby_interactables.append(area.get_parent())
+func update_interactable_text() -> void:
+	current_interactable = get_interactable()
+	display_interactable_text()
+	hide_interactable_text()
+	last_interactable = get_interactable()
 
 
-## Remove Interactables
-func _on_interaction_zone_area_exited(area):
-	nearby_interactables.erase(area.get_parent())
+func display_interactable_text() -> void:
+	if current_interactable and current_interactable.has_node("Label3D"):
+		var label = current_interactable.get_node("Label3D")
+		label.show()
+
+
+func hide_interactable_text() -> void:
+	if last_interactable and current_interactable != last_interactable:
+		if last_interactable.has_node("Label3D"):
+			var label = last_interactable.get_node("Label3D")
+			label.hide()
 #endregion

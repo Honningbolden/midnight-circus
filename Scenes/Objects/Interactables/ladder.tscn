@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://60xksnd6tgq5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_efh2s"]
+size = Vector3(0.5, 2, 0.1)
+
+[sub_resource type="Curve3D" id="Curve3D_efh2s"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efh2s"]
+
+[node name="Ladder" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0)
+mesh = SubResource("BoxMesh_efh2s")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_efh2s")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 0.447214, -0.894427, 0, 0.894427, 0.447214, 0, -1, 1)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.406367, 0.605505)
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_efh2s")

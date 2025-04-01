@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://dd88q4phekbiq" path="res://Scripts/Objects/Interactables/olaf.gd" id="1_48o71"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c20hu"]
+height = 1.7
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_48o71"]
 size = Vector3(1, 1.5, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxdqk"]
+height = 1.7
 
 [node name="Olaf" type="Node3D"]
 script = ExtResource("1_48o71")
@@ -29,3 +31,9 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("CapsuleShape3D_wxdqk")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -0.0792241, 0.636229)
+visible = false
+texture_filter = 0
+text = "Talk to Olaf"

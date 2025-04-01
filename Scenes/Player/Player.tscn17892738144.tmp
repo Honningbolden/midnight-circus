@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://2hdgywoyjhx6"]
+
+[ext_resource type="Script" uid="uid://pd43ecwjvj8o" path="res://Scripts/Player/player.gd" id="1_k20og"]
+[ext_resource type="Script" uid="uid://b7ehmibxnwvq7" path="res://Scripts/Player/camera.gd" id="2_crbs0"]
+[ext_resource type="Script" uid="uid://dwnst1flmshtl" path="res://Scripts/Player/State Machine/Core/state_machine.gd" id="3_h54ih"]
+[ext_resource type="Script" uid="uid://bcx754jdcyyb" path="res://Scripts/Player/State Machine/normal_state.gd" id="4_ude3g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rf68g"]
+radius = 0.25
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en7ah"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rrtll"]
+material = SubResource("StandardMaterial3D_en7ah")
+radius = 0.25
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3gk8"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 14
+script = ExtResource("1_k20og")
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player", "listener")]
+transform = Transform3D(1, 0, 0, 0, 0.986268, 0.165151, 0, -0.165151, 0.986268, 0, 1.38645, 2.34016)
+current = true
+script = ExtResource("2_crbs0")
+player = NodePath("..")
+listener = NodePath("../AudioListener3D")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_rf68g")
+
+[node name="Temporary Body Mesh" type="MeshInstance3D" parent="."]
+transparency = 0.76
+mesh = SubResource("CapsuleMesh_rrtll")
+
+[node name="Interaction Zone" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 12
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction Zone"]
+shape = SubResource("BoxShape3D_r3gk8")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_h54ih")
+current_state = NodePath("Exploration State")
+
+[node name="Exploration State" type="Node" parent="State Machine" node_paths=PackedStringArray("player")]
+script = ExtResource("4_ude3g")
+player = NodePath("../..")
+
+[node name="Tightrope State" type="Node" parent="State Machine"]
+
+[connection signal="area_entered" from="Interaction Zone" to="." method="_on_interaction_zone_area_entered"]
+[connection signal="area_exited" from="Interaction Zone" to="." method="_on_interaction_zone_area_exited"]

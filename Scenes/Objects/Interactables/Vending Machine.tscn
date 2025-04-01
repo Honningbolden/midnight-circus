@@ -31,3 +31,9 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_ch68x")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -0.343732, 0.674899)
+visible = false
+texture_filter = 0
+text = "Deposit Coin"

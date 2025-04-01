@@ -20,3 +20,9 @@ monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_terbh")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0.331, 0)
+visible = false
+texture_filter = 0
+text = "Pick Up"

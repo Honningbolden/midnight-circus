@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=7 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="2_cbcgu"]
 [ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="3_5nsto"]
+[ext_resource type="PackedScene" uid="uid://bqs07bb504yqg" path="res://Scenes/Objects/Interactables/Olaf.tscn" id="4_gjpho"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -22,11 +23,14 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_6hh0k")
 
-[node name="Player" parent="Floor" instance=ExtResource("1_e5dp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8757, 8.45683, 4.6627)
-
 [node name="keys" parent="." instance=ExtResource("2_cbcgu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, 16.0765)
 
 [node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 2.06015, 4.94692)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 1.49735, 4.94692)
+
+[node name="Olaf" parent="." instance=ExtResource("4_gjpho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36269, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_e5dp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8757, 8.45683, 4.6627)
