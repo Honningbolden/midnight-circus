@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://60xksnd6tgq5"]
+[gd_scene load_steps=5 format=3 uid="uid://60xksnd6tgq5"]
+
+[ext_resource type="Script" uid="uid://fcsfeopg7ocr" path="res://Scripts/Objects/Interactables/ladder.gd" id="1_l0jmd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_efh2s"]
 size = Vector3(0.5, 2, 0.1)
@@ -12,7 +14,9 @@ point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efh2s"]
 
-[node name="Ladder" type="Node3D"]
+[node name="Ladder" type="Node3D" node_paths=PackedStringArray("pathfollow")]
+script = ExtResource("1_l0jmd")
+pathfollow = NodePath("Path3D/PathFollow3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0)
@@ -23,6 +27,7 @@ curve = SubResource("Curve3D_efh2s")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 transform = Transform3D(1, 0, 0, 0, 0.447214, -0.894427, 0, 0.894427, 0.447214, 0, -1, 1)
+loop = false
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.406367, 0.605505)
@@ -32,3 +37,9 @@ monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_efh2s")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.47283)
+visible = false
+texture_filter = 0
+text = "Climb"

@@ -1,10 +1,10 @@
-# circus_door1.gd
+# circus_door.gd
 
 
 extends Interactable
 
 
-func use():
+func use(player: Player) -> void:
 	if GameManager.collected_items.has("Circus Key"):
 		GameManager.collected_items.erase("Circus Key")
 		# TASK: sliding door or swinging door?

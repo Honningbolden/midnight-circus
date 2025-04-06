@@ -4,7 +4,7 @@
 extends Interactable
 
 
-func use():
+func use(_player: Player) -> void:
 	if GameManager.collected_items.has("Coin"):
 		GameManager.collected_items.erase("Coin")
 		GameManager.collected_items.append("Vodka")

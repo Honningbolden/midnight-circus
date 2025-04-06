@@ -1,26 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://2hdgywoyjhx6"]
+[gd_scene load_steps=9 format=3 uid="uid://2hdgywoyjhx6"]
 
 [ext_resource type="Script" uid="uid://pd43ecwjvj8o" path="res://Scripts/Player/player.gd" id="1_k20og"]
 [ext_resource type="Script" uid="uid://b7ehmibxnwvq7" path="res://Scripts/Player/camera.gd" id="2_crbs0"]
 [ext_resource type="Script" uid="uid://dwnst1flmshtl" path="res://Scripts/Player/State Machine/Core/state_machine.gd" id="3_h54ih"]
-[ext_resource type="Script" uid="uid://bcx754jdcyyb" path="res://Scripts/Player/State Machine/normal_state.gd" id="4_ude3g"]
+[ext_resource type="Script" uid="uid://bcx754jdcyyb" path="res://Scripts/Player/State Machine/exploration_state.gd" id="4_ude3g"]
+[ext_resource type="Texture2D" uid="uid://cqakumy4wqmbd" path="res://Assets/Pixel art/Player/lefthand.png" id="5_jmcll"]
+[ext_resource type="Script" uid="uid://b8ft37nuldw6r" path="res://Scripts/Player/State Machine/climb_state.gd" id="5_t26db"]
+[ext_resource type="Texture2D" uid="uid://c38n40oyqjlu7" path="res://Assets/Pixel art/Player/righthand.png" id="6_4wape"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rf68g"]
 radius = 0.25
 height = 1.7
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("raycast")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("raycast", "statemachine")]
 collision_mask = 14
 script = ExtResource("1_k20og")
 raycast = NodePath("Interaction RayCast3D")
+statemachine = NodePath("State Machine")
 
-[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player", "listener", "raycast")]
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player", "listener", "raycast", "hands")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 current = true
 script = ExtResource("2_crbs0")
 player = NodePath("..")
 listener = NodePath("../AudioListener3D")
 raycast = NodePath("../Interaction RayCast3D")
+hands = NodePath("../Hands")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -45,6 +50,24 @@ script = ExtResource("4_ude3g")
 player = NodePath("../..")
 camera = NodePath("../../Camera3D")
 
-[node name="Climb State" type="Node" parent="State Machine"]
+[node name="Climb State" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "camera")]
+script = ExtResource("5_t26db")
+player = NodePath("../..")
+camera = NodePath("../../Camera3D")
 
 [node name="Tightrope State" type="Node" parent="State Machine"]
+
+[node name="Hands" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Left Hand" type="Sprite3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.4, -0.8)
+pixel_size = 0.001
+texture_filter = 0
+texture = ExtResource("5_jmcll")
+
+[node name="Right Hand" type="Sprite3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.4, -0.8)
+pixel_size = 0.001
+texture_filter = 0
+texture = ExtResource("6_4wape")

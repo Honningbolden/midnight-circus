@@ -6,5 +6,5 @@ class_name Interactable
 
 
 ## Abstract method, overridden by inheritors
-func use():
+func use(_player : Player):
 	pass

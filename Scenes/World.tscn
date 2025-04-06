@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=8 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="2_cbcgu"]
 [ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="3_5nsto"]
 [ext_resource type="PackedScene" uid="uid://bqs07bb504yqg" path="res://Scenes/Objects/Interactables/Olaf.tscn" id="4_gjpho"]
+[ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_p70al"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -34,3 +35,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36269, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_e5dp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8757, 8.45683, 4.6627)
+
+[node name="Ladder" parent="." instance=ExtResource("5_p70al")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 1.5, 2.84781)

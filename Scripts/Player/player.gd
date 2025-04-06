@@ -7,6 +7,7 @@ class_name Player
 
 @export_category("Components")
 @export var raycast : RayCast3D
+@export var statemachine : FiniteStateMachine
 
 @export_category("Movement Variables")
 @export var walking_threshold : float = 0.1  # minimum speed required to walk
@@ -51,7 +52,7 @@ func _physics_process(_delta: float) -> void:  # every physics frame
 	move_and_slide()  # detect movement and collisions
 
 
-func _input(event: InputEvent) -> void:  # every input event
+func _input(_event: InputEvent) -> void:  # every input event
 	pass
 
 
@@ -99,7 +100,7 @@ func interact():
 	if item is Collectible:
 		item.collect()
 	elif item is Interactable:
-		item.use()
+		item.use(self)
 
 
 ## Get the first interactable the raycast hits
