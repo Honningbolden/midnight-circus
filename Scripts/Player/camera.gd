@@ -18,7 +18,7 @@ extends Camera3D
 
 # Camera helpers
 var target_pitch : float = 0.0  # vertical angle the player wants to look
-var camera_pitch : float = 0.0  # vertical angle of the camera
+var camera_pitch : float = 0.0  # current vertical angle of the camera
 var target_forward : float = 0.0  # the direction the player wants to look
 var locked : bool = false  # disallows camera movement
 
@@ -84,11 +84,14 @@ func set_camera() -> void:
 
 
 ## Slowly rotate the camera to look at a point
-func look_at_position(world_position: Vector3) -> void:
+func look_at_position(target_position: Vector3) -> void:
 	print(target_forward)
 	var camera_position = global_position
-	var to_target = camera_position - world_position
+	var to_target = camera_position - target_position
 	var flat_dir = Vector2(to_target.x, to_target.z)
 	
 	if flat_dir.length() > 0.0001:
 		target_forward = atan2(flat_dir.x, flat_dir.y)
+	
+	var target_normalized = to_target.normalized()
+	target_pitch = clamp(-asin(target_normalized.y), pitch_min, pitch_max)
