@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://fywxd2eeltwp"]
+
+[ext_resource type="Script" uid="uid://thlbj4u0r5bg" path="res://Scripts/Objects/Interactables/breakable_wall.gd" id="1_doqlj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_doqlj"]
+size = Vector3(1.2, 1.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_doqlj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6gfuq"]
+size = Vector3(1, 1.3, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6gfuq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fl3qb"]
+size = Vector3(1.2, 1.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fl3qb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_anht0"]
+size = Vector3(0.8, 1.3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anht0"]
+size = Vector3(0.8, 0.6, 1)
+
+[node name="BreakableWall" type="Node3D" node_paths=PackedStringArray("container")]
+script = ExtResource("1_doqlj")
+container = NodePath("Container")
+
+[node name="Container" type="Node3D" parent="."]
+
+[node name="Rock 1" type="MeshInstance3D" parent="Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0632838, 1.12429, 0.65)
+mesh = SubResource("BoxMesh_doqlj")
+skeleton = NodePath("")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Container/Rock 1"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Container/Rock 1/AnimatableBody3D"]
+shape = SubResource("BoxShape3D_doqlj")
+
+[node name="Rock 2" type="MeshInstance3D" parent="Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.952402, -0.656952)
+mesh = SubResource("BoxMesh_6gfuq")
+skeleton = NodePath("")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Container/Rock 2"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Container/Rock 2/AnimatableBody3D"]
+shape = SubResource("BoxShape3D_6gfuq")
+
+[node name="Rock 3" type="MeshInstance3D" parent="Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, -0.743896)
+mesh = SubResource("BoxMesh_fl3qb")
+skeleton = NodePath("")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Container/Rock 3"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Container/Rock 3/AnimatableBody3D"]
+shape = SubResource("BoxShape3D_fl3qb")
+
+[node name="Rock 4" type="MeshInstance3D" parent="Container"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0803494, -0.353703, 0.830775)
+mesh = SubResource("BoxMesh_anht0")
+skeleton = NodePath("")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Container/Rock 4"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Container/Rock 4/AnimatableBody3D"]
+shape = SubResource("BoxShape3D_anht0")
