@@ -21,11 +21,13 @@ statemachine = NodePath("State Machine")
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player", "listener", "raycast", "hands")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 current = true
+fov = 60.0
 script = ExtResource("2_crbs0")
 player = NodePath("..")
 listener = NodePath("../AudioListener3D")
 raycast = NodePath("../Interaction RayCast3D")
 hands = NodePath("../Hands")
+camera_smoothness = 0.4
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
