@@ -46,5 +46,5 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.721
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -1.38674)
 
 [node name="Fence" parent="." instance=ExtResource("7_q2d71")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65572, 1.75, 3.15143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.656, 0.5, 3.151)
 script = ExtResource("8_uo7di")

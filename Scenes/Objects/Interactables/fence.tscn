@@ -19,9 +19,11 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("BoxShape3D_67cn0")
 
 [node name="fence" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 mesh = SubResource("BoxMesh_deicn")
 skeleton = NodePath("")
 
@@ -33,7 +35,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_67cn0")
 
 [node name="fence post" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 2.75)
 mesh = SubResource("BoxMesh_3jmrq")
 skeleton = NodePath("")
 
