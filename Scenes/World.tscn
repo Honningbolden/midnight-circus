@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=14 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="2_cbcgu"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_45d1s"]
 [ext_resource type="PackedScene" uid="uid://cjm5wehesvmoi" path="res://Scenes/Objects/Interactables/fence.tscn" id="7_q2d71"]
 [ext_resource type="Script" uid="uid://dolr0auqg3f2b" path="res://Scripts/Objects/Interactables/fence.gd" id="8_uo7di"]
+[ext_resource type="PackedScene" uid="uid://5837fuxvxy2q" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
+[ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
+[ext_resource type="PackedScene" uid="uid://dto86ghsx42bc" path="res://Scripts/Objects/Interactables/horse_pedestal_1.tscn" id="11_7yo87"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -48,3 +51,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -1.38674)
 [node name="Fence" parent="." instance=ExtResource("7_q2d71")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.656, 0.5, 3.151)
 script = ExtResource("8_uo7di")
+
+[node name="Safe" parent="." instance=ExtResource("9_uo7di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37323, 1.53034, -3.43218)
+script = ExtResource("10_kn06e")
+
+[node name="Carousel" parent="." instance=ExtResource("11_7yo87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1613, 1.53914, -11.9573)
