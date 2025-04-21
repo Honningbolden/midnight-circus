@@ -1,0 +1,249 @@
+[gd_scene load_steps=12 format=3 uid="uid://dto86ghsx42bc"]
+
+[ext_resource type="Script" uid="uid://boaeolyujvlxd" path="res://Scenes/Objects/Interactables/horse_pedestal_1.gd" id="1_0yypm"]
+[ext_resource type="Script" uid="uid://dv0vqgrprv220" path="res://Scenes/Objects/Interactables/horse_pedestal_2.gd" id="2_bupa8"]
+[ext_resource type="Script" uid="uid://ssssdq6m3b6h" path="res://Scenes/Objects/Interactables/horse_pedestal_3.gd" id="3_dtciv"]
+[ext_resource type="Script" uid="uid://cyix638dhsl3i" path="res://Scenes/Objects/Interactables/horse_pedestal_4.gd" id="4_8fw46"]
+[ext_resource type="Script" uid="uid://braw4vulktpff" path="res://Scenes/Objects/Interactables/horse_pedestal_5.gd" id="5_jh8qh"]
+[ext_resource type="Script" uid="uid://bnrlqcxa4e0pl" path="res://Scenes/Objects/Interactables/horse_pedestal_6.gd" id="6_x56xx"]
+[ext_resource type="Script" uid="uid://brv34yqltq0nk" path="res://Scenes/Objects/Interactables/horse_pedestal_7.gd" id="7_1vglu"]
+[ext_resource type="Script" uid="uid://c7nor47gark54" path="res://Scenes/Objects/Interactables/horse_pedestal_8.gd" id="8_5gxyq"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_irsk8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7i0x0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j78s4"]
+
+[node name="Carousel" type="Node3D"]
+
+[node name="HorsePedestal1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+script = ExtResource("1_0yypm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal1"]
+mesh = SubResource("TorusMesh_irsk8")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="HorsePedestal1"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal1/Area3D"]
+shape = SubResource("BoxShape3D_7i0x0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HorsePedestal1"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal1/StaticBody3D"]
+shape = SubResource("BoxShape3D_j78s4")
+
+[node name="Label3D" type="Label3D" parent="HorsePedestal1"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
+visible = false
+modulate = Color(1, 0, 0, 1)
+text = "Horse1"
+
+[node name="HorsePedestal2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+script = ExtResource("2_bupa8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal2"]
+mesh = SubResource("TorusMesh_irsk8")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="HorsePedestal2"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal2/Area3D"]
+shape = SubResource("BoxShape3D_7i0x0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HorsePedestal2"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal2/StaticBody3D"]
+shape = SubResource("BoxShape3D_j78s4")
+
+[node name="Label3D" type="Label3D" parent="HorsePedestal2"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
+visible = false
+modulate = Color(9.14484e-07, 0.887663, 0, 1)
+text = "Horse2"
+
+[node name="HorsePedestal3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+script = ExtResource("3_dtciv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal3"]
+mesh = SubResource("TorusMesh_irsk8")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="HorsePedestal3"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal3/Area3D"]
+shape = SubResource("BoxShape3D_7i0x0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HorsePedestal3"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal3/StaticBody3D"]
+shape = SubResource("BoxShape3D_j78s4")
+
+[node name="Label3D" type="Label3D" parent="HorsePedestal3"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
+visible = false
+modulate = Color(4.81308e-06, 0, 0.911567, 1)
+text = "Horse3"
+
+[node name="HorsePedestal4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
+script = ExtResource("4_8fw46")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal4"]
+mesh = SubResource("TorusMesh_irsk8")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="HorsePedestal4"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal4/Area3D"]
+shape = SubResource("BoxShape3D_7i0x0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HorsePedestal4"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal4/StaticBody3D"]
+shape = SubResource("BoxShape3D_j78s4")
+
+[node name="Label3D" type="Label3D" parent="HorsePedestal4"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
+visible = false
+modulate = Color(1, 1, 0, 1)
+text = "Horse4"
+
+[node name="HorsePedestal5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+script = ExtResource("5_jh8qh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal5"]
+mesh = SubResource("TorusMesh_irsk8")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="HorsePedestal5"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal5/Area3D"]
+shape = SubResource("BoxShape3D_7i0x0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HorsePedestal5"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal5/StaticBody3D"]
+shape = SubResource("BoxShape3D_j78s4")
+
+[node name="Label3D" type="Label3D" parent="HorsePedestal5"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
+visible = false
+modulate = Color(1, 0, 1, 1)
+text = "Horse5"
+
+[node name="HorsePedestal6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
+script = ExtResource("6_x56xx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal6"]
+mesh = SubResource("TorusMesh_irsk8")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="HorsePedestal6"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal6/Area3D"]
+shape = SubResource("BoxShape3D_7i0x0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HorsePedestal6"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal6/StaticBody3D"]
+shape = SubResource("BoxShape3D_j78s4")
+
+[node name="Label3D" type="Label3D" parent="HorsePedestal6"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
+visible = false
+modulate = Color(0, 1, 1, 1)
+text = "Horse6"
+
+[node name="HorsePedestal7" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+script = ExtResource("7_1vglu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal7"]
+mesh = SubResource("TorusMesh_irsk8")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="HorsePedestal7"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal7/Area3D"]
+shape = SubResource("BoxShape3D_7i0x0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HorsePedestal7"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal7/StaticBody3D"]
+shape = SubResource("BoxShape3D_j78s4")
+
+[node name="Label3D" type="Label3D" parent="HorsePedestal7"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
+visible = false
+text = "Horse7"
+
+[node name="HorsePedestal8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.5)
+script = ExtResource("8_5gxyq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal8"]
+mesh = SubResource("TorusMesh_irsk8")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="HorsePedestal8"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal8/Area3D"]
+shape = SubResource("BoxShape3D_7i0x0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="HorsePedestal8"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HorsePedestal8/StaticBody3D"]
+shape = SubResource("BoxShape3D_j78s4")
+
+[node name="Label3D" type="Label3D" parent="HorsePedestal8"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
+visible = false
+modulate = Color(0, 0, 0, 1)
+text = "Horse8"

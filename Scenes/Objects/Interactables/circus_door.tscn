@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bfop568udcn3v" path="res://Scripts/Objects/Interactables/circus_door.gd" id="1_snptj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3tjo2"]
-size = Vector3(1, 2, 1)
+size = Vector3(0.25, 2.25, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yonl8"]
-size = Vector3(1, 2, 1)
+size = Vector3(0.15, 2.25, 1.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_l5hw7"]
-size = Vector3(1, 2, 1)
+size = Vector3(0.25, 2.25, 1.5)
 
 [node name="CircusDoor" type="Node3D"]
 script = ExtResource("1_snptj")
@@ -29,9 +29,11 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door1/AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
 shape = SubResource("BoxShape3D_yonl8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Door1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
 mesh = SubResource("BoxMesh_l5hw7")
 skeleton = NodePath("../..")
 
@@ -42,8 +44,10 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door2/AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
 shape = SubResource("BoxShape3D_yonl8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Door2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
 mesh = SubResource("BoxMesh_l5hw7")
 skeleton = NodePath("../..")
