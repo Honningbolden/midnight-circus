@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=14 format=3 uid="uid://cbf0xqirktgmp"]
 
-[ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="2_cbcgu"]
-[ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="3_5nsto"]
-[ext_resource type="PackedScene" uid="uid://bqs07bb504yqg" path="res://Scenes/Objects/Interactables/Olaf.tscn" id="4_gjpho"]
-[ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_p70al"]
-[ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_45d1s"]
-[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Assets/Greybox Material.tres" id="7_y7y61"]
-[ext_resource type="Texture2D" uid="uid://cegeo612mms3r" path="res://Assets/kenney_prototype-textures/PNG/Dark/texture_04.png" id="8_q2d71"]
-[ext_resource type="Material" uid="uid://cttu7f7jjvbg6" path="res://Gold.tres" id="8_uo7di"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="1_k4m4y"]
+[ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="2_fak8t"]
+[ext_resource type="PackedScene" uid="uid://bqs07bb504yqg" path="res://Scenes/Objects/Interactables/Olaf.tscn" id="3_j8hc4"]
+[ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="4_okkk3"]
+[ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_v13qs"]
+[ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_q2yp5"]
+[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Assets/Greybox Material.tres" id="7_yh71d"]
+[ext_resource type="Material" uid="uid://cttu7f7jjvbg6" path="res://Gold.tres" id="8_ysglx"]
+[ext_resource type="Texture2D" uid="uid://cegeo612mms3r" path="res://Assets/kenney_prototype-textures/PNG/Dark/texture_04.png" id="9_utqx4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -24,7 +24,7 @@ metallic_specular = 1.0
 roughness = 0.46
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uo7di"]
-albedo_texture = ExtResource("8_q2d71")
+albedo_texture = ExtResource("9_utqx4")
 uv1_triplanar = true
 uv1_world_triplanar = true
 
@@ -41,27 +41,27 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_6hh0k")
 
-[node name="keys" parent="." instance=ExtResource("2_cbcgu")]
+[node name="keys" parent="." instance=ExtResource("1_k4m4y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, 16.0765)
 visible = false
 
-[node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
+[node name="VendingMachine" parent="." instance=ExtResource("2_fak8t")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.9054, 1.59735, -6.65308)
 
-[node name="Olaf" parent="." instance=ExtResource("4_gjpho")]
+[node name="Olaf" parent="." instance=ExtResource("3_j8hc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.36269, 0)
 
-[node name="Player" parent="." instance=ExtResource("1_e5dp7")]
+[node name="Player" parent="." instance=ExtResource("4_okkk3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8757, 8.45683, 4.6627)
 walking_speed = 2.2
 running_speed = 4.5
 acceleration = 0.15
 
-[node name="Ladder" parent="." instance=ExtResource("5_p70al")]
+[node name="Ladder" parent="." instance=ExtResource("5_v13qs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 1.5, 2.84781)
 visible = false
 
-[node name="BreakableWall" parent="." instance=ExtResource("6_45d1s")]
+[node name="BreakableWall" parent="." instance=ExtResource("6_q2yp5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -1.38674)
 visible = false
 
@@ -227,75 +227,75 @@ use_collision = true
 [node name="Stables" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50975, 4.5, 1.00505)
 size = Vector3(20, 10, 16)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow" type="CSGBox3D" parent="Game Area/Stables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 operation = 2
 size = Vector3(19, 9, 15)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Equipment Room" type="CSGBox3D" parent="Game Area/Stables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -5.5)
 size = Vector3(10, 4, 5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow2" type="CSGBox3D" parent="Game Area/Stables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, -2.25, -5.5)
 operation = 2
 size = Vector3(9.5, 3.5, 4)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Doorway3" type="CSGBox3D" parent="Game Area/Stables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80005, -2.75, -0.8)
 operation = 2
 size = Vector3(1, 2.5, 1.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Doorway4" type="CSGBox3D" parent="Game Area/Stables"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80005, -2.25, 2.7)
 operation = 2
 size = Vector3(1, 3.5, 4.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Steam Room" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5098, 2, -6.49495)
 size = Vector3(12, 5, 9)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow" type="CSGBox3D" parent="Game Area/Steam Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.5, 0)
 operation = 2
 size = Vector3(11.5, 4, 8)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hallway" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00975, 2, -8.99495)
 size = Vector3(33, 5, 4)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow" type="CSGBox3D" parent="Game Area/Hallway"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.25)
 operation = 2
 size = Vector3(33, 4, 3.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Staff Area" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9902, 2, 1.00505)
 size = Vector3(11, 5, 16)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow" type="CSGBox3D" parent="Game Area/Staff Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2.25)
 operation = 2
 size = Vector3(10, 4, 10.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow2" type="CSGBox3D" parent="Game Area/Staff Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.5, 3)
 operation = 2
 size = Vector3(5.5, 4, 9)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Game Area/Staff Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5375, 3)
@@ -318,65 +318,65 @@ height = 5.0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.1999, -0.25, -7.8)
 operation = 2
 size = Vector3(1, 2.5, 1.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Doorway2" type="CSGBox3D" parent="Game Area/Staff Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1999, -0.25, 4.2)
 operation = 2
 size = Vector3(1, 2.5, 1.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Ringmaster\'s Quarters" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9903, 2, -8.99495)
 size = Vector3(13, 5, 4)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Doorway" type="CSGBox3D" parent="Game Area/Ringmaster\'s Quarters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2, -0.25, 0)
 operation = 2
 size = Vector3(1, 2.5, 1.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow" type="CSGBox3D" parent="Game Area/Ringmaster\'s Quarters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 operation = 2
 size = Vector3(12, 4, 3)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Extension" type="CSGBox3D" parent="Game Area/Ringmaster\'s Quarters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
 size = Vector3(8, 5, 5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow2" type="CSGBox3D" parent="Game Area/Ringmaster\'s Quarters"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 4)
 operation = 2
 size = Vector3(7, 4, 5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Backstage Entrance" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 1)
 size = Vector3(7, 5, 16)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow" type="CSGBox3D" parent="Game Area/Backstage Entrance"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
 operation = 2
 size = Vector3(7, 4, 14)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Hollow2" type="CSGBox3D" parent="Game Area/Backstage Entrance"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -7.5)
 operation = 2
 size = Vector3(5, 3.5, 1)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Circus Tent" type="CSGCylinder3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.25, 20)
 radius = 12.0
 height = 5.5
 sides = 32
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Top" type="CSGCylinder3D" parent="Game Area/Circus Tent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
@@ -385,7 +385,7 @@ radius = 12.0
 height = 5.5
 sides = 32
 cone = true
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Inner Hollow" type="CSGCylinder3D" parent="Game Area/Circus Tent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -393,7 +393,7 @@ operation = 2
 radius = 11.8
 height = 4.5
 sides = 32
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Inner-Top Hollow" type="CSGCylinder3D" parent="Game Area/Circus Tent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
@@ -403,7 +403,7 @@ radius = 11.8
 height = 3.6
 sides = 32
 cone = true
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Game Area/Circus Tent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.75)
@@ -558,7 +558,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.65, 20)
 radius = 14.5
 height = 2.3
 sides = 32
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Circus Entrance Hall2" type="CSGCylinder3D" parent="Game Area/Circus Entrance Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4875, 0)
@@ -566,7 +566,7 @@ operation = 2
 radius = 14.1
 height = 1.325
 sides = 32
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Entrance Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.35, -8.7)
@@ -581,79 +581,79 @@ size = Vector3(38, 3, 20)
 [node name="Circus Entrance2" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.65, 33.75)
 size = Vector3(4.8, 2.3, 4.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Circus Entrance4" type="CSGBox3D" parent="Game Area/Circus Entrance2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15256e-07, 0.53, 0)
 operation = 2
 size = Vector3(4, 1.4, 4.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Circus Entrance5" type="CSGBox3D" parent="Game Area/Circus Entrance2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499999, 0.53, -0.950001)
 operation = 2
 size = Vector3(5, 1.4, 2.6)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Circus Entrance3" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.25, 36.25)
 size = Vector3(4, 0.5, 0.5)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Circus Entrance" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7, 0.65, 19.8)
 size = Vector3(4.4, 2.3, 6.4)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Circus Entrance4" type="CSGBox3D" parent="Game Area/Circus Entrance"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200001, 0.55, 0)
 operation = 2
 size = Vector3(4, 1.4, 5.6)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Circus Entrance5" type="CSGBox3D" parent="Game Area/Circus Entrance"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, 0.55, 0.200001)
 operation = 2
 size = Vector3(2.3, 1.4, 6)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Carnival Area" type="CSGBox3D" parent="Game Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, 41)
 size = Vector3(24.2, 1, 42)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Fill2" type="CSGBox3D" parent="Game Area/Carnival Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0999985)
 size = Vector3(48.2, 1, 18)
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Corner" type="CSGCylinder3D" parent="Game Area/Carnival Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -9.1)
 radius = 12.1
 height = 1.0
 sides = 16
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Corner2" type="CSGCylinder3D" parent="Game Area/Carnival Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -9.1)
 radius = 12.1
 height = 1.0
 sides = 16
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Corner3" type="CSGCylinder3D" parent="Game Area/Carnival Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8.9)
 radius = 12.1
 height = 1.0
 sides = 16
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Corner4" type="CSGCylinder3D" parent="Game Area/Carnival Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 8.9)
 radius = 12.1
 height = 1.0
 sides = 16
-material = ExtResource("7_y7y61")
+material = ExtResource("7_yh71d")
 
 [node name="Statue" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -1, 49.9)
@@ -667,22 +667,22 @@ material = SubResource("StandardMaterial3D_kn06e")
 [node name="CSGBox3D2" type="CSGBox3D" parent="Statue"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 2.85, -6.4)
 size = Vector3(1, 1.5, 1)
-material = ExtResource("8_uo7di")
+material = ExtResource("8_ysglx")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Statue"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 4.35, -6.4)
 size = Vector3(1.4, 1.5, 1.3)
-material = ExtResource("8_uo7di")
+material = ExtResource("8_ysglx")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Statue"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 4.15, -6.4)
 size = Vector3(2.3, 1.7, 0.7)
-material = ExtResource("8_uo7di")
+material = ExtResource("8_ysglx")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Statue"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 5.6, -6.4)
 size = Vector3(0.8, 1, 0.8)
-material = ExtResource("8_uo7di")
+material = ExtResource("8_ysglx")
 
 [node name="Gates" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, 41)
