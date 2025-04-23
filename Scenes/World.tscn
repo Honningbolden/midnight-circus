@@ -1,16 +1,18 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=16 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="2_cbcgu"]
 [ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="3_5nsto"]
 [ext_resource type="PackedScene" uid="uid://bqs07bb504yqg" path="res://Scenes/Objects/Interactables/Olaf.tscn" id="4_gjpho"]
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_p70al"]
 [ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_45d1s"]
 [ext_resource type="PackedScene" uid="uid://cjm5wehesvmoi" path="res://Scenes/Objects/Interactables/fence.tscn" id="7_q2d71"]
 [ext_resource type="Script" uid="uid://dolr0auqg3f2b" path="res://Scripts/Objects/Interactables/fence.gd" id="8_uo7di"]
-[ext_resource type="PackedScene" uid="uid://5837fuxvxy2q" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
+[ext_resource type="PackedScene" uid="uid://bqyfg3hxj1nu6" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
 [ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
 [ext_resource type="PackedScene" uid="uid://dto86ghsx42bc" path="res://Scripts/Objects/Interactables/horse_pedestal_1.tscn" id="11_7yo87"]
+[ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="12_8l3nt"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="13_op4cu"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="14_8l3nt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -30,7 +32,7 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_6hh0k")
 
-[node name="keys" parent="." instance=ExtResource("2_cbcgu")]
+[node name="keys" parent="." instance=ExtResource("14_8l3nt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, 16.0765)
 
 [node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
@@ -58,3 +60,9 @@ script = ExtResource("10_kn06e")
 
 [node name="Carousel" parent="." instance=ExtResource("11_7yo87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1613, 1.53914, -11.9573)
+
+[node name="BrokenPipe" parent="." instance=ExtResource("12_8l3nt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -2.932)
+
+[node name="Duct Tape" parent="." instance=ExtResource("13_op4cu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.346, -3)
