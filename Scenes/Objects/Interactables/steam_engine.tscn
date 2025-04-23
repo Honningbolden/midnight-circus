@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsqvn5kq07odm"]
+
+[ext_resource type="Script" uid="uid://djw1tehdobdcc" path="res://Scripts/Objects/Interactables/steam_engine.gd" id="1_kbm6m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_55xv3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ju3wb"]
+
+[sub_resource type="Animation" id="Animation_kbm6m"]
+resource_name = "rotate valve"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("container/AnimationPlayer/Steam Engine Valve:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0), Vector3(0, 4.71239, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_55xv3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("container/AnimationPlayer/Steam Engine Valve:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ju3wb"]
+_data = {
+&"RESET": SubResource("Animation_55xv3"),
+&"rotate valve": SubResource("Animation_kbm6m")
+}
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lieck"]
+
+[node name="SteamEngine" type="Node3D"]
+script = ExtResource("1_kbm6m")
+
+[node name="container" type="Node3D" parent="."]
+
+[node name="Steam Engine" type="MeshInstance3D" parent="container"]
+mesh = SubResource("BoxMesh_55xv3")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="container/Steam Engine"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="container/Steam Engine/StaticBody3D"]
+shape = SubResource("BoxShape3D_ju3wb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="container"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ju3wb")
+}
+
+[node name="Steam Engine Valve" type="MeshInstance3D" parent="container/AnimationPlayer"]
+transform = Transform3D(0.304031, 0, 0, 0, 0.024, 0, 0, 0, 0.5, 0, 0.590666, 0)
+mesh = SubResource("CylinderMesh_lieck")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="container/AnimationPlayer/Steam Engine Valve"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="container/AnimationPlayer/Steam Engine Valve/StaticBody3D"]
+shape = SubResource("BoxShape3D_ju3wb")
