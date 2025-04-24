@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=18 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="3_5nsto"]
@@ -11,8 +11,10 @@
 [ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
 [ext_resource type="PackedScene" uid="uid://dto86ghsx42bc" path="res://Scripts/Objects/Interactables/horse_pedestal_1.tscn" id="11_7yo87"]
 [ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="12_8l3nt"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="13_op4cu"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="14_8l3nt"]
+[ext_resource type="PackedScene" uid="uid://covymlbu2kxg4" path="res://Scenes/Objects/Fuse.tscn" id="13_8l3nt"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="13_op4cu"]
+[ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="14_kwl8l"]
+[ext_resource type="Script" uid="uid://bdevs1a7tdteg" path="res://Scripts/Objects/Collectibles/fuse.gd" id="14_xiqgv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -32,7 +34,7 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_6hh0k")
 
-[node name="keys" parent="." instance=ExtResource("14_8l3nt")]
+[node name="keys" parent="." instance=ExtResource("13_op4cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, 16.0765)
 
 [node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
@@ -66,3 +68,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -2.932)
 
 [node name="Duct Tape" parent="." instance=ExtResource("13_op4cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.346, -3)
+
+[node name="RMFuse1" parent="." instance=ExtResource("13_8l3nt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.26521, 0.950552, -7.84682)
+script = ExtResource("14_xiqgv")
+
+[node name="RMFuse2" parent="." instance=ExtResource("13_8l3nt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.72941, 0.950552, -7.84682)
+script = ExtResource("14_xiqgv")
+
+[node name="RMFuse3" parent="." instance=ExtResource("13_8l3nt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.08211, 0.950552, -7.84682)
+script = ExtResource("14_xiqgv")
+
+[node name="RingMasterStatue" parent="." instance=ExtResource("14_kwl8l")]
+transform = Transform3D(1.82157, 0, 0, 0, 1.82157, 0, 0, 0, 1.82157, 0, 2.33574, -5.35491)

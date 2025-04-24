@@ -1,0 +1,271 @@
+[gd_scene load_steps=19 format=3 uid="uid://cb8wad3qwif2c"]
+
+[ext_resource type="Script" uid="uid://bgd87s8fkyggu" path="res://Scripts/Objects/Interactables/statue_limbs.gd" id="1_7s766"]
+[ext_resource type="Script" uid="uid://cfug0g1g72m2b" path="res://Scripts/Objects/Interactables/ring_master_statue.gd" id="1_jyhhw"]
+[ext_resource type="Script" uid="uid://dbg4tre7j55xw" path="res://Scripts/Objects/Interactables/fuse_slot.gd" id="3_calyj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lpsem"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s766"]
+albedo_color = Color(1, 1, 0.584314, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jyhhw"]
+height = 2.07055
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_calyj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ayrgc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kffp"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pp4ku"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w8itn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayrgc"]
+albedo_color = Color(1, 1, 0.584314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhhw"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_calyj"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp4ku"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w8itn"]
+material = SubResource("StandardMaterial3D_pp4ku")
+height = 0.05
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0t0p8"]
+height = 0.342529
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_itrgk"]
+height = 0.001
+
+[node name="RingMasterStatue" type="Node3D"]
+transform = Transform3D(1.82157, 0, 0, 0, 1.82157, 0, 0, 0, 1.82157, 0, 0, 0)
+script = ExtResource("1_jyhhw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_lpsem")
+surface_material_override/0 = SubResource("StandardMaterial3D_7s766")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_jyhhw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_calyj")
+
+[node name="RightArm" type="Node3D" parent="."]
+transform = Transform3D(0.489678, 0, 0, 0, 0.439668, 0, 0, 0, 0.925605, -0.0234664, 0.324623, 0.686295)
+script = ExtResource("1_7s766")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightArm"]
+mesh = SubResource("SphereMesh_ayrgc")
+surface_material_override/0 = SubResource("StandardMaterial3D_4kffp")
+
+[node name="Area3D" type="Area3D" parent="RightArm"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightArm/Area3D"]
+shape = SubResource("SphereShape3D_pp4ku")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RightArm"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightArm/StaticBody3D"]
+shape = SubResource("SphereShape3D_w8itn")
+
+[node name="Label3D" type="Label3D" parent="RightArm"]
+transform = Transform3D(-3.84912e-08, -0.448355, -1.31335, -1.79561e-08, 2.0209, -0.291379, 0.97168, 1.95843e-08, -5.74104e-08, -0.700496, 0.144653, 0.318771)
+visible = false
+text = "Interact with Arm"
+
+[node name="RightFoot" type="Node3D" parent="."]
+transform = Transform3D(0.489678, 0, 0, 0, 0.439668, 0, 0, 0, 0.925605, -0.023, -0.547, 0.686)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightFoot"]
+mesh = SubResource("SphereMesh_ayrgc")
+surface_material_override/0 = SubResource("StandardMaterial3D_ayrgc")
+
+[node name="Area3D" type="Area3D" parent="RightFoot"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightFoot/Area3D"]
+shape = SubResource("SphereShape3D_pp4ku")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RightFoot"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightFoot/StaticBody3D"]
+shape = SubResource("SphereShape3D_w8itn")
+
+[node name="LeftArm" type="Node3D" parent="."]
+transform = Transform3D(0.489678, 0, 0, 0, 0.439668, 0, 0, 0, 0.925605, -0.023, 0.325, -0.686)
+script = ExtResource("1_7s766")
+state = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftArm"]
+mesh = SubResource("SphereMesh_ayrgc")
+surface_material_override/0 = SubResource("StandardMaterial3D_jyhhw")
+
+[node name="Area3D" type="Area3D" parent="LeftArm"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftArm/Area3D"]
+shape = SubResource("SphereShape3D_pp4ku")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LeftArm"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftArm/StaticBody3D"]
+shape = SubResource("SphereShape3D_w8itn")
+
+[node name="Label3D" type="Label3D" parent="LeftArm"]
+transform = Transform3D(-3.84912e-08, -0.448355, -1.31335, -1.79561e-08, 2.0209, -0.291379, 0.97168, 1.95843e-08, -5.74104e-08, -0.700496, 0.144653, -0.460332)
+visible = false
+text = "Interact with Arm"
+
+[node name="LeftFoot" type="Node3D" parent="."]
+transform = Transform3D(0.489678, 0, 0, 0, 0.439668, 0, 0, 0, 0.925605, -0.023, -0.547, -0.686)
+script = ExtResource("1_7s766")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftFoot"]
+mesh = SubResource("SphereMesh_ayrgc")
+surface_material_override/0 = SubResource("StandardMaterial3D_calyj")
+
+[node name="Area3D" type="Area3D" parent="LeftFoot"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftFoot/Area3D"]
+shape = SubResource("SphereShape3D_pp4ku")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LeftFoot"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftFoot/StaticBody3D"]
+shape = SubResource("SphereShape3D_w8itn")
+
+[node name="Label3D" type="Label3D" parent="LeftFoot"]
+transform = Transform3D(-3.84912e-08, -0.448355, -1.31335, -1.79561e-08, 2.0209, -0.291379, 0.97168, 1.95843e-08, -5.74104e-08, -0.700496, 0.144653, -0.460332)
+visible = false
+text = "Interact with Leg"
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.282341, -0.959314, 0, 0.959314, 0.282341, 1, 1.23415e-08, -4.19329e-08, -0.604732, -0.120743, 0.0581127)
+visible = false
+text = "Statue"
+
+[node name="FuseSlot1" type="Node3D" parent="."]
+transform = Transform3D(0.238048, 0, 0, 0, 0.416594, 0, 0, 0, 0.249957, -0.620331, -0.499636, -0.340667)
+visible = false
+script = ExtResource("3_calyj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FuseSlot1"]
+mesh = SubResource("CylinderMesh_w8itn")
+
+[node name="Area3D" type="Area3D" parent="FuseSlot1"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuseSlot1/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0098877, 0)
+shape = SubResource("CylinderShape3D_0t0p8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FuseSlot1"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuseSlot1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0761602, 0)
+shape = SubResource("CylinderShape3D_itrgk")
+
+[node name="Label3D" type="Label3D" parent="FuseSlot1"]
+transform = Transform3D(-7.34497e-08, 0.474427, -1.61197, 0, 0.921101, 0.271095, 1.60028, 1.97499e-08, -6.71043e-08, -0.69685, 0.379818, 0.0631124)
+visible = false
+text = "Enter Fuse"
+
+[node name="FuseSlot2" type="Node3D" parent="."]
+transform = Transform3D(0.238048, 0, 0, 0, 0.416594, 0, 0, 0, 0.249957, -0.702591, -0.5, 0)
+visible = false
+script = ExtResource("3_calyj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FuseSlot2"]
+mesh = SubResource("CylinderMesh_w8itn")
+
+[node name="Area3D" type="Area3D" parent="FuseSlot2"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuseSlot2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0098877, 0)
+shape = SubResource("CylinderShape3D_0t0p8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FuseSlot2"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuseSlot2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0761602, 0)
+shape = SubResource("CylinderShape3D_itrgk")
+
+[node name="Label3D" type="Label3D" parent="FuseSlot2"]
+transform = Transform3D(-7.34497e-08, 0.474427, -1.61197, 0, 0.921101, 0.271095, 1.60028, 1.97499e-08, -6.71043e-08, -0.69685, 0.379818, 0.0631124)
+visible = false
+text = "Enter Fuse"
+
+[node name="FuseSlot3" type="Node3D" parent="."]
+transform = Transform3D(0.238048, 0, 0, 0, 0.416594, 0, 0, 0, 0.249957, -0.62, -0.5, 0.341)
+visible = false
+script = ExtResource("3_calyj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FuseSlot3"]
+mesh = SubResource("CylinderMesh_w8itn")
+
+[node name="Area3D" type="Area3D" parent="FuseSlot3"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuseSlot3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0098877, 0)
+shape = SubResource("CylinderShape3D_0t0p8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FuseSlot3"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FuseSlot3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0761602, 0)
+shape = SubResource("CylinderShape3D_itrgk")
+
+[node name="Label3D" type="Label3D" parent="FuseSlot3"]
+transform = Transform3D(-7.34497e-08, 0.474427, -1.61197, 0, 0.921101, 0.271095, 1.60028, 1.97499e-08, -6.71043e-08, -0.69685, 0.379818, 0.0631124)
+visible = false
+text = "Enter Fuse"

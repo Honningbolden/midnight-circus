@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c5ehyeft6ncvg" path="res://Scenes/Objects/Interactables/lock.tscn" id="1_k2f70"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2f70"]
-albedo_color = Color(0.498039, 1, 1, 1)
+albedo_color = Color(0.541176, 1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_630nm"]
 material = SubResource("StandardMaterial3D_k2f70")

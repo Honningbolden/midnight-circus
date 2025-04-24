@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfj5roc8dpnmg"]
 
-[ext_resource type="Script" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="1_xu5ra"]
+[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="1_xu5ra"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd0c8"]
 albedo_color = Color(1, 0, 0, 1)
