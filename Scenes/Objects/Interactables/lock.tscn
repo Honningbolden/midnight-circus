@@ -37,4 +37,24 @@ stream = ExtResource("4_fbqs2")
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="Inputs" type="TextEdit" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 761.0
+offset_top = 120.0
+offset_right = 1260.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.890943, 0.67779, 0.623626, 1)
+theme_override_font_sizes/font_size = 55
+placeholder_text = "CODE"
+editable = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+autowrap_mode = 1
+
 [connection signal="finished" from="LockTurnAudio" to="." method="_on_sample_player_finished"]

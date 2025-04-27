@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://fhqs276e3l8u"]
+
+[ext_resource type="Texture2D" uid="uid://cjelxyl3fsrq1" path="res://Assets/horsetag.webp" id="1_7yhs0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yyrff"]
+
+[node name="HorseTag" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0395073, 0, 0, 0, 0.0486244, 0, 0, 0, 0.0869157, 0, 0, 0)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_7yhs0")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_yyrff")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0.331, 0)
+visible = false
+texture_filter = 0
+text = "Pick Up"

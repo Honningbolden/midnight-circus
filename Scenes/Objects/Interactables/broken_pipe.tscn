@@ -1,6 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfj5roc8dpnmg"]
-
-[ext_resource type="Script" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="1_xu5ra"]
+[gd_scene load_steps=5 format=3 uid="uid://cfj5roc8dpnmg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd0c8"]
 albedo_color = Color(1, 0, 0, 1)
@@ -18,7 +16,6 @@ radius = 0.2
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vho7g"]
 
 [node name="BrokenPipe" type="Node3D"]
-script = ExtResource("1_xu5ra")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000679255, 0.00374562, -0.000242233)
