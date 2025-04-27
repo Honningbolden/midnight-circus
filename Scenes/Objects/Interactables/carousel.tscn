@@ -1,29 +1,76 @@
-[gd_scene load_steps=12 format=3 uid="uid://dto86ghsx42bc"]
+[gd_scene load_steps=27 format=3 uid="uid://bywfgwxn45poc"]
 
-[ext_resource type="Script" uid="uid://boaeolyujvlxd" path="res://Scenes/Objects/Interactables/horse_pedestal_1.gd" id="1_0yypm"]
-[ext_resource type="Script" uid="uid://dv0vqgrprv220" path="res://Scenes/Objects/Interactables/horse_pedestal_2.gd" id="2_bupa8"]
-[ext_resource type="Script" uid="uid://ssssdq6m3b6h" path="res://Scenes/Objects/Interactables/horse_pedestal_3.gd" id="3_dtciv"]
-[ext_resource type="Script" uid="uid://cyix638dhsl3i" path="res://Scenes/Objects/Interactables/horse_pedestal_4.gd" id="4_8fw46"]
-[ext_resource type="Script" uid="uid://braw4vulktpff" path="res://Scenes/Objects/Interactables/horse_pedestal_5.gd" id="5_jh8qh"]
-[ext_resource type="Script" uid="uid://bnrlqcxa4e0pl" path="res://Scenes/Objects/Interactables/horse_pedestal_6.gd" id="6_x56xx"]
-[ext_resource type="Script" uid="uid://brv34yqltq0nk" path="res://Scenes/Objects/Interactables/horse_pedestal_7.gd" id="7_1vglu"]
-[ext_resource type="Script" uid="uid://c7nor47gark54" path="res://Scenes/Objects/Interactables/horse_pedestal_8.gd" id="8_5gxyq"]
+[ext_resource type="Script" uid="uid://dxobrtj5psnrp" path="res://Scripts/Objects/Interactables/carousel.gd" id="1_1sd25"]
+[ext_resource type="Script" uid="uid://boaeolyujvlxd" path="res://Scripts/Objects/Interactables/horse_pedestal.gd" id="2_jy2vb"]
+[ext_resource type="PackedScene" uid="uid://covymlbu2kxg4" path="res://Scenes/Objects/Fuse.tscn" id="3_jy2vb"]
+[ext_resource type="Script" uid="uid://bdevs1a7tdteg" path="res://Scripts/Objects/Collectibles/fuse.gd" id="4_es4lw"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_irsk8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cpys5"]
+albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7i0x0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j78s4"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_1sd25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31ill"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moigf"]
+albedo_color = Color(0, 1, 0.316667, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sd25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dutu6"]
+albedo_color = Color(0.0666666, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d44jv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gx6rm"]
+albedo_color = Color(0.916667, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jy2vb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cktfq"]
+albedo_color = Color(1, 0, 0.883333, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_es4lw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8c8bi"]
+albedo_color = Color(0, 0.833333, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjhv4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0dou6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2uuab"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcsw1"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8onpk"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_yjhv4"]
+inner_radius = 6.723
+outer_radius = 5.729
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lu07"]
+albedo_color = Color(0.23, 0.1219, 0.1219, 1)
+
 [node name="Carousel" type="Node3D"]
+visible = false
+script = ExtResource("1_1sd25")
 
 [node name="HorsePedestal1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-script = ExtResource("1_0yypm")
+script = ExtResource("2_jy2vb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal1"]
 mesh = SubResource("TorusMesh_irsk8")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_cpys5")
 
 [node name="Area3D" type="Area3D" parent="HorsePedestal1"]
 collision_layer = 8
@@ -43,16 +90,26 @@ shape = SubResource("BoxShape3D_j78s4")
 [node name="Label3D" type="Label3D" parent="HorsePedestal1"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
 visible = false
-modulate = Color(1, 0, 0, 1)
-text = "Horse1"
+text = "Place Horse Tag"
+
+[node name="TagIndicator" type="Node3D" parent="HorsePedestal1"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal1/TagIndicator"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.958265, 0)
+mesh = SubResource("SphereMesh_1sd25")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_31ill")
 
 [node name="HorsePedestal2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
-script = ExtResource("2_bupa8")
+script = ExtResource("2_jy2vb")
+number = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal2"]
 mesh = SubResource("TorusMesh_irsk8")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_moigf")
 
 [node name="Area3D" type="Area3D" parent="HorsePedestal2"]
 collision_layer = 8
@@ -72,16 +129,26 @@ shape = SubResource("BoxShape3D_j78s4")
 [node name="Label3D" type="Label3D" parent="HorsePedestal2"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
 visible = false
-modulate = Color(9.14484e-07, 0.887663, 0, 1)
-text = "Horse2"
+text = "Place Horse Tag"
+
+[node name="TagIndicator" type="Node3D" parent="HorsePedestal2"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal2/TagIndicator"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.958265, 0)
+mesh = SubResource("SphereMesh_1sd25")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1sd25")
 
 [node name="HorsePedestal3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-script = ExtResource("3_dtciv")
+script = ExtResource("2_jy2vb")
+number = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal3"]
 mesh = SubResource("TorusMesh_irsk8")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dutu6")
 
 [node name="Area3D" type="Area3D" parent="HorsePedestal3"]
 collision_layer = 8
@@ -101,16 +168,26 @@ shape = SubResource("BoxShape3D_j78s4")
 [node name="Label3D" type="Label3D" parent="HorsePedestal3"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
 visible = false
-modulate = Color(4.81308e-06, 0, 0.911567, 1)
-text = "Horse3"
+text = "Place Horse Tag"
+
+[node name="TagIndicator" type="Node3D" parent="HorsePedestal3"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal3/TagIndicator"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.958265, 0)
+mesh = SubResource("SphereMesh_1sd25")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_d44jv")
 
 [node name="HorsePedestal4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.5)
-script = ExtResource("4_8fw46")
+script = ExtResource("2_jy2vb")
+number = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal4"]
 mesh = SubResource("TorusMesh_irsk8")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gx6rm")
 
 [node name="Area3D" type="Area3D" parent="HorsePedestal4"]
 collision_layer = 8
@@ -130,16 +207,26 @@ shape = SubResource("BoxShape3D_j78s4")
 [node name="Label3D" type="Label3D" parent="HorsePedestal4"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
 visible = false
-modulate = Color(1, 1, 0, 1)
-text = "Horse4"
+text = "Place Horse Tag"
+
+[node name="TagIndicator" type="Node3D" parent="HorsePedestal4"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal4/TagIndicator"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.958265, 0)
+mesh = SubResource("SphereMesh_1sd25")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_jy2vb")
 
 [node name="HorsePedestal5" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-script = ExtResource("5_jh8qh")
+script = ExtResource("2_jy2vb")
+number = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal5"]
 mesh = SubResource("TorusMesh_irsk8")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_cktfq")
 
 [node name="Area3D" type="Area3D" parent="HorsePedestal5"]
 collision_layer = 8
@@ -159,16 +246,26 @@ shape = SubResource("BoxShape3D_j78s4")
 [node name="Label3D" type="Label3D" parent="HorsePedestal5"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
 visible = false
-modulate = Color(1, 0, 1, 1)
-text = "Horse5"
+text = "Place Horse Tag"
+
+[node name="TagIndicator" type="Node3D" parent="HorsePedestal5"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal5/TagIndicator"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.958265, 0)
+mesh = SubResource("SphereMesh_1sd25")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_es4lw")
 
 [node name="HorsePedestal6" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
-script = ExtResource("6_x56xx")
+script = ExtResource("2_jy2vb")
+number = 6
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal6"]
 mesh = SubResource("TorusMesh_irsk8")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8c8bi")
 
 [node name="Area3D" type="Area3D" parent="HorsePedestal6"]
 collision_layer = 8
@@ -188,16 +285,26 @@ shape = SubResource("BoxShape3D_j78s4")
 [node name="Label3D" type="Label3D" parent="HorsePedestal6"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
 visible = false
-modulate = Color(0, 1, 1, 1)
-text = "Horse6"
+text = "Place Horse Tag"
+
+[node name="TagIndicator" type="Node3D" parent="HorsePedestal6"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal6/TagIndicator"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.958265, 0)
+mesh = SubResource("SphereMesh_1sd25")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_yjhv4")
 
 [node name="HorsePedestal7" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-script = ExtResource("7_1vglu")
+script = ExtResource("2_jy2vb")
+number = 7
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal7"]
 mesh = SubResource("TorusMesh_irsk8")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_0dou6")
 
 [node name="Area3D" type="Area3D" parent="HorsePedestal7"]
 collision_layer = 8
@@ -217,15 +324,26 @@ shape = SubResource("BoxShape3D_j78s4")
 [node name="Label3D" type="Label3D" parent="HorsePedestal7"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
 visible = false
-text = "Horse7"
+text = "Place Horse Tag"
+
+[node name="TagIndicator" type="Node3D" parent="HorsePedestal7"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal7/TagIndicator"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.958265, 0)
+mesh = SubResource("SphereMesh_1sd25")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2uuab")
 
 [node name="HorsePedestal8" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.5)
-script = ExtResource("8_5gxyq")
+script = ExtResource("2_jy2vb")
+number = 8
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal8"]
 mesh = SubResource("TorusMesh_irsk8")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fcsw1")
 
 [node name="Area3D" type="Area3D" parent="HorsePedestal8"]
 collision_layer = 8
@@ -245,5 +363,22 @@ shape = SubResource("BoxShape3D_j78s4")
 [node name="Label3D" type="Label3D" parent="HorsePedestal8"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0.0738985, -0.085508, 1.0869)
 visible = false
-modulate = Color(0, 0, 0, 1)
-text = "Horse8"
+text = "Place Horse Tag"
+
+[node name="TagIndicator" type="Node3D" parent="HorsePedestal8"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HorsePedestal8/TagIndicator"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.958265, 0)
+mesh = SubResource("SphereMesh_1sd25")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8onpk")
+
+[node name="CarouselLight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51695, 0)
+mesh = SubResource("TorusMesh_yjhv4")
+surface_material_override/0 = SubResource("StandardMaterial3D_8lu07")
+
+[node name="RMFuse1" parent="." instance=ExtResource("3_jy2vb")]
+visible = false
+script = ExtResource("4_es4lw")
