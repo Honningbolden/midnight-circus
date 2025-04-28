@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://2hdgywoyjhx6"]
+[gd_scene load_steps=10 format=3 uid="uid://2hdgywoyjhx6"]
 
 [ext_resource type="Script" uid="uid://pd43ecwjvj8o" path="res://Scripts/Player/player.gd" id="1_k20og"]
 [ext_resource type="Script" uid="uid://b7ehmibxnwvq7" path="res://Scripts/Player/camera.gd" id="2_crbs0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cqakumy4wqmbd" path="res://Assets/Pixel art/Player/lefthand.png" id="5_jmcll"]
 [ext_resource type="Script" uid="uid://b8ft37nuldw6r" path="res://Scripts/Player/State Machine/climb_state.gd" id="5_t26db"]
 [ext_resource type="Texture2D" uid="uid://c38n40oyqjlu7" path="res://Assets/Pixel art/Player/righthand.png" id="6_4wape"]
+[ext_resource type="Script" uid="uid://b8bytn3s8ruhl" path="res://Scripts/Player/State Machine/canon_state.gd" id="6_fk5o5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rf68g"]
 radius = 0.25
@@ -56,6 +57,10 @@ player = NodePath("../..")
 camera = NodePath("../../Camera3D")
 
 [node name="Tightrope State" type="Node" parent="State Machine"]
+
+[node name="Canon State" type="Node" parent="State Machine" node_paths=PackedStringArray("player")]
+script = ExtResource("6_fk5o5")
+player = NodePath("../..")
 
 [node name="Hands" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
