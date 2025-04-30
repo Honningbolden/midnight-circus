@@ -1,6 +1,5 @@
 ## climb_state.gd
 
-
 extends StateMachineState
 
 

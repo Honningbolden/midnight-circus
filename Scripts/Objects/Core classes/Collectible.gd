@@ -12,4 +12,8 @@ func _ready():  # when the node is ready
 ## Add the collectible
 func collect():
 	GameManager.collected_items.append(name)
+	await wait(0.01)
 	queue_free()  # delete the item
+
+func wait(seconds: float) -> void:        # Thanks to GBWD on the Godot forum
+	await get_tree().create_timer(seconds).timeout

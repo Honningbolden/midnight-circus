@@ -28,13 +28,13 @@ func on_physics_process(_delta: float) -> void:
 func on_input(event: InputEvent) -> void:
 	if event.is_action_pressed("sprint"):  # if 'sprint' is pressed
 		player.speed = player.running_speed  # run faster
-	elif event.is_action_released("sprint"):  # if 'sprint' is released
+	if event.is_action_released("sprint"):  # if 'sprint' is released
 		player.speed = player.walking_speed  # run slower
-	elif event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact"):
 		player.interact()
-	elif event is InputEventMouseMotion:  # if mouse moved
+	if event is InputEventMouseMotion:  # if mouse moved
 		camera.update_camera_input(event.relative)  # update the camera
-	elif event is InputEventJoypadMotion:  # if joystick moved
+	if event is InputEventJoypadMotion:  # if joystick moved
 		camera.update_camera_input(camera.get_joy_direction())
 
 
