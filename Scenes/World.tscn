@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=23 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="3_5nsto"]
@@ -10,19 +10,16 @@
 [ext_resource type="PackedScene" uid="uid://bqyfg3hxj1nu6" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
 [ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
 [ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="12_8l3nt"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://dsqvn5kq07odm" path="res://Scenes/Objects/Interactables/steam_engine.tscn" id="13_8l3nt"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="13_op4cu"]
-=======
 [ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="12_rwt1y"]
 [ext_resource type="PackedScene" uid="uid://covymlbu2kxg4" path="res://Scenes/Objects/Fuse.tscn" id="13_8l3nt"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="13_op4cu"]
 [ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="14_kwl8l"]
 [ext_resource type="Script" uid="uid://bdevs1a7tdteg" path="res://Scripts/Objects/Collectibles/fuse.gd" id="14_xiqgv"]
 [ext_resource type="PackedScene" uid="uid://bywfgwxn45poc" path="res://Scenes/Objects/Interactables/carousel.tscn" id="16_mvfa8"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/horse_tag.tscn" id="17_r0dna"]
-[ext_resource type="Script" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="18_b5aes"]
->>>>>>> 3dd114f8c9b19a527b7a8a2885ff7245bf4eeece
+[ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="17_r0dna"]
+[ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="18_b5aes"]
+[ext_resource type="PackedScene" uid="uid://dsqvn5kq07odm" path="res://Scenes/Objects/Interactables/steam_engine.tscn" id="19_mvfa8"]
+[ext_resource type="PackedScene" uid="uid://cay65qnwy7s8f" path="res://Scenes/Objects/Interactables/canon.tscn" id="20_r0dna"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -75,10 +72,6 @@ script = ExtResource("12_rwt1y")
 [node name="Duct Tape" parent="." instance=ExtResource("13_op4cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.346, -3)
 
-<<<<<<< HEAD
-[node name="SteamEngine" parent="." instance=ExtResource("13_8l3nt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2661, 1.31346, 0)
-=======
 [node name="RMFuse2" parent="." instance=ExtResource("13_8l3nt")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.72941, 0.950552, -7.84682)
 script = ExtResource("14_xiqgv")
@@ -138,4 +131,9 @@ color = Color(1, 1, 1, 1)
 transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -18.6673, 0.936855, -7.78905)
 script = ExtResource("18_b5aes")
 number = 8
->>>>>>> 3dd114f8c9b19a527b7a8a2885ff7245bf4eeece
+
+[node name="SteamEngine" parent="." instance=ExtResource("19_mvfa8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.354, 1.22052, 1.46588)
+
+[node name="Canon" parent="." instance=ExtResource("20_r0dna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.726, 1.61227, 7.29426)

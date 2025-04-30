@@ -1,4 +1,4 @@
-## canon_state.gd
+# canon_state.gd
 
 extends StateMachineState
 
