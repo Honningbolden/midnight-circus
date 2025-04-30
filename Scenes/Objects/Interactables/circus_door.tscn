@@ -11,8 +11,10 @@ size = Vector3(0.15, 2.25, 1.5)
 [sub_resource type="BoxMesh" id="BoxMesh_l5hw7"]
 size = Vector3(0.25, 2.25, 1.5)
 
-[node name="CircusDoor" type="Node3D"]
+[node name="CircusDoor" type="Node3D" node_paths=PackedStringArray("Pivot1", "Pivot2")]
 script = ExtResource("1_snptj")
+Pivot1 = NodePath("Pivot1")
+Pivot2 = NodePath("Pivot2")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 8
@@ -22,32 +24,38 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_3tjo2")
 
-[node name="Door1" type="Node3D" parent="."]
+[node name="Pivot1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Door1"]
+[node name="Door1" type="Node3D" parent="Pivot1"]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Pivot1/Door1"]
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door1/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot1/Door1/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
 shape = SubResource("BoxShape3D_yonl8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Door1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot1/Door1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
 mesh = SubResource("BoxMesh_l5hw7")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="Door2" type="Node3D" parent="."]
+[node name="Pivot2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Door2"]
+[node name="Door2" type="Node3D" parent="Pivot2"]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Pivot2/Door2"]
 collision_layer = 8
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot2/Door2/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
 shape = SubResource("BoxShape3D_yonl8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Door2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot2/Door2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.75)
 mesh = SubResource("BoxMesh_l5hw7")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")

@@ -67,7 +67,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0960867, 2.02174, 0.509666)
 curve = SubResource("Curve3D_doqlj")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Container/Path 1/Path3D"]
-transform = Transform3D(-4.37103e-08, 0, 0.999951, 0, 0.999951, 0, -0.999975, 0, -4.37092e-08, 0, 0, 0)
+transform = Transform3D(-4.37103e-08, 0, 0.999948, 0, 0.999948, 0, -0.999975, 0, -4.37091e-08, 0, 0, 0)
 loop = false
 
 [node name="Rock 1" type="MeshInstance3D" parent="Container/Path 1/Path3D/PathFollow3D"]

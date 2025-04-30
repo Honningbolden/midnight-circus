@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjm5wehesvmoi"]
+[gd_scene load_steps=6 format=3 uid="uid://cjm5wehesvmoi"]
+
+[ext_resource type="Script" uid="uid://dolr0auqg3f2b" path="res://Scripts/Objects/fence.gd" id="1_mn8mn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_67cn0"]
 size = Vector3(0.25, 2.5, 5)
@@ -13,10 +15,11 @@ size = Vector3(0.25, 2.5, 0.5)
 size = Vector3(0.25, 2.5, 0.5)
 
 [node name="Fence" type="Node3D"]
+script = ExtResource("1_mn8mn")
 
 [node name="Area3D" type="Area3D" parent="."]
-collision_layer = 8
-collision_mask = 0
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
@@ -28,7 +31,7 @@ mesh = SubResource("BoxMesh_deicn")
 skeleton = NodePath("")
 
 [node name="AnimatableBody3D" type="CharacterBody3D" parent="fence"]
-collision_layer = 8
+collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fence/AnimatableBody3D"]
@@ -40,6 +43,11 @@ mesh = SubResource("BoxMesh_3jmrq")
 skeleton = NodePath("")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="fence post"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fence post/AnimatableBody3D"]
 shape = SubResource("BoxShape3D_hfur0")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
