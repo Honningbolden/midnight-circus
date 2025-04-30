@@ -107,7 +107,8 @@ func interact():
 func get_interactable() -> Node3D:
 	if raycast.is_colliding():
 		var interactable_area = raycast.get_collider()
-		return interactable_area.get_parent()
+		if interactable_area != null:
+			return interactable_area.get_parent()
 	return null
 
 
