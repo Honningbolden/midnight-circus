@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://buup2ev1ebj5s"]
+
+[ext_resource type="PackedScene" uid="uid://7y7rk6t3lb8n" path="res://Scenes/Objects/Interactables/vending_machine.tscn" id="1_wbbef"]
+
+[node name="Hallway" type="Node3D"]
+transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0, 0, 0)
+
+[node name="VendingMachine" parent="." instance=ExtResource("1_wbbef")]

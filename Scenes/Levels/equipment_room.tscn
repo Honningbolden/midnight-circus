@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmhj5h3swxsx7"]
+
+[ext_resource type="PackedScene" uid="uid://c4svdsvfgl2bp" path="res://Scenes/Objects/DuctTape.tscn" id="1_kxv55"]
+[ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="2_li8ik"]
+
+[node name="EquipmentRoom" type="Node3D"]
+transform = Transform3D(0.56, 0, 0, 0, 0.56, 0, 0, 0, 0.56, 0, 0, 0)
+
+[node name="Duct Tape" parent="." instance=ExtResource("1_kxv55")]
+
+[node name="BreakableWall" parent="." instance=ExtResource("2_li8ik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99441, 0, 0)

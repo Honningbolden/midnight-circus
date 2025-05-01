@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://nwbnbkdyohyt"]
+
+[ext_resource type="PackedScene" uid="uid://cay65qnwy7s8f" path="res://Scenes/Objects/Interactables/canon.tscn" id="1_5tucr"]
+[ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="2_renvc"]
+
+[node name="Circus" type="Node3D"]
+
+[node name="Canon" parent="." instance=ExtResource("1_5tucr")]
+
+[node name="Ladder" parent="." instance=ExtResource("2_renvc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.52626)

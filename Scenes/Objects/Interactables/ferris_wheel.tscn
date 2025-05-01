@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://bsaem14g30p7m"]
+
+[ext_resource type="Script" uid="uid://bs5qcqnrys8ex" path="res://Scripts/Objects/Interactables/ferris_wheel.gd" id="1_3xtoa"]
+[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Scripts/Objects/Interactables/Greybox Material.tres" id="2_kwtke"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ukao"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s0vur"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_abeqf"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ij437"]
+material = ExtResource("2_kwtke")
+top_radius = 7.5
+bottom_radius = 7.5
+
+[sub_resource type="GDScript" id="GDScript_kwtke"]
+script/source = "#wheel.gd
+
+extends Interactable
+
+func roll() -> void:
+	var tween = create_tween()
+	tween.tween_property(self, \"rotation\", Vector3(0, 0, -2 * PI), 5).set_trans(tween.TRANS_SINE).set_ease(tween.EASE_IN)
+"
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kwtke"]
+radius = 7.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7ukao"]
+radius = 7.5
+
+[node name="TipPoint" type="Node3D"]
+
+[node name="FerrisWheel" type="Node3D" parent="." node_paths=PackedStringArray("TipPoint", "wheel", "area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, -1)
+script = ExtResource("1_3xtoa")
+TipPoint = NodePath("..")
+wheel = NodePath("Wheel")
+area = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="FerrisWheel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -7, -4)
+collision_layer = 24
+collision_mask = 0
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="FerrisWheel/Area3D"]
+collision_layer = 24
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FerrisWheel/Area3D/AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_7ukao")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FerrisWheel/Area3D/AnimatableBody3D"]
+mesh = SubResource("BoxMesh_s0vur")
+surface_material_override/0 = ExtResource("2_kwtke")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FerrisWheel/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_abeqf")
+
+[node name="Wheel" type="MeshInstance3D" parent="FerrisWheel"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ij437")
+script = SubResource("GDScript_kwtke")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FerrisWheel/Wheel"]
+collision_layer = 24
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FerrisWheel/Wheel/StaticBody3D"]
+shape = SubResource("CylinderShape3D_kwtke")
+
+[node name="Area3D2" type="Area3D" parent="FerrisWheel"]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FerrisWheel/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_7ukao")

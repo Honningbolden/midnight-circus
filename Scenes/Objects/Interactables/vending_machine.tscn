@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://mdrq4gut8d0p"]
+[gd_scene load_steps=5 format=3 uid="uid://7y7rk6t3lb8n"]
 
 [ext_resource type="Script" uid="uid://dn0lbm7kyqubt" path="res://Scripts/Objects/Interactables/vending_machine.gd" id="1_1bqfr"]
 
