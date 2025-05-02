@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=29 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="1_kwl8l"]
@@ -8,23 +8,24 @@
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_p70al"]
 [ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_45d1s"]
 [ext_resource type="PackedScene" uid="uid://cjm5wehesvmoi" path="res://Scenes/Objects/fence.tscn" id="7_q2d71"]
-[ext_resource type="Script" path="res://Scripts/Objects/fence.gd" id="8_uo7di"]
+[ext_resource type="Script" uid="uid://dolr0auqg3f2b" path="res://Scripts/Objects/fence.gd" id="8_uo7di"]
 [ext_resource type="PackedScene" uid="uid://ums44tggyg3q" path="res://Scenes/Objects/Interactables/roller_coaster.tscn" id="9_ti1bm"]
-[ext_resource type="PackedScene" uid="uid://5837fuxvxy2q" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
+[ext_resource type="PackedScene" uid="uid://bqyfg3hxj1nu6" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
 [ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
 [ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="12_8l3nt"]
-[ext_resource type="Script" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="12_rwt1y"]
+[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="12_rwt1y"]
 [ext_resource type="PackedScene" uid="uid://covymlbu2kxg4" path="res://Scenes/Objects/Fuse.tscn" id="13_8ldnt"]
 [ext_resource type="PackedScene" uid="uid://x5fy16j868fr" path="res://Scenes/Objects/Interactables/circus_door.tscn" id="13_op4cu"]
 [ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="14_kwl8l"]
-[ext_resource type="Script" path="res://Scripts/Objects/Collectibles/fuse.gd" id="14_xiqgv"]
+[ext_resource type="Script" uid="uid://bdevs1a7tdteg" path="res://Scripts/Objects/Collectibles/fuse.gd" id="14_xiqgv"]
 [ext_resource type="PackedScene" uid="uid://bywfgwxn45poc" path="res://Scenes/Objects/Interactables/carousel.tscn" id="16_mvfa8"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="17_l11rc"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="17_33kev"]
 [ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="17_r0dna"]
-[ext_resource type="PackedScene" uid="uid://deulsn56s4k3i" path="res://Scenes/Objects/DuctTape.tscn" id="17_w86vl"]
-[ext_resource type="Script" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="18_b5aes"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="17_w86vl"]
+[ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="18_b5aes"]
 [ext_resource type="PackedScene" uid="uid://dsqvn5kq07odm" path="res://Scenes/Objects/Interactables/steam_engine.tscn" id="19_mvfa8"]
 [ext_resource type="PackedScene" uid="uid://cay65qnwy7s8f" path="res://Scenes/Objects/Interactables/canon.tscn" id="20_r0dna"]
+[ext_resource type="PackedScene" uid="uid://n2mq7gsykghl" path="res://Scenes/Objects/Interactables/tightrope.tscn" id="26_w86vl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -50,7 +51,7 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_6hh0k")
 
-[node name="keys" parent="." instance=ExtResource("17_l11rc")]
+[node name="keys" parent="." instance=ExtResource("17_w86vl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, 16.0765)
 
 [node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
@@ -64,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8757, 8.45683, 4.6627)
 collision_mask = 30
 
 [node name="Ladder" parent="." instance=ExtResource("5_p70al")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 1.5, 2.84781)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 2.55378, 2.84781)
 
 [node name="BreakableWall" parent="." instance=ExtResource("6_45d1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -1.38674)
@@ -87,7 +88,7 @@ script = ExtResource("10_kn06e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -2.932)
 script = ExtResource("12_rwt1y")
 
-[node name="Duct Tape" parent="." instance=ExtResource("17_w86vl")]
+[node name="Duct Tape" parent="." instance=ExtResource("17_33kev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.346, -3)
 
 [node name="SteamEngine" parent="." instance=ExtResource("19_mvfa8")]
@@ -158,3 +159,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.354, 1.22052, 1.46588)
 
 [node name="Canon" parent="." instance=ExtResource("20_r0dna")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.726, 1.61227, 7.29426)
+
+[node name="Tightrope" parent="." instance=ExtResource("26_w86vl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606151, 1.51765, 8.24836)

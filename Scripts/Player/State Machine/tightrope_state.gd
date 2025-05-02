@@ -1,4 +1,4 @@
-## climb_state.gd
+## tightrope_state.gd
 
 
 extends StateMachineState
@@ -10,19 +10,15 @@ extends StateMachineState
 @export var climb_speed : float = 0.02
 
 var world : Node3D = null
-var ladder_pathfollow : PathFollow3D = null
-
-
-func on_ready() -> void:
-	world = player.get_parent()
-	print(world)
+var rope_direction : float = 1.0
+var tightrope_pathfollow : PathFollow3D = null
 
 
 func on_enter() -> void:
-	player.position = Vector3.ZERO
+	player.position = Vector3.UP
 	player.velocity = Vector3.ZERO
-	var ladder = ladder_pathfollow.get_parent().get_parent()
-	camera.look_at_position(ladder.global_position)
+	var tightrope = tightrope_pathfollow.get_parent().get_parent()
+	camera.look_at_position(tightrope.global_position)
 
 
 func on_process(_delta: float) -> void:
@@ -30,7 +26,7 @@ func on_process(_delta: float) -> void:
 
 
 func on_physics_process(_delta: float) -> void:
-	climb_ladder()
+	walk_tightrope()
 
 
 func on_input(event: InputEvent) -> void:
@@ -42,11 +38,10 @@ func on_input(event: InputEvent) -> void:
 		camera.update_camera_input(camera.get_joy_direction())
 
 
-func climb_ladder() -> void:
+func walk_tightrope() -> void:
 	var direction = player.vertical_direction
-	ladder_pathfollow.progress += -climb_speed * direction
+	tightrope_pathfollow.progress += -climb_speed * direction * rope_direction
 
 
 func on_exit() -> void:
-	ladder_pathfollow = null
-	player.reparent(world)
+	tightrope_pathfollow = null

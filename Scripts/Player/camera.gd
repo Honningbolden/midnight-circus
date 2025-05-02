@@ -85,7 +85,6 @@ func set_camera() -> void:
 
 ## Slowly rotate the camera to look at a point
 func look_at_position(target_position: Vector3) -> void:
-	print(target_forward)
 	var camera_position = global_position
 	var to_target = camera_position - target_position
 	var flat_dir = Vector2(to_target.x, to_target.z)

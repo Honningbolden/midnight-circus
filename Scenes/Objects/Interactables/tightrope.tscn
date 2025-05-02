@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://n2mq7gsykghl"]
+
+[ext_resource type="Script" uid="uid://c72bfuieedbnj" path="res://Scripts/Objects/Interactables/tightrope.gd" id="1_prg8f"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j0bj0"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 5.0
+
+[sub_resource type="Curve3D" id="Curve3D_j0bj0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.5, 0, 0, 0, 0, 0, 0, 0, 0, -2.5, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3okbo"]
+size = Vector3(5, 0.5, 0.5)
+
+[node name="Tightrope" type="Node3D" node_paths=PackedStringArray("pathfollow", "start_marker", "end_marker", "timer")]
+script = ExtResource("1_prg8f")
+pathfollow = NodePath("Path3D/PathFollow3D")
+start_marker = NodePath("Start Marker")
+end_marker = NodePath("End Marker")
+timer = NodePath("Timer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_j0bj0")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_j0bj0")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0, 0)
+loop = false
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_3okbo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Start Marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+
+[node name="End Marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_tightrope_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_tightrope_body_exited"]
