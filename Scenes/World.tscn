@@ -106,7 +106,7 @@ script = ExtResource("14_xiqgv")
 transform = Transform3D(1.82157, 0, 0, 0, 1.82157, 0, 0, 0, 1.82157, 0, 2.336, -5.355)
 
 [node name="Carousel" parent="." instance=ExtResource("16_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.16, 0.936855, -11.957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17597, 0.936855, -11.957)
 
 [node name="HorseTag1" parent="." instance=ExtResource("17_r0dna")]
 transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -21.8168, 0.936855, -7.78905)
