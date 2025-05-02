@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqolip5dwosyd"
+path="res://.godot/imported/toilet_flush.wav-aece751a4f719e623fb25415f6eb9758.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Staff Area/toilet_flush.wav"
+dest_files=["res://.godot/imported/toilet_flush.wav-aece751a4f719e623fb25415f6eb9758.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

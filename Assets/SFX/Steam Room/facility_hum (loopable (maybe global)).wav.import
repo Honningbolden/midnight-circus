@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3jdwuwo5ws8o"
+path="res://.godot/imported/facility_hum (loopable (maybe global)).wav-980c357b952d3e08c798d471ede81730.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Steam Room/facility_hum (loopable (maybe global)).wav"
+dest_files=["res://.godot/imported/facility_hum (loopable (maybe global)).wav-980c357b952d3e08c798d471ede81730.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

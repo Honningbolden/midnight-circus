@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5ex7nx74fywm"
+path="res://.godot/imported/boiler_sound.wav-5e16c3d5cdac965c17ee066576d25988.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Steam Room/boiler_sound.wav"
+dest_files=["res://.godot/imported/boiler_sound.wav-5e16c3d5cdac965c17ee066576d25988.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
