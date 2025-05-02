@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ums44tggyg3q"]
 
 [ext_resource type="Script" uid="uid://r16c6h2hdmhx" path="res://Scripts/Objects/Interactables/roller_coaster.gd" id="1_cu6p2"]
-[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Assets/Greybox Material.tres" id="4_63i3m"]
+[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Scripts/Objects/Interactables/Greybox Material.tres" id="4_63i3m"]
 
 [sub_resource type="Curve3D" id="Curve3D_gs7h4"]
 closed = true
