@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=30 format=3 uid="uid://dvl6lb4k6gp1i"]
 
+[ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_33kev"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="1_kwl8l"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="1_ti1bm"]
@@ -35,13 +36,16 @@ size = Vector3(50, 1, 50)
 
 [node name="World" type="Node3D"]
 
+[node name="map" parent="." instance=ExtResource("1_33kev")]
+
 [node name="Rope" parent="." instance=ExtResource("1_ti1bm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85951, -1.75351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85951, -142.754)
 
 [node name="FerrisWheel" parent="." instance=ExtResource("1_kwl8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.935, 1, 13.728)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.935, 1, -127.272)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -141)
 mesh = SubResource("BoxMesh_uoh0x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -52,116 +56,116 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_6hh0k")
 
 [node name="keys" parent="." instance=ExtResource("17_33kev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, 16.0765)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
 
 [node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 1.49735, 4.94692)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 1.49735, -136.053)
 
 [node name="Olaf" parent="." instance=ExtResource("4_gjpho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36269, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36269, -141)
 
 [node name="Player" parent="." instance=ExtResource("1_e5dp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8757, 8.45683, 4.6627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8757, 8.45683, -136.337)
 collision_mask = 30
 
 [node name="Ladder" parent="." instance=ExtResource("5_p70al")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 2.55378, 2.84781)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 2.55378, -138.152)
 
 [node name="BreakableWall" parent="." instance=ExtResource("6_45d1s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -1.38674)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -142.387)
 
 [node name="Fence" parent="." instance=ExtResource("7_q2d71")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17691, 0.5, 14.2163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17691, 0.5, -126.784)
 
 [node name="RollerCoaster" parent="." instance=ExtResource("9_ti1bm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3993, 1.26646, -8.95506)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3993, 1.26646, -149.955)
 
 [node name="CircusDoor" parent="." instance=ExtResource("13_op4cu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.656, 0.5, 3.151)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.656, 0.5, -137.849)
 script = ExtResource("8_uo7di")
 
 [node name="Safe" parent="." instance=ExtResource("9_uo7di")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37323, 1.53034, -3.43218)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37323, 1.53034, -144.432)
 script = ExtResource("10_kn06e")
 
 [node name="BrokenPipe" parent="." instance=ExtResource("12_8l3nt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -2.932)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -143.932)
 script = ExtResource("12_rwt1y")
 
 [node name="Duct Tape" parent="." instance=ExtResource("17_33kev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.346, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.346, -144)
 
 [node name="SteamEngine" parent="." instance=ExtResource("19_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2661, 1.31346, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2661, 1.31346, -141)
 
 [node name="RMFuse2" parent="." instance=ExtResource("13_8ldnt")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.72941, 0.950552, -7.84682)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.72941, 0.950552, -148.847)
 script = ExtResource("14_xiqgv")
 
 [node name="RMFuse3" parent="." instance=ExtResource("13_8ldnt")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.08211, 0.950552, -7.84682)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.08211, 0.950552, -148.847)
 script = ExtResource("14_xiqgv")
 
 [node name="RingMasterStatue" parent="." instance=ExtResource("14_kwl8l")]
-transform = Transform3D(1.82157, 0, 0, 0, 1.82157, 0, 0, 0, 1.82157, 0, 2.336, -5.355)
+transform = Transform3D(1.82157, 0, 0, 0, 1.82157, 0, 0, 0, 1.82157, 0, 2.336, -146.355)
 
 [node name="Carousel" parent="." instance=ExtResource("16_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17597, 0.936855, -11.957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17597, 0.936855, -152.957)
 
 [node name="HorseTag1" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -21.8168, 0.936855, -7.78905)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -21.8168, 0.936855, -148.789)
 script = ExtResource("18_b5aes")
 color = Color(1, 0, 0, 1)
 
 [node name="HorseTag2" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -21.455, 0.936855, -7.78905)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -21.455, 0.936855, -148.789)
 script = ExtResource("18_b5aes")
 number = 2
 color = Color(0, 1, 0, 1)
 
 [node name="HorseTag3" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -21.0734, 0.936855, -7.78905)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -21.0734, 0.936855, -148.789)
 script = ExtResource("18_b5aes")
 number = 3
 color = Color(0, 0, 1, 1)
 
 [node name="HorseTag4" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -20.6491, 0.936855, -7.78905)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -20.6491, 0.936855, -148.789)
 script = ExtResource("18_b5aes")
 number = 4
 color = Color(0.95, 1, 0, 1)
 
 [node name="HorseTag5" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -20.1719, 0.936855, -7.78905)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -20.1719, 0.936855, -148.789)
 script = ExtResource("18_b5aes")
 number = 5
 color = Color(1, 0, 0.95, 1)
 
 [node name="HorseTag6" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -19.6571, 0.936855, -7.78905)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -19.6571, 0.936855, -148.789)
 script = ExtResource("18_b5aes")
 number = 6
 color = Color(0, 0.933333, 1, 1)
 
 [node name="HorseTag7" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -19.1919, 0.936855, -7.78905)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -19.1919, 0.936855, -148.789)
 script = ExtResource("18_b5aes")
 number = 7
 color = Color(1, 1, 1, 1)
 
 [node name="HorseTag8" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -18.6673, 0.936855, -7.78905)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -18.6673, 0.936855, -148.789)
 script = ExtResource("18_b5aes")
 number = 8
 
 [node name="SteamEngine2" parent="." instance=ExtResource("19_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.354, 1.22052, 1.46588)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.354, 1.22052, -139.534)
 
 [node name="Canon" parent="." instance=ExtResource("20_r0dna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.726, 1.61227, 7.29426)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.726, 1.61227, -133.706)
 
 [node name="Tightrope" parent="." instance=ExtResource("26_w86vl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606151, 1.51765, 8.24836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606151, 1.51765, -132.752)
 
 [node name="Speaker" parent="." instance=ExtResource("25_l11rc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.22, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.22, -141)
