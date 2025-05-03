@@ -60,7 +60,6 @@ outer_radius = 5.729
 albedo_color = Color(0.23, 0.1219, 0.1219, 1)
 
 [node name="Carousel" type="Node3D"]
-visible = false
 script = ExtResource("1_1sd25")
 
 [node name="HorsePedestal1" type="Node3D" parent="."]
