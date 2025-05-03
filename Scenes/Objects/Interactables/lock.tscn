@@ -7,28 +7,29 @@
 
 [node name="Lock" type="Node2D"]
 visible = false
+scale = Vector2(1.32525, 1.32525)
 script = ExtResource("1_d8yqy")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = 33.0
-offset_right = 1281.0
-offset_bottom = 849.0
+auto_translate_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 126.769
+offset_top = 39.2379
+offset_right = 1326.77
+offset_bottom = 739.238
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.560955, 0.560955, 0.560955, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Dial" type="Sprite2D" parent="."]
-position = Vector2(639, 489)
+position = Vector2(727.41, 451.249)
 texture = ExtResource("2_0u7s0")
 
 [node name="Pointer" type="Sprite2D" parent="."]
-position = Vector2(639, 173)
+position = Vector2(727.41, 135.249)
 scale = Vector2(0.0933331, 0.0976526)
 texture = ExtResource("3_fbqs2")
 
@@ -43,18 +44,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 761.0
-offset_top = 120.0
-offset_right = 1260.0
-offset_bottom = 217.0
+offset_left = 849.41
+offset_top = 82.2488
+offset_right = 1219.41
+offset_bottom = 179.249
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.890943, 0.67779, 0.623626, 1)
 theme_override_font_sizes/font_size = 55
-placeholder_text = "CODE"
 editable = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="finished" from="LockTurnAudio" to="." method="_on_sample_player_finished"]
