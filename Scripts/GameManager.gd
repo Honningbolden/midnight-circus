@@ -4,7 +4,11 @@
 extends Node
 
 var total_items = []  # all available items
-var collected_items = ["Ignition Key"]  # picked up items
+<<<<<<< HEAD
+var collected_items = ["Circus Key"]  # picked up items
+=======
+var current_item = ""  # can only have 1 item equipped at a time
+>>>>>>> ed7c887b4f8a6758e56c401202589c85fd6270e5
 
 
 func _ready() -> void:  # when the node is ready

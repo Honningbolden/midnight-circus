@@ -12,8 +12,6 @@ class_name Player
 @export_category("Movement Variables")
 @export var walking_threshold : float = 0.1  # minimum speed required to walk
 @export var sprite_segments : int = 8  # how many directions can the player turn
-@export var walking_speed : float = 1.5  # base walking speed
-@export var running_speed : float = 4.0  # base running speed
 @export var acceleration : float = 0.21  # takes 0.4 seconds to reach max speed
 @export var deceleration : float = 0.42  # takes 0.2 seconds to come to a stop
 @export var deadzone : float = 0.3  # controller deadzone
@@ -25,6 +23,8 @@ class_name Player
 
 # Character helpers
 var speed : float = 0.0  # the player's current max speed
+var walking_speed : float = 3.0  # base walking speed
+var running_speed : float = 6.0  # base running speed
 var forward_direction : float = 0.0  # the direction the camera is looking
 var horizontal_direction : float = 0.0  # the player's left and right input
 var vertical_direction : float = 0.0  # the player's back and forth input
@@ -90,7 +90,7 @@ func update_gravity() -> void:
 	# if the player is in the air and their velocity isn't maxed out
 	if not is_on_floor() and velocity.y >= fall_speed:
 		# accumulate speed using gravity until reaching max fall speed
-		velocity.y = max(velocity.y + fall_gravity, fall_speed)
+		velocity = Vector3(velocity.x, max(velocity.y + fall_gravity, fall_speed), velocity.z)
 
 
 #region Interactions

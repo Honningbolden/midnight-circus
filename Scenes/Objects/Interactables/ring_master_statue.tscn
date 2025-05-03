@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://cb8wad3qwif2c"]
 
-[ext_resource type="Script" uid="uid://bgd87s8fkyggu" path="res://Scripts/Objects/Interactables/statue_limbs.gd" id="1_7s766"]
-[ext_resource type="Script" uid="uid://cfug0g1g72m2b" path="res://Scripts/Objects/Interactables/ring_master_statue.gd" id="1_jyhhw"]
+[ext_resource type="Script" path="res://Scripts/Objects/Interactables/statue_limbs.gd" id="1_7s766"]
+[ext_resource type="Script" path="res://Scripts/Objects/Interactables/ring_master_statue.gd" id="1_jyhhw"]
 [ext_resource type="Script" uid="uid://dbg4tre7j55xw" path="res://Scripts/Objects/Interactables/fuse_slot.gd" id="3_calyj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lpsem"]
@@ -46,7 +46,6 @@ height = 0.342529
 height = 0.001
 
 [node name="RingMasterStatue" type="Node3D"]
-transform = Transform3D(1.82157, 0, 0, 0, 1.82157, 0, 0, 0, 1.82157, 0, 0, 0)
 script = ExtResource("1_jyhhw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
