@@ -90,7 +90,7 @@ func update_gravity() -> void:
 	# if the player is in the air and their velocity isn't maxed out
 	if not is_on_floor() and velocity.y >= fall_speed:
 		# accumulate speed using gravity until reaching max fall speed
-		velocity.y = max(velocity.y + fall_gravity, fall_speed)
+		velocity = Vector3(velocity.x, max(velocity.y + fall_gravity, fall_speed), velocity.z)
 
 
 #region Interactions

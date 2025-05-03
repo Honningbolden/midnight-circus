@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=31 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_33kev"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_p70al"]
 [ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_45d1s"]
 [ext_resource type="PackedScene" uid="uid://cjm5wehesvmoi" path="res://Scenes/Objects/fence.tscn" id="7_q2d71"]
-[ext_resource type="Script" uid="uid://dolr0auqg3f2b" path="res://Scripts/Objects/fence.gd" id="8_uo7di"]
 [ext_resource type="PackedScene" uid="uid://ums44tggyg3q" path="res://Scenes/Objects/Interactables/roller_coaster.tscn" id="9_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://bqyfg3hxj1nu6" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
 [ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
@@ -70,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 1.49735, -136.053)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36269, -141)
 
 [node name="Player" parent="." instance=ExtResource("1_e5dp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.876, 1.35, -91.5522)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.876, 1.35, -91.552)
 collision_mask = 30
 
 [node name="Ladder" parent="." instance=ExtResource("5_p70al")]
@@ -80,14 +79,13 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.721
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -142.387)
 
 [node name="Fence" parent="." instance=ExtResource("7_q2d71")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17691, 0.5, -126.784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17691, 0.5, -122.682)
 
 [node name="RollerCoaster" parent="." instance=ExtResource("9_ti1bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3993, 1.26646, -149.955)
 
 [node name="CircusDoor" parent="." instance=ExtResource("13_op4cu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.656, 0.5, -137.849)
-script = ExtResource("8_uo7di")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99, 2.4, -77.22)
 
 [node name="Safe" parent="." instance=ExtResource("9_uo7di")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37323, 1.53034, -144.432)
@@ -180,4 +178,16 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_33kev")
 
 [node name="MechanicalDoor" parent="." instance=ExtResource("28_g01fq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.441, 2.275, -93.162)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4974, 2.275, -95.7541)
+
+[node name="MechanicalDoor2" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.99353, 2.275, -93.2883)
+
+[node name="MechanicalDoor3" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5026, 2.275, -95.5434)
+
+[node name="MechanicalDoor4" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293728, 2.275, -86.6585)
+
+[node name="MechanicalDoor5" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74402, 2.275, -82.438)

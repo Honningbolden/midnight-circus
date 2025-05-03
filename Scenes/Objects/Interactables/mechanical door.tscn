@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://dielau1ioq5x5" path="res://Scripts/Objects/Interactables/mechanical_door.gd" id="1_b116m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b116m"]
-size = Vector3(2.7, 3.55, 0.3)
+size = Vector3(0.25, 3.55, 2.7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4oqru"]
-size = Vector3(2.7, 3.55, 0.3)
+size = Vector3(0.25, 3.55, 2.7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8j44"]
-size = Vector3(2.7, 3.55, 0.3)
+size = Vector3(0.25, 3.55, 2.7)
 
 [node name="MechanicalDoor" type="Node3D"]
 script = ExtResource("1_b116m")
