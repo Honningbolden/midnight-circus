@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="1_kwl8l"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="1_ti1bm"]
-[ext_resource type="PackedScene" uid="uid://blunhqsd4ap66" path="res://Scenes/Objects/Interactables/vending_machine.tscn" id="3_5nsto"]
+[ext_resource type="PackedScene" uid="uid://mdrq4gut8d0p" path="res://Scenes/Objects/Interactables/vending_machine.tscn" id="3_5nsto"]
 [ext_resource type="PackedScene" uid="uid://bqs07bb504yqg" path="res://Scenes/Objects/Interactables/Olaf.tscn" id="4_gjpho"]
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_p70al"]
 [ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_45d1s"]
@@ -107,6 +107,7 @@ transform = Transform3D(1.82157, 0, 0, 0, 1.82157, 0, 0, 0, 1.82157, 0, 2.336, -
 
 [node name="Carousel" parent="." instance=ExtResource("16_mvfa8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.17597, 0.936855, -11.957)
+visible = true
 
 [node name="HorseTag1" parent="." instance=ExtResource("17_r0dna")]
 transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -21.8168, 0.936855, -7.78905)
