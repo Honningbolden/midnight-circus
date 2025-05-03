@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://kgv87cnjcrpe"]
+
+[ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="1_yiuhe"]
+[ext_resource type="Script" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="2_i6etn"]
+
+[node name="StaffArea" type="Node3D"]
+
+[node name="BrokenPipe" parent="." instance=ExtResource("1_yiuhe")]
+script = ExtResource("2_i6etn")

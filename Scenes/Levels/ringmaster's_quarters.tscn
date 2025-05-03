@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://0j1xy5y810dq"]
+
+[ext_resource type="PackedScene" uid="uid://5837fuxvxy2q" path="res://Scenes/Objects/Interactables/safe.tscn" id="1_k2kul"]
+[ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="2_7amqa"]
+
+[node name="Ringmaster\'sQuarters" type="Node3D"]
+
+[node name="Safe" parent="." instance=ExtResource("1_k2kul")]
+script = ExtResource("2_7amqa")
