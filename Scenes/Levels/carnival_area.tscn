@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://biir5yg8jlvo3"]
+
+[ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="1_5p767"]
+[ext_resource type="PackedScene" uid="uid://ums44tggyg3q" path="res://Scenes/Objects/Interactables/roller_coaster.tscn" id="2_kx0lt"]
+[ext_resource type="PackedScene" uid="uid://bywfgwxn45poc" path="res://Scenes/Objects/Interactables/carousel.tscn" id="3_3reul"]
+[ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="4_alumc"]
+[ext_resource type="Script" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="5_gpiwq"]
+[ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="6_dxai3"]
+
+[node name="CarnivalArea" type="Node3D"]
+
+[node name="RingMasterStatue" parent="." instance=ExtResource("1_5p767")]
+
+[node name="RollerCoaster" parent="." instance=ExtResource("2_kx0lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.2548)
+
+[node name="Carousel" parent="." instance=ExtResource("3_3reul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.71828)
+visible = true
+
+[node name="HorseTag1" parent="Carousel" instance=ExtResource("4_alumc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82696, 0, -3.22633)
+script = ExtResource("5_gpiwq")
+color = Color(1, 0, 0, 1)
+
+[node name="HorseTag2" parent="Carousel" instance=ExtResource("4_alumc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82696, 0, -2.48952)
+script = ExtResource("5_gpiwq")
+number = 2
+color = Color(0, 1, 0, 1)
+
+[node name="HorseTag3" parent="Carousel" instance=ExtResource("4_alumc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82696, 0, -1.70113)
+script = ExtResource("5_gpiwq")
+number = 3
+color = Color(0, 0, 1, 1)
+
+[node name="HorseTag4" parent="Carousel" instance=ExtResource("4_alumc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82696, 0, -0.84304)
+script = ExtResource("5_gpiwq")
+number = 4
+color = Color(1, 1, 0, 1)
+
+[node name="HorseTag5" parent="Carousel" instance=ExtResource("4_alumc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82696, 0, -0.0124741)
+script = ExtResource("5_gpiwq")
+number = 5
+color = Color(1, 0, 1, 1)
+
+[node name="HorseTag6" parent="Carousel" instance=ExtResource("4_alumc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82696, 0, 0.843105)
+script = ExtResource("5_gpiwq")
+number = 6
+color = Color(0, 1, 1, 1)
+
+[node name="HorseTag7" parent="Carousel" instance=ExtResource("4_alumc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82696, 0, 1.65534)
+script = ExtResource("5_gpiwq")
+number = 7
+color = Color(1, 1, 1, 1)
+
+[node name="HorseTag8" parent="Carousel" instance=ExtResource("4_alumc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.82696, 0, 2.50481)
+script = ExtResource("5_gpiwq")
+number = 8
+
+[node name="TipPoint" parent="." instance=ExtResource("6_dxai3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8727, 0, 0)

@@ -1,0 +1,782 @@
+[gd_scene load_steps=14 format=3 uid="uid://cbf0xqirktgmp"]
+
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="1_k4m4y"]
+[ext_resource type="PackedScene" uid="uid://mdrq4gut8d0p" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="2_fak8t"]
+[ext_resource type="PackedScene" uid="uid://bqs07bb504yqg" path="res://Scenes/Objects/Interactables/Olaf.tscn" id="3_j8hc4"]
+[ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="4_okkk3"]
+[ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_v13qs"]
+[ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_q2yp5"]
+[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Assets/Greybox Material.tres" id="7_yh71d"]
+[ext_resource type="Material" uid="uid://cttu7f7jjvbg6" path="res://Gold.tres" id="8_ysglx"]
+[ext_resource type="Texture2D" uid="uid://cegeo612mms3r" path="res://Assets/kenney_prototype-textures/PNG/Dark/texture_04.png" id="9_utqx4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6hh0k"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kn06e"]
+albedo_color = Color(0.205117, 0.205117, 0.205117, 1)
+albedo_texture_force_srgb = true
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.46
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uo7di"]
+albedo_texture = ExtResource("9_utqx4")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="World" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_uoh0x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_6hh0k")
+
+[node name="keys" parent="." instance=ExtResource("1_k4m4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, 16.0765)
+visible = false
+
+[node name="VendingMachine" parent="." instance=ExtResource("2_fak8t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.9054, 1.59735, -6.65308)
+
+[node name="Olaf" parent="." instance=ExtResource("3_j8hc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.36269, 0)
+
+[node name="Player" parent="." instance=ExtResource("4_okkk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8757, 8.45683, 4.6627)
+walking_speed = 2.2
+running_speed = 4.5
+acceleration = 0.15
+
+[node name="Ladder" parent="." instance=ExtResource("5_v13qs")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 1.5, 2.84781)
+visible = false
+
+[node name="BreakableWall" parent="." instance=ExtResource("6_q2yp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -1.38674)
+visible = false
+
+[node name="Cages" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -1.38674)
+use_collision = true
+collision_layer = 8
+
+[node name="Cages" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33215, 2.72168, 8.29179)
+size = Vector3(5, 6, 3.2)
+
+[node name="Cages2" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26785, 2.52168, 8.89179)
+size = Vector3(4, 5.6, 2)
+
+[node name="Cages5" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 14.2678, 0.221685, -1.90821)
+
+[node name="Cages4" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 12.2678, 0.221685, -3.90821)
+
+[node name="Cages7" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 10.2678, 0.221685, -3.10821)
+
+[node name="Cages8" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 6.9143, 0.221685, -0.754658)
+size = Vector3(2, 1, 1)
+
+[node name="Cages13" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 4.3143, 0.721685, 0.045342)
+size = Vector3(2, 2, 1)
+
+[node name="Cages14" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 0.270718, 0.721685, 0.543439)
+size = Vector3(2, 2, 2)
+
+[node name="Cages15" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, 0.0871558, 0, 1, 0, -0.0871558, 0, 0.996195, -2.77286, 0.221685, 0.045342)
+size = Vector3(2, 1, 1)
+
+[node name="Cages16" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, -2.77286, 0.221685, 1.14534)
+size = Vector3(2, 1, 1)
+
+[node name="Cages22" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, -3.27286, 0.721685, 5.14534)
+size = Vector3(1, 2, 1)
+
+[node name="Cages28" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984808, 0.595371, 0.721685, 5.17319)
+size = Vector3(1, 2, 2.3)
+
+[node name="Cages34" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 2.48777, 0.721685, 6.48637)
+size = Vector3(2, 2, 2.3)
+
+[node name="Cages35" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 2.54878, 2.22168, 5.78903)
+size = Vector3(2, 1, 0.9)
+
+[node name="Cages36" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(-0.573577, 0, -0.819152, 0, 1, 0, 0.819152, 0, -0.573577, 2.54878, 3.22168, 6.78903)
+size = Vector3(2, 1, 0.9)
+
+[node name="Cages38" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(-0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, -0.906308, 2.362, 4.37169, 6.89861)
+size = Vector3(1.3, 1.3, 1.2)
+
+[node name="Cages37" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(-0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.939693, 2.47894, 2.22168, 7.21802)
+size = Vector3(1, 1, 0.9)
+
+[node name="Cages26" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, -3.27286, 1.72168, 5.69534)
+size = Vector3(1, 4, 1.5)
+
+[node name="Cages23" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, -2.15979, 0.221685, 4.99591)
+size = Vector3(1, 1, 1.3)
+
+[node name="Cages25" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, -0.981574, 0.221685, 5.24496)
+size = Vector3(1, 1, 2)
+
+[node name="Cages27" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, 0.0165205, 2.22168, 5.28854)
+size = Vector3(2, 1, 2.4)
+
+[node name="Cages24" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, 0.0871558, 0, 1, 0, -0.0871558, 0, 0.996195, -1.66169, 1.22168, 5.33835)
+size = Vector3(2, 1, 2.1)
+
+[node name="Cages29" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, 0.0871558, 0, 1, 0, -0.0871558, 0, 0.996195, -2.16415, 2.37169, 5.33212)
+size = Vector3(1, 1.3, 2)
+
+[node name="Cages33" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.172987, 0.0871557, -0.98106, -0.0151344, 0.996195, 0.0858316, 0.984808, 0, 0.173648, -0.902753, 3.67169, 4.66235)
+size = Vector3(1, 1.3, 3.5)
+
+[node name="Cages30" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0.815722, 3.22168, 5.57103)
+size = Vector3(3, 1, 1)
+
+[node name="Cages32" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.93554, -0.3417, 0.0894743, 0.347309, 0.936031, -0.0567702, -0.0643524, 0.084186, 0.99437, -1.74091, 4.93692, 5.92278)
+size = Vector3(2.7, 3, 1)
+
+[node name="Cages31" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871558, 0, 1, 0, 0.0871558, 0, 0.996195, 1.31763, 4.22168, 5.71461)
+size = Vector3(2, 1, 1)
+
+[node name="Cages19" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -2.17286, 1.22168, 0.645342)
+size = Vector3(2, 1, 1)
+
+[node name="Cages21" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(-0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, -0.996195, -2.7541, 1.22168, 2.24366)
+size = Vector3(2, 1, 0.7)
+
+[node name="Cages39" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(-0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, -0.996195, -2.7541, 1.72168, 2.24366)
+size = Vector3(2, 2, 0.7)
+
+[node name="Cages20" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -2.27286, 2.47168, 0.745342)
+size = Vector3(2, 1.3, 1)
+
+[node name="Cages17" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, -3.27286, 0.221685, 2.24534)
+
+[node name="Cages18" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.996195, 0, -0.0871557, 0, 1, 0, 0.0871557, 0, 0.996195, -2.21682, 0.171685, 2.75215)
+size = Vector3(0.8, 0.9, 2)
+
+[node name="Cages10" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.573576, 0, 0.819152, 0, 1, 0, -0.819152, 0, 0.573576, 6.9143, 1.22168, -0.754658)
+size = Vector3(2, 1, 1)
+
+[node name="Cages9" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 8.26785, 0.721685, -3.10821)
+size = Vector3(1, 2, 1)
+
+[node name="Cages11" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16785, 0.221685, -3.60821)
+size = Vector3(0.8, 1, 2)
+
+[node name="Cages12" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.16785, 0.171685, -4.75821)
+size = Vector3(0.8, 0.9, 0.5)
+
+[node name="Cages6" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 11.0849, 1.07168, -3.7788)
+size = Vector3(2, 0.7, 1)
+
+[node name="Cages3" type="CSGBox3D" parent="Cages"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 11.0679, 0.221685, -4.40821)
+
+[node name="Game Area" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Stables" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50975, 4.5, 1.00505)
+size = Vector3(20, 10, 16)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow" type="CSGBox3D" parent="Game Area/Stables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(19, 9, 15)
+material = ExtResource("7_yh71d")
+
+[node name="Equipment Room" type="CSGBox3D" parent="Game Area/Stables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2, -5.5)
+size = Vector3(10, 4, 5)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow2" type="CSGBox3D" parent="Game Area/Stables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25, -2.25, -5.5)
+operation = 2
+size = Vector3(9.5, 3.5, 4)
+material = ExtResource("7_yh71d")
+
+[node name="Doorway3" type="CSGBox3D" parent="Game Area/Stables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80005, -2.75, -0.8)
+operation = 2
+size = Vector3(1, 2.5, 1.5)
+material = ExtResource("7_yh71d")
+
+[node name="Doorway4" type="CSGBox3D" parent="Game Area/Stables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80005, -2.25, 2.7)
+operation = 2
+size = Vector3(1, 3.5, 4.5)
+material = ExtResource("7_yh71d")
+
+[node name="Steam Room" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5098, 2, -6.49495)
+size = Vector3(12, 5, 9)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow" type="CSGBox3D" parent="Game Area/Steam Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.5, 0)
+operation = 2
+size = Vector3(11.5, 4, 8)
+material = ExtResource("7_yh71d")
+
+[node name="Hallway" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.00975, 2, -8.99495)
+size = Vector3(33, 5, 4)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow" type="CSGBox3D" parent="Game Area/Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.25)
+operation = 2
+size = Vector3(33, 4, 3.5)
+material = ExtResource("7_yh71d")
+
+[node name="Staff Area" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9902, 2, 1.00505)
+size = Vector3(11, 5, 16)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow" type="CSGBox3D" parent="Game Area/Staff Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2.25)
+operation = 2
+size = Vector3(10, 4, 10.5)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow2" type="CSGBox3D" parent="Game Area/Staff Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25, 0.5, 3)
+operation = 2
+size = Vector3(5.5, 4, 9)
+material = ExtResource("7_yh71d")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Game Area/Staff Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5375, 3)
+operation = 2
+radius = 4.5
+height = 4.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Game Area/Staff Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5.5)
+operation = 2
+size = Vector3(5, 5, 5)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Game Area/Staff Area/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -2.5)
+operation = 2
+radius = 5.0
+height = 5.0
+
+[node name="Doorway" type="CSGBox3D" parent="Game Area/Staff Area"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.1999, -0.25, -7.8)
+operation = 2
+size = Vector3(1, 2.5, 1.5)
+material = ExtResource("7_yh71d")
+
+[node name="Doorway2" type="CSGBox3D" parent="Game Area/Staff Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1999, -0.25, 4.2)
+operation = 2
+size = Vector3(1, 2.5, 1.5)
+material = ExtResource("7_yh71d")
+
+[node name="Ringmaster\'s Quarters" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9903, 2, -8.99495)
+size = Vector3(13, 5, 4)
+material = ExtResource("7_yh71d")
+
+[node name="Doorway" type="CSGBox3D" parent="Game Area/Ringmaster\'s Quarters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2, -0.25, 0)
+operation = 2
+size = Vector3(1, 2.5, 1.5)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow" type="CSGBox3D" parent="Game Area/Ringmaster\'s Quarters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+size = Vector3(12, 4, 3)
+material = ExtResource("7_yh71d")
+
+[node name="Extension" type="CSGBox3D" parent="Game Area/Ringmaster\'s Quarters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 4.5)
+size = Vector3(8, 5, 5)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow2" type="CSGBox3D" parent="Game Area/Ringmaster\'s Quarters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 4)
+operation = 2
+size = Vector3(7, 4, 5)
+material = ExtResource("7_yh71d")
+
+[node name="Backstage Entrance" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 1)
+size = Vector3(7, 5, 16)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow" type="CSGBox3D" parent="Game Area/Backstage Entrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+operation = 2
+size = Vector3(7, 4, 14)
+material = ExtResource("7_yh71d")
+
+[node name="Hollow2" type="CSGBox3D" parent="Game Area/Backstage Entrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -7.5)
+operation = 2
+size = Vector3(5, 3.5, 1)
+material = ExtResource("7_yh71d")
+
+[node name="Circus Tent" type="CSGCylinder3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.25, 20)
+radius = 12.0
+height = 5.5
+sides = 32
+material = ExtResource("7_yh71d")
+
+[node name="Top" type="CSGCylinder3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+visible = false
+radius = 12.0
+height = 5.5
+sides = 32
+cone = true
+material = ExtResource("7_yh71d")
+
+[node name="Inner Hollow" type="CSGCylinder3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+operation = 2
+radius = 11.8
+height = 4.5
+sides = 32
+material = ExtResource("7_yh71d")
+
+[node name="Inner-Top Hollow" type="CSGCylinder3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+visible = false
+operation = 2
+radius = 11.8
+height = 3.6
+sides = 32
+cone = true
+material = ExtResource("7_yh71d")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.75)
+operation = 2
+size = Vector3(6, 4.5, 1.5)
+
+[node name="Stage" type="CSGCylinder3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, 0)
+radius = 7.0
+height = 0.2
+sides = 16
+
+[node name="Hollow" type="CSGCylinder3D" parent="Game Area/Circus Tent/Stage"]
+operation = 2
+radius = 6.5
+height = 0.5
+sides = 16
+
+[node name="Hollow2" type="CSGBox3D" parent="Game Area/Circus Tent/Stage"]
+transform = Transform3D(0.819152, 0, -0.573576, 0, 1, 0, 0.573576, 0, 0.819152, 0, 0, 0)
+operation = 2
+size = Vector3(15, 1, 3)
+
+[node name="Hollow3" type="CSGBox3D" parent="Game Area/Circus Tent/Stage"]
+transform = Transform3D(-0.573577, 0, -0.819152, 0, 1, 0, 0.819152, 0, -0.573577, 0, 0, 0)
+operation = 2
+size = Vector3(15, 1, 3)
+
+[node name="Hollow4" type="CSGBox3D" parent="Game Area/Circus Tent/Stage"]
+transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 0, 0, 0)
+operation = 2
+size = Vector3(15, 1, 3)
+
+[node name="Hollow5" type="CSGBox3D" parent="Game Area/Circus Tent/Stage"]
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 0, 0, 0)
+operation = 2
+size = Vector3(15, 1, 3)
+
+[node name="Doorway Hollow" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7, -0.55, 0)
+operation = 2
+size = Vector3(1, 2.4, 4)
+
+[node name="Doorway" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8, -0.55, 0)
+size = Vector3(0.5, 2.6, 4.2)
+
+[node name="Hollow" type="CSGBox3D" parent="Game Area/Circus Tent/Doorway"]
+operation = 2
+size = Vector3(1, 2.4, 4)
+
+[node name="Seating" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.9, -0.8, 0)
+size = Vector3(8, 2, 2)
+
+[node name="Subtract" type="CSGBox3D" parent="Game Area/Circus Tent/Seating"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 1.5, 0.866026)
+operation = 2
+size = Vector3(8, 3, 6)
+
+[node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Tent/Seating"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 2.7, 0.866026)
+operation = 2
+size = Vector3(9, 3, 6)
+
+[node name="Seating2" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(-0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, -0.766044, -6.3, -0.8, 7.6)
+size = Vector3(8, 2, 2)
+
+[node name="Subtract" type="CSGBox3D" parent="Game Area/Circus Tent/Seating2"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 1.5, 0.866026)
+operation = 2
+size = Vector3(8, 3, 6)
+
+[node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Tent/Seating2"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 2.7, 0.866026)
+operation = 2
+size = Vector3(9, 3, 6)
+
+[node name="Seating6" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 5.35093, -0.8, -8.66418)
+size = Vector3(5, 2, 2)
+
+[node name="Subtract" type="CSGBox3D" parent="Game Area/Circus Tent/Seating6"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 1.5, 0.866026)
+operation = 2
+size = Vector3(8, 3, 6)
+
+[node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Tent/Seating6"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 2.7, 0.866026)
+operation = 2
+size = Vector3(9, 3, 6)
+
+[node name="Seating7" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 8.35093, -0.8, -5.66418)
+size = Vector3(5, 2, 2)
+
+[node name="Subtract" type="CSGBox3D" parent="Game Area/Circus Tent/Seating7"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 1.5, 0.866026)
+operation = 2
+size = Vector3(8, 3, 6)
+
+[node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Tent/Seating7"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 2.7, 0.866026)
+operation = 2
+size = Vector3(9, 3, 6)
+
+[node name="Seating5" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(0.819152, 0, 0.573576, 0, 1, 0, -0.573576, 0, 0.819152, -6.70958, -0.8, -7.11321)
+size = Vector3(7, 2, 2)
+
+[node name="Subtract" type="CSGBox3D" parent="Game Area/Circus Tent/Seating5"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 1.5, 0.866026)
+operation = 2
+size = Vector3(8, 3, 6)
+
+[node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Tent/Seating5"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 2.7, 0.866026)
+operation = 2
+size = Vector3(9, 3, 6)
+
+[node name="Seating3" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, 1.8, -0.8, 9.7)
+size = Vector3(8, 2, 2)
+
+[node name="Subtract" type="CSGBox3D" parent="Game Area/Circus Tent/Seating3"]
+transform = Transform3D(0.999999, 1.49012e-08, 7.45058e-08, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -4.76837e-07, 1.5, 0.866026)
+operation = 2
+size = Vector3(8.1, 3, 6)
+
+[node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Tent/Seating3"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 2.7, 0.866026)
+operation = 2
+size = Vector3(9, 3, 6)
+
+[node name="Seating4" type="CSGBox3D" parent="Game Area/Circus Tent"]
+transform = Transform3D(-0.573576, 0, -0.819152, 0, 1, 0, 0.819152, 0, -0.573576, 8.52642, -0.8, 5.81915)
+size = Vector3(6, 2, 2)
+
+[node name="Subtract" type="CSGBox3D" parent="Game Area/Circus Tent/Seating4"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 1.5, 0.866026)
+operation = 2
+size = Vector3(8, 3, 6)
+
+[node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Tent/Seating4"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0, 2.7, 0.866026)
+operation = 2
+size = Vector3(9, 3, 6)
+
+[node name="Circus Entrance Hall" type="CSGCylinder3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.65, 20)
+radius = 14.5
+height = 2.3
+sides = 32
+material = ExtResource("7_yh71d")
+
+[node name="Circus Entrance Hall2" type="CSGCylinder3D" parent="Game Area/Circus Entrance Hall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4875, 0)
+operation = 2
+radius = 14.1
+height = 1.325
+sides = 32
+material = ExtResource("7_yh71d")
+
+[node name="Subtract2" type="CSGBox3D" parent="Game Area/Circus Entrance Hall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.35, -8.7)
+operation = 2
+size = Vector3(36, 3, 22.6)
+
+[node name="Subtract" type="CSGBox3D" parent="Game Area/Circus Entrance Hall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0.35, 9)
+operation = 2
+size = Vector3(38, 3, 20)
+
+[node name="Circus Entrance2" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.65, 33.75)
+size = Vector3(4.8, 2.3, 4.5)
+material = ExtResource("7_yh71d")
+
+[node name="Circus Entrance4" type="CSGBox3D" parent="Game Area/Circus Entrance2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15256e-07, 0.53, 0)
+operation = 2
+size = Vector3(4, 1.4, 4.5)
+material = ExtResource("7_yh71d")
+
+[node name="Circus Entrance5" type="CSGBox3D" parent="Game Area/Circus Entrance2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499999, 0.53, -0.950001)
+operation = 2
+size = Vector3(5, 1.4, 2.6)
+material = ExtResource("7_yh71d")
+
+[node name="Circus Entrance3" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.25, 36.25)
+size = Vector3(4, 0.5, 0.5)
+material = ExtResource("7_yh71d")
+
+[node name="Circus Entrance" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7, 0.65, 19.8)
+size = Vector3(4.4, 2.3, 6.4)
+material = ExtResource("7_yh71d")
+
+[node name="Circus Entrance4" type="CSGBox3D" parent="Game Area/Circus Entrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200001, 0.55, 0)
+operation = 2
+size = Vector3(4, 1.4, 5.6)
+material = ExtResource("7_yh71d")
+
+[node name="Circus Entrance5" type="CSGBox3D" parent="Game Area/Circus Entrance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05, 0.55, 0.200001)
+operation = 2
+size = Vector3(2.3, 1.4, 6)
+material = ExtResource("7_yh71d")
+
+[node name="Carnival Area" type="CSGBox3D" parent="Game Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, 41)
+size = Vector3(24.2, 1, 42)
+material = ExtResource("7_yh71d")
+
+[node name="Fill2" type="CSGBox3D" parent="Game Area/Carnival Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0999985)
+size = Vector3(48.2, 1, 18)
+material = ExtResource("7_yh71d")
+
+[node name="Corner" type="CSGCylinder3D" parent="Game Area/Carnival Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -9.1)
+radius = 12.1
+height = 1.0
+sides = 16
+material = ExtResource("7_yh71d")
+
+[node name="Corner2" type="CSGCylinder3D" parent="Game Area/Carnival Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -9.1)
+radius = 12.1
+height = 1.0
+sides = 16
+material = ExtResource("7_yh71d")
+
+[node name="Corner3" type="CSGCylinder3D" parent="Game Area/Carnival Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8.9)
+radius = 12.1
+height = 1.0
+sides = 16
+material = ExtResource("7_yh71d")
+
+[node name="Corner4" type="CSGCylinder3D" parent="Game Area/Carnival Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 8.9)
+radius = 12.1
+height = 1.0
+sides = 16
+material = ExtResource("7_yh71d")
+
+[node name="Statue" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -1, 49.9)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Statue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 1.25, -6.4)
+size = Vector3(2, 1.5, 2)
+material = SubResource("StandardMaterial3D_kn06e")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Statue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 2.85, -6.4)
+size = Vector3(1, 1.5, 1)
+material = ExtResource("8_ysglx")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Statue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 4.35, -6.4)
+size = Vector3(1.4, 1.5, 1.3)
+material = ExtResource("8_ysglx")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Statue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 4.15, -6.4)
+size = Vector3(2.3, 1.7, 0.7)
+material = ExtResource("8_ysglx")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Statue"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 5.6, -6.4)
+size = Vector3(0.8, 1, 0.8)
+material = ExtResource("8_ysglx")
+
+[node name="Gates" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, 41)
+use_collision = true
+
+[node name="Gate" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.75, 2, -0.25)
+size = Vector3(0.5, 5, 18.5)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate14" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.734, 2, -0.25)
+size = Vector3(0.5, 5, 18.5)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate9" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.228271, 2, 20.55)
+size = Vector3(0.5, 5, 24.4565)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate2" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.980199, 0, 0.198017, 0, 1, 0, -0.198017, 0, 0.980199, 23.3243, 2, -11.5473)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate15" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.978224, 0, -0.207553, 0, 1, 0, 0.207553, 0, 0.978224, -23.272, 2, -11.5473)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate16" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.832728, 0, -0.553682, 0, 1, 0, 0.553682, 0, 0.832728, -21.6896, 2, -15.3711)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate17" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.567628, 0, -0.823285, 0, 1, 0, 0.823285, 0, 0.567628, -18.7709, 2, -18.2898)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate18" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.26453, 0, -0.964378, 0, 1, 0, 0.964378, 0, 0.26453, -14.5294, 2, -20.1633)
+size = Vector3(0.5, 5, 5.49683)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate3" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.839203, 0, 0.543819, 0, 1, 0, -0.543819, 0, 0.839203, 21.7552, 2, -15.4027)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate5" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.827933, 0, -0.560827, 0, 1, 0, 0.560827, 0, 0.827933, 21.6308, 2, 14.8513)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate7" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.595917, 0, -0.803046, 0, 1, 0, 0.803046, 0, 0.595917, 18.5047, 2, 18.0642)
+size = Vector3(0.5, 5, 4.91235)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate8" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.22, 0, -0.9755, 0, 1, 0, 0.9755, 0, 0.22, 14.2921, 2, 20.0155)
+size = Vector3(0.5, 5, 4.91235)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate6" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.975955, 0, -0.217973, 0, 1, 0, 0.217973, 0, 0.975955, 23.2831, 2, 11.0308)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate10" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(-0.560827, 0, -0.827933, 0, 1, 0, 0.827933, 0, -0.560827, -18.236, 2, 18.4513)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate11" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(-0.803046, 0, -0.595917, 0, 1, 0, 0.595917, 0, -0.803046, -21.4489, 2, 15.3252)
+size = Vector3(0.5, 5, 4.91235)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate12" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(-0.9755, 0, -0.219999, 0, 1, 0, 0.219999, 0, -0.9755, -23.1951, 2, 11.3316)
+size = Vector3(0.5, 5, 4.91235)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate13" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(-0.217973, 0, -0.975955, 0, 1, 0, 0.975955, 0, -0.217973, -14.4155, 2, 20.1036)
+size = Vector3(0.5, 5, 4.37549)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="Gate4" type="CSGBox3D" parent="Gates"]
+transform = Transform3D(0.576447, 0, 0.817135, 0, 1, 0, -0.817135, 0, 0.576447, 18.1826, 2, -18.885)
+size = Vector3(0.5, 5, 6.04865)
+material = SubResource("StandardMaterial3D_uo7di")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 12, 0)
