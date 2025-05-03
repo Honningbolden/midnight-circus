@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=32 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_33kev"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cay65qnwy7s8f" path="res://Scenes/Objects/Interactables/canon.tscn" id="20_r0dna"]
 [ext_resource type="PackedScene" uid="uid://c6647pnq3lgvh" path="res://Scenes/Objects/speaker.tscn" id="25_l11rc"]
 [ext_resource type="PackedScene" uid="uid://n2mq7gsykghl" path="res://Scenes/Objects/Interactables/tightrope.tscn" id="26_w86vl"]
+[ext_resource type="PackedScene" uid="uid://y7ryxlwa3yn6" path="res://Scenes/Objects/Interactables/mechanical door.tscn" id="28_g01fq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -34,9 +35,13 @@ size = Vector3(50, 1, 50)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6hh0k"]
 size = Vector3(50, 1, 50)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_33kev"]
+size = Vector3(100, 1, 200)
+
 [node name="World" type="Node3D"]
 
 [node name="map" parent="." instance=ExtResource("1_33kev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71.295)
 
 [node name="Rope" parent="." instance=ExtResource("1_ti1bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85951, -142.754)
@@ -65,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 1.49735, -136.053)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36269, -141)
 
 [node name="Player" parent="." instance=ExtResource("1_e5dp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8757, 8.45683, -136.337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.876, 1.35, -91.5522)
 collision_mask = 30
 
 [node name="Ladder" parent="." instance=ExtResource("5_p70al")]
@@ -93,10 +98,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -143.932)
 script = ExtResource("12_rwt1y")
 
 [node name="Duct Tape" parent="." instance=ExtResource("17_33kev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.346, -144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8917, 0.63, -90.0268)
 
 [node name="SteamEngine" parent="." instance=ExtResource("19_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2661, 1.31346, -141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.549, 1, -91.5841)
 
 [node name="RMFuse2" parent="." instance=ExtResource("13_8ldnt")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.72941, 0.950552, -148.847)
@@ -158,9 +163,6 @@ transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -18.6673
 script = ExtResource("18_b5aes")
 number = 8
 
-[node name="SteamEngine2" parent="." instance=ExtResource("19_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.354, 1.22052, -139.534)
-
 [node name="Canon" parent="." instance=ExtResource("20_r0dna")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.726, 1.61227, -133.706)
 
@@ -169,3 +171,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606151, 1.51765, -132.752)
 
 [node name="Speaker" parent="." instance=ExtResource("25_l11rc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.22, -141)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_33kev")
+
+[node name="MechanicalDoor" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.441, 2.275, -93.162)

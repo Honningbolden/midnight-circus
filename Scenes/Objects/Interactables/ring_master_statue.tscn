@@ -46,7 +46,6 @@ height = 0.342529
 height = 0.001
 
 [node name="RingMasterStatue" type="Node3D"]
-transform = Transform3D(1.82157, 0, 0, 0, 1.82157, 0, 0, 0, 1.82157, 0, 0, 0)
 script = ExtResource("1_jyhhw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
