@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cay65qnwy7s8f"]
+[gd_scene load_steps=6 format=3 uid="uid://cay65qnwy7s8f"]
 
 [ext_resource type="Script" uid="uid://mjs8jhr1vqn2" path="res://Scripts/Objects/Interactables/canon.gd" id="1_fxg21"]
+[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Scripts/Objects/Interactables/Greybox Material.tres" id="2_42iov"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_42iov"]
 
@@ -13,17 +14,24 @@ height = 2.01465
 script = ExtResource("1_fxg21")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.651579, 0, 0, 0, 1, 0, 0.7, 0)
 mesh = SubResource("CylinderMesh_42iov")
+surface_material_override/0 = ExtResource("2_42iov")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="MeshInstance3D"]
+[node name="AnimatableBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012955, 0)
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/AnimatableBody3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 shape = SubResource("CylinderShape3D_5npy8")
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.693348, 0)
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.2, 0, 0, 0, 0.75, 0, 0, 0, 1.2, 0, 0, 0)
 shape = SubResource("CylinderShape3D_fxg21")

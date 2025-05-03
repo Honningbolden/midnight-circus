@@ -162,7 +162,7 @@ number = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.354, 1.22052, -139.534)
 
 [node name="Canon" parent="." instance=ExtResource("20_r0dna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.726, 1.61227, -133.706)
+transform = Transform3D(0.173648, 0.984808, 0, -0.984808, 0.173648, 0, 0, 0, 1, -17.726, 1.19259, -133.706)
 
 [node name="Tightrope" parent="." instance=ExtResource("26_w86vl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606151, 1.51765, -132.752)
