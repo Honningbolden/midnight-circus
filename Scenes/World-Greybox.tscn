@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=3 uid="uid://cbf0xqirktgmp"]
 
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="1_k4m4y"]
-[ext_resource type="PackedScene" uid="uid://mdrq4gut8d0p" path="res://Scenes/Objects/Interactables/vending_machine.tscn" id="2_fak8t"]
+[ext_resource type="PackedScene" uid="uid://mdrq4gut8d0p" path="res://Scenes/Objects/Interactables/Vending Machine.tscn" id="2_fak8t"]
 [ext_resource type="PackedScene" uid="uid://bqs07bb504yqg" path="res://Scenes/Objects/Interactables/Olaf.tscn" id="3_j8hc4"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="4_okkk3"]
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_v13qs"]
 [ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_q2yp5"]
-[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Scripts/Objects/Interactables/Greybox Material.tres" id="7_yh71d"]
+[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Assets/Greybox Material.tres" id="7_yh71d"]
 [ext_resource type="Material" uid="uid://cttu7f7jjvbg6" path="res://Gold.tres" id="8_ysglx"]
-[ext_resource type="Texture2D" uid="uid://cegeo612mms3r" path="res://Scripts/Objects/Interactables/kenney_prototype-textures/PNG/Dark/texture_04.png" id="9_utqx4"]
+[ext_resource type="Texture2D" uid="uid://cegeo612mms3r" path="res://Assets/kenney_prototype-textures/PNG/Dark/texture_04.png" id="9_utqx4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -53,6 +53,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.36269, 0)
 
 [node name="Player" parent="." instance=ExtResource("4_okkk3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8757, 8.45683, 4.6627)
+walking_speed = 2.2
+running_speed = 4.5
 acceleration = 0.15
 
 [node name="Ladder" parent="." instance=ExtResource("5_v13qs")]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=27 format=3 uid="uid://bywfgwxn45poc"]
 
-[ext_resource type="Script" path="res://Scripts/Objects/Interactables/carousel.gd" id="1_1sd25"]
+[ext_resource type="Script" uid="uid://dxobrtj5psnrp" path="res://Scripts/Objects/Interactables/carousel.gd" id="1_1sd25"]
 [ext_resource type="Script" uid="uid://boaeolyujvlxd" path="res://Scripts/Objects/Interactables/horse_pedestal.gd" id="2_jy2vb"]
-[ext_resource type="PackedScene" uid="uid://bojlcywc1io63" path="res://Scenes/Objects/Fuse.tscn" id="3_jy2vb"]
+[ext_resource type="PackedScene" uid="uid://covymlbu2kxg4" path="res://Scenes/Objects/Fuse.tscn" id="3_jy2vb"]
 [ext_resource type="Script" uid="uid://bdevs1a7tdteg" path="res://Scripts/Objects/Collectibles/fuse.gd" id="4_es4lw"]
 
 [sub_resource type="TorusMesh" id="TorusMesh_irsk8"]

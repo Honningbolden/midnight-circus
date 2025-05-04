@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bsaem14g30p7m"]
 
-[ext_resource type="Script" path="res://Scripts/Objects/Interactables/ferris_wheel.gd" id="1_3xtoa"]
+[ext_resource type="Script" uid="uid://bs5qcqnrys8ex" path="res://Scripts/Objects/Interactables/ferris_wheel.gd" id="1_3xtoa"]
 [ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Scripts/Objects/Interactables/Greybox Material.tres" id="2_kwtke"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ukao"]

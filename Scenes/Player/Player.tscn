@@ -21,6 +21,8 @@ script = ExtResource("1_k20og")
 raycast = NodePath("Interaction RayCast3D")
 statemachine = NodePath("State Machine")
 walking_threshold = 0.6
+walking_speed = 1.0
+running_speed = 1.5
 acceleration = 0.8
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player", "listener", "raycast", "hands")]

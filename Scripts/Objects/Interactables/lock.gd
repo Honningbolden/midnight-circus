@@ -63,7 +63,7 @@ func _input(_event):
 		code.pop_front()
 			
 	# Display code to user
-	inputted_code.text = " ".join(code.map(func(n): return str(n)))
+	inputted_code.text = str(code)
 	
 	# If player gets the correct code
 	if code == pin_code:
