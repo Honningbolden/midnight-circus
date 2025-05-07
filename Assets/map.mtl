@@ -1,0 +1,400 @@
+# Blender 4.4.1 MTL File: 'asset-creation.blend'
+# www.blender.org
+
+newmtl AR3DMat_PBR_Old_Galvanized_Steel
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd OldGalvanizedSteel_BaseColor.jpg
+map_Ns OldGalvanizedSteel_Roughness.jpg
+map_refl OldGalvanizedSteel_Metalness.jpg
+map_Bump -bm 1.000000 OldGalvanizedSteel_Normal.jpg
+
+newmtl Bronze_Antique_Brushed
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Bronze_Antique_Brushed.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Brushed_and_used_Aluminium
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Brushed_and_used_Aluminium.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Carbon_Steel
+Ns 717.871155
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Carbon_Steel.001
+Ns 717.871155
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Circus_Tent
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Ns Plain_Green_Vinyl_2166144_rough.jpg
+map_refl Plain_Green_Vinyl_2166144_met.jpg
+map_Bump -bm 1.000000 Plain_Green_Vinyl_2166144_nrm.jpg
+
+newmtl Concrete
+Ka 1.000000 1.000000 1.000000
+Ks 0.050000 0.050000 0.050000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd concrete_01_color.jpg
+map_Ns concrete_01_roughness.jpg
+
+newmtl Concrete.003
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd concrete_02_color.jpg
+map_Ns concrete_02_roughness.jpg
+
+newmtl Ground_Baked
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd /Volumes/Boldens SSD/midnight-circus-3d-creation/baked/Ground/Ground_Bake1_PBR_Diffuse.jpg
+map_Ns /Volumes/Boldens SSD/midnight-circus-3d-creation/baked/Ground/Ground_Bake1_PBR_Roughness.jpg
+map_refl /Volumes/Boldens SSD/midnight-circus-3d-creation/baked/Ground/Ground_Bake1_PBR_Metalness.jpg
+map_Bump -bm 1.000000 /Volumes/Boldens SSD/midnight-circus-3d-creation/baked/Ground/Ground_Bake1_PBR_Normal.jpg
+
+newmtl Hammered_Bronze
+Ns 808.775940
+Ka 1.000000 1.000000 1.000000
+Kd 0.040915 0.007499 0.001821
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+
+newmtl Keyhole
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.070449 0.070449 0.070449
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl LED-light_off
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.021329 0.800000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl LED-light_off.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.021329 0.800000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl LED-light_on
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.021329 0.800000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl LED-light_on.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.021329 0.800000 0.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.002
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.637724 0.801540 0.212660
+Ks 0.500000 0.500000 0.500000
+Ke 13.942599 20.000000 1.727616
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material.004
+Ns 250.000000
+Ka 0.666667 0.666667 0.666667
+Kd 0.800291 0.388052 0.024245
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl Material.005
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.006
+Ns 250.000000
+Ka 0.666667 0.666667 0.666667
+Kd 0.800291 0.388052 0.024245
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl Material.007
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Material.010
+Ns 893.884277
+Ka 0.980000 0.980000 0.980000
+Kd 0.024720 0.096867 0.006007
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.400000
+d 0.613636
+illum 6
+
+newmtl Metal
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd -s 30 30 30 metal-21_diffuse.jpg
+map_Ns -s 30 30 30 metal-21_roughness.jpg
+map_refl -s 30 30 30 metal-21_metal.jpg
+map_Bump -s 30 30 30 -bm 1.000000 metal-21_normal.jpg
+
+newmtl Metal_ribs
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd ribs02_diffuse.jpg
+map_Ns ribs02_roughness.jpg
+map_refl ribs02_metalness.jpg
+map_Bump -bm 1.000000 ribs02_opengl_normal.jpg
+
+newmtl Old_used_dark_wood.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd wood_basecolor_diffuse.jpg
+map_Ks wood_specular.jpg
+map_refl wood_metallic.jpg
+map_Bump -bm 1.000000 wood_normal_opengl.jpg
+
+newmtl Procedural_rusty_metal
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Rotten_Wood
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Ns _Roughness_.jpg
+map_Bump -bm 2.000000 _Normal_.jpg
+
+newmtl Rusty_metal.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd rusty_diffuse.jpg
+map_Ks rusty_specular.jpg
+map_refl rusty_metallic.jpg
+map_Bump -bm 1.000000 rusty_normal_opengl.jpg
+
+newmtl Rusty_painted_metal_procedural
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Spear-Concrete
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd DefaultMaterial_BaseColor.jpg
+map_Ns DefaultMaterial_Roughness.jpg
+map_Bump -bm 1.000000 DefaultMaterial_Normal.jpg
+
+newmtl Spear-Metal
+Ns 250.000000
+Ka 0.972727 0.972727 0.972727
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Wood.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 4 4 4 wood diffuse.jpg
+map_Ks -s 4 4 4 wood spec.jpg
+
+newmtl Wood.144
+Ns 1000.000000
+Ka 0.693182 0.693182 0.693182
+Kd 0.800000 0.800000 0.800000
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+
+newmtl Wood_White
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd _Diffuse_.jpg
+map_Ns _Roughness_.jpg
+map_Bump -bm 1.000000 _Normal_.jpg
+
+newmtl damp_sand
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.400000
+d 1.000000
+illum 2
+map_Ns damp_sand_rough_8k.exr
+
+newmtl rusty_cage
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd rust_diffuse.jpg
+map_Ks rust_specular.jpg
+map_Bump -bm 1.000000 rust_normal_opengl.jpg
