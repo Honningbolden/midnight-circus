@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://csm45mje2rbtm"
+path.s3tc="res://.godot/imported/backstage_circus_doors_left_backstage_circus-door_2_bake1_PBR_Diffuse-backstage_circus-door_2_bake1_PBR_Alpha.png-756bd60a9a50fe3266a670311eaccda3.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "4b509a4ffb42c08c14d18192db5ded21"
+}
+
+[deps]
+
+source_file="res://Assets/3D_assets/backstage_circus_doors/backstage_circus_doors_left_backstage_circus-door_2_bake1_PBR_Diffuse-backstage_circus-door_2_bake1_PBR_Alpha.png"
+dest_files=["res://.godot/imported/backstage_circus_doors_left_backstage_circus-door_2_bake1_PBR_Diffuse-backstage_circus-door_2_bake1_PBR_Alpha.png-756bd60a9a50fe3266a670311eaccda3.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

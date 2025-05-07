@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b8cocgebevpif"
+path="res://.godot/imported/backstage_circus_doors_right_backstage_circus-door_1_bake1_PBR_Clearcoat-backstage_circus-door_1_bake1_PBR_Clearcoat Roughness.jpg-8fa37cb857794e417faf42376d376549.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "6c53de32fab3bb9ad0f0475a6d243c8f"
+}
+
+[deps]
+
+source_file="res://Assets/3D_assets/backstage_circus_doors/backstage_circus_doors_right_backstage_circus-door_1_bake1_PBR_Clearcoat-backstage_circus-door_1_bake1_PBR_Clearcoat Roughness.jpg"
+dest_files=["res://.godot/imported/backstage_circus_doors_right_backstage_circus-door_1_bake1_PBR_Clearcoat-backstage_circus-door_1_bake1_PBR_Clearcoat Roughness.jpg-8fa37cb857794e417faf42376d376549.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
