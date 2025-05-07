@@ -5,8 +5,8 @@ extends Interactable
 @onready var material = mesh.get_active_material(0)
 
 func use(_player: Player) -> void:
-	if not enabled and GameManager.collected_items.has("Fuse"):
-		GameManager.collected_items.erase("Fuse")
+	if not enabled and GameManager.current_item == "Fuse":
+		GameManager.current_item = ""
 		enabled = true
 		
 		# Duplicate to not effect other objs of same material

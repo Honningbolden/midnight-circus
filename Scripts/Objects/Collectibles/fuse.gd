@@ -6,6 +6,7 @@ func _ready():  # when the node is ready
 
 ## Add the collectible
 func collect():
-	GameManager.collected_items.append("Fuse")
-	queue_free()  # delete the item
+	if GameManager.current_item == "":
+		GameManager.current_item = "Fuse"
+		queue_free()  # delete the item
 	

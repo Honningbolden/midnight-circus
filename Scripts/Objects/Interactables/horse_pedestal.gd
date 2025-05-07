@@ -15,8 +15,9 @@ func use(_player: Player) -> void:
 		return
 	# state 1 if no tag, allow player to place any horse tag they havew (users can only have 1 item at a time apparently
 	if not has_tag:
-		if GameManager.collected_items.size() > 0:
-			current_tag = GameManager.collected_items.pop_front()
+		if GameManager.current_item.substr(0, 8) == "HorseTag":
+			current_tag = GameManager.current_item
+			GameManager.current_item = ""
 			has_tag = true
 			taglight(has_tag)
 			# if correct tag, change var
@@ -27,9 +28,10 @@ func use(_player: Player) -> void:
 	# state 2 if there is a placed tag, allow player to retrieve the placed tag		
 	elif has_tag:
 		# if player has an equipped tag, switch tags with the current placed tag
-		if GameManager.collected_items.size() > 0:
-			GameManager.collected_items.append(current_tag)
-			current_tag = GameManager.collected_items.pop_front()
+		if GameManager.current_item.substr(0, 8) == "HorseTag":
+			var tempswitch = GameManager.current_item
+			GameManager.current_item = current_tag
+			current_tag = tempswitch
 			taglight(true)
 			# this is really bad coding practice
 			if int(current_tag[-1]) == number:
@@ -39,7 +41,7 @@ func use(_player: Player) -> void:
 				
 		# take tag on pedestal and equip on player
 		else:
-			GameManager.collected_items.append(current_tag)
+			GameManager.current_item = (current_tag)
 			has_tag = false
 			taglight(has_tag)
 			current_tag = "None"
