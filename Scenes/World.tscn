@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=33 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_33kev"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/Objects/horse_tag.tscn" id="17_r0dna"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="18_0bcf6"]
 [ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="18_b5aes"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="18_y1bqn"]
 [ext_resource type="PackedScene" path="res://Scenes/Objects/Interactables/steam_engine.tscn" id="19_mvfa8"]
 [ext_resource type="PackedScene" path="res://Scenes/Objects/Interactables/canon.tscn" id="20_r0dna"]
 [ext_resource type="PackedScene" uid="uid://c6647pnq3lgvh" path="res://Scenes/Objects/speaker.tscn" id="25_l11rc"]
@@ -67,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 1.49735, -136.053)
 
 [node name="Olaf" parent="." instance=ExtResource("4_gjpho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36269, -141)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0511284, 1.31863, -140.953)
 
 [node name="Player" parent="." instance=ExtResource("1_e5dp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7811, 1.35, -27.2767)
@@ -97,8 +98,8 @@ script = ExtResource("10_kn06e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -143.932)
 script = ExtResource("12_rwt1y")
 
-[node name="DuctTape" parent="." instance=ExtResource("18_0bcf6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4206, 1.955, -91.3402)
+[node name="DuctTape" parent="." instance=ExtResource("18_y1bqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.421, 1.955, -91.34)
 
 [node name="SteamEngine" parent="." instance=ExtResource("19_mvfa8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.549, 1, -91.5841)

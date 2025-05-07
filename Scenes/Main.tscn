@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6a74d2wra0fc"]
+[gd_scene load_steps=3 format=3 uid="uid://b6a74d2wra0fc"]
 
 [ext_resource type="PackedScene" uid="uid://dvl6lb4k6gp1i" path="res://Scenes/World.tscn" id="1_npeuf"]
+[ext_resource type="PackedScene" uid="uid://bmu4rchcyd4kp" path="res://Scenes/GameWorld.tscn" id="2_idj7w"]
 
 [node name="Main" type="Node"]
 
@@ -8,3 +9,5 @@
 
 [node name="World" parent="Scene Container" instance=ExtResource("1_npeuf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0865, 12.5051, 27.4346)
+
+[node name="GameWorld" parent="Scene Container" instance=ExtResource("2_idj7w")]

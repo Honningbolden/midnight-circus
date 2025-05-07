@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmu4rchcyd4kp"]
+
+[ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_ui0sf"]
+[ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ywpc4"]
+size = Vector3(100, 1, 200)
+
+[node name="GameWorld" type="Node3D"]
+
+[node name="map" parent="." instance=ExtResource("1_ui0sf")]
+
+[node name="Floor" type="StaticBody3D" parent="map"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00598, 0)
+shape = SubResource("BoxShape3D_ywpc4")
+
+[node name="Player" parent="." instance=ExtResource("2_tnnpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75181, 5.28927, -12.8754)
