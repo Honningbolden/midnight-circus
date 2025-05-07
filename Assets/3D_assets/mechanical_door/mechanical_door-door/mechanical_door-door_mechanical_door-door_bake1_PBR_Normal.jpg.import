@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgpwe2cwy0nec"
-path.s3tc="res://.godot/imported/mechanical_door-door_mechanical_door-door_bake1_PBR_Normal.jpg-4e127bf6a1ab14d57f698ec910630afd.s3tc.ctex"
+path.s3tc="res://.godot/imported/mechanical_door-door_mechanical_door-door_bake1_PBR_Normal.jpg-a819c43297031e8074d4d49c476b9492.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-door/mechanical_door-door_mechanical_door-door_bake1_PBR_Normal.jpg"
-dest_files=["res://.godot/imported/mechanical_door-door_mechanical_door-door_bake1_PBR_Normal.jpg-4e127bf6a1ab14d57f698ec910630afd.s3tc.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-door/mechanical_door-door_mechanical_door-door_bake1_PBR_Normal.jpg"
+dest_files=["res://.godot/imported/mechanical_door-door_mechanical_door-door_bake1_PBR_Normal.jpg-a819c43297031e8074d4d49c476b9492.s3tc.ctex"]
 
 [params]
 

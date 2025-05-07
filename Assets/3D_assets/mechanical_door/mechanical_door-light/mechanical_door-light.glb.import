@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c5s4mkbbdcuci"
-path="res://.godot/imported/mechanical_door-light.glb-c45f0caec857e825aab31fe131f4f445.scn"
+path="res://.godot/imported/mechanical_door-light.glb-fd7fdfbbe689cbd408d5861672217fb3.scn"
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-light/mechanical_door-light.glb"
-dest_files=["res://.godot/imported/mechanical_door-light.glb-c45f0caec857e825aab31fe131f4f445.scn"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-light/mechanical_door-light.glb"
+dest_files=["res://.godot/imported/mechanical_door-light.glb-fd7fdfbbe689cbd408d5861672217fb3.scn"]
 
 [params]
 

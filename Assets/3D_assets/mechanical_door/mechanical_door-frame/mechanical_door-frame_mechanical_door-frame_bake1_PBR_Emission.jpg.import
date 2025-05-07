@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://g5n4jgleq2yn"
-path.s3tc="res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Emission.jpg-3f2b096642405d911babb372f132e06c.s3tc.ctex"
+path.s3tc="res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Emission.jpg-72ae7677697edde135224387c57723db.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-frame/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Emission.jpg"
-dest_files=["res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Emission.jpg-3f2b096642405d911babb372f132e06c.s3tc.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-frame/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Emission.jpg"
+dest_files=["res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Emission.jpg-72ae7677697edde135224387c57723db.s3tc.ctex"]
 
 [params]
 

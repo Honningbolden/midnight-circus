@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dvs2ld1mnniq7"
-path="res://.godot/imported/mechanical_door-door.glb-315c9510b2ae051917d9c0004fd77a29.scn"
+path="res://.godot/imported/mechanical_door-door.glb-64d1549e0f6f703196dd8b460252da30.scn"
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-door/mechanical_door-door.glb"
-dest_files=["res://.godot/imported/mechanical_door-door.glb-315c9510b2ae051917d9c0004fd77a29.scn"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-door/mechanical_door-door.glb"
+dest_files=["res://.godot/imported/mechanical_door-door.glb-64d1549e0f6f703196dd8b460252da30.scn"]
 
 [params]
 

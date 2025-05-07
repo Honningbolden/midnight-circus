@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctupqbb7itbpc"
-path="res://.godot/imported/mechanical_door-light_bake1_PBR_Normal.jpg-a80d6095d03d0c3ce18d77a0eebda0cc.ctex"
+path="res://.godot/imported/mechanical_door-light_bake1_PBR_Normal.jpg-da9b8366ebc3535955bfcc351373b990.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-light/mechanical_door-light_bake1_PBR_Normal.jpg"
-dest_files=["res://.godot/imported/mechanical_door-light_bake1_PBR_Normal.jpg-a80d6095d03d0c3ce18d77a0eebda0cc.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-light/mechanical_door-light_bake1_PBR_Normal.jpg"
+dest_files=["res://.godot/imported/mechanical_door-light_bake1_PBR_Normal.jpg-da9b8366ebc3535955bfcc351373b990.ctex"]
 
 [params]
 

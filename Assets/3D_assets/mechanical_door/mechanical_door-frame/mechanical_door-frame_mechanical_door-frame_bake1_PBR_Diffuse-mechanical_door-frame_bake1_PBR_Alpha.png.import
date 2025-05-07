@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0skyicg08gmy"
-path.s3tc="res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Diffuse-mechanical_door-frame_bake1_PBR_Alpha.png-1520b6a70f3bde927f89cab8db7cc9fc.s3tc.ctex"
+path.s3tc="res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Diffuse-mechanical_door-frame_bake1_PBR_Alpha.png-e6f01695cb72ad103e24ead6af967a65.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-frame/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Diffuse-mechanical_door-frame_bake1_PBR_Alpha.png"
-dest_files=["res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Diffuse-mechanical_door-frame_bake1_PBR_Alpha.png-1520b6a70f3bde927f89cab8db7cc9fc.s3tc.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-frame/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Diffuse-mechanical_door-frame_bake1_PBR_Alpha.png"
+dest_files=["res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Diffuse-mechanical_door-frame_bake1_PBR_Alpha.png-e6f01695cb72ad103e24ead6af967a65.s3tc.ctex"]
 
 [params]
 

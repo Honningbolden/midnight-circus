@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ceqm7qf6i1go1"
-path="res://.godot/imported/mechanical_door-frame_bake1_PBR_Roughness.jpg-610990ae616dffb6623712d4360feb3f.ctex"
+path="res://.godot/imported/mechanical_door-frame_bake1_PBR_Roughness.jpg-2c59b9874a4abfde7f37252e1d038039.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-frame/mechanical_door-frame_bake1_PBR_Roughness.jpg"
-dest_files=["res://.godot/imported/mechanical_door-frame_bake1_PBR_Roughness.jpg-610990ae616dffb6623712d4360feb3f.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-frame/mechanical_door-frame_bake1_PBR_Roughness.jpg"
+dest_files=["res://.godot/imported/mechanical_door-frame_bake1_PBR_Roughness.jpg-2c59b9874a4abfde7f37252e1d038039.ctex"]
 
 [params]
 
