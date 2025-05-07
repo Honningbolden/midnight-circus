@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnjtynnn40qsf"
-path="res://.godot/imported/mechanical_door-frame_bake1_PBR_Normal.jpg-27e84a40d1aa570a510eff4fe3b1b0cf.ctex"
+path="res://.godot/imported/mechanical_door-frame_bake1_PBR_Normal.jpg-8c1202484fa103c3f4831c6e37c75cf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-frame/mechanical_door-frame_bake1_PBR_Normal.jpg"
-dest_files=["res://.godot/imported/mechanical_door-frame_bake1_PBR_Normal.jpg-27e84a40d1aa570a510eff4fe3b1b0cf.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-frame/mechanical_door-frame_bake1_PBR_Normal.jpg"
+dest_files=["res://.godot/imported/mechanical_door-frame_bake1_PBR_Normal.jpg-8c1202484fa103c3f4831c6e37c75cf7.ctex"]
 
 [params]
 

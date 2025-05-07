@@ -11,7 +11,7 @@ func _ready():  # when the node is ready
 
 ## Add the collectible
 func collect():
-	GameManager.collected_items.append(name)
+	GameManager.pickup(name)
 	await wait(0.01)
 	queue_free()  # delete the item
 

@@ -3,19 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rrshg1c1ifpm"
-path.s3tc="res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Normal.jpg-def1729ccd7cf34025f62358274f02da.s3tc.ctex"
+path.s3tc="res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Normal.jpg-af65e5499da20e1babd28b093c655100.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5aafbdb2861e3a0b2b8e2e08633b0481"
+"md5": "e610a80938be1ad40515bca1bee3bbb9"
 }
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-frame/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Normal.jpg"
-dest_files=["res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Normal.jpg-def1729ccd7cf34025f62358274f02da.s3tc.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-frame/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Normal.jpg"
+dest_files=["res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Normal.jpg-af65e5499da20e1babd28b093c655100.s3tc.ctex"]
 
 [params]
 

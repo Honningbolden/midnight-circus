@@ -5,9 +5,9 @@ extends Interactable
 
 
 func use(_player: Player) -> void:
-	if GameManager.collected_items.has("Vodka"):
-		GameManager.collected_items.erase("Vodka")
-		GameManager.collected_items.append("Circus Key")
+	if GameManager.current_item == "Vodka":
+		GameManager.current_item == ""
+		GameManager.pickup("Circus Key")
 		# TASK: Add an animation Giving the Vodka to Olaf
 		# TASK: Add a sound effect for Olaf gving the key
 	else:

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7pkbymh31ber"
-path.s3tc="res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Metalness-mechanical_door-frame_bake1_PBR_Roughness.png-673532bf07858b75841ab4faaec9f091.s3tc.ctex"
+path.s3tc="res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Metalness-mechanical_door-frame_bake1_PBR_Roughness.png-0795de18df4c32af2a1d7e9440b6141e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-frame/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Metalness-mechanical_door-frame_bake1_PBR_Roughness.png"
-dest_files=["res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Metalness-mechanical_door-frame_bake1_PBR_Roughness.png-673532bf07858b75841ab4faaec9f091.s3tc.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-frame/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Metalness-mechanical_door-frame_bake1_PBR_Roughness.png"
+dest_files=["res://.godot/imported/mechanical_door-frame_mechanical_door-frame_bake1_PBR_Metalness-mechanical_door-frame_bake1_PBR_Roughness.png-0795de18df4c32af2a1d7e9440b6141e.s3tc.ctex"]
 
 [params]
 

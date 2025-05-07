@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://bn2jk150sxr2f"]
 
 [ext_resource type="Script" uid="uid://dr21c7hq5248" path="res://Scripts/Objects/Collectibles/DuctTape.gd" id="1_pe7cy"]
-[ext_resource type="Texture2D" uid="uid://disl1o5pmr25g" path="res://Assets/ducttape.webp" id="2_h0d43"]
+[ext_resource type="Texture2D" uid="uid://3hnk1ort5mq5" path="res://Assets/Pixel art/tape.png" id="2_pe7cy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_terbh"]
 
@@ -16,7 +16,7 @@ script = ExtResource("1_pe7cy")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 2
 texture_filter = 0
-texture = ExtResource("2_h0d43")
+texture = ExtResource("2_pe7cy")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 4

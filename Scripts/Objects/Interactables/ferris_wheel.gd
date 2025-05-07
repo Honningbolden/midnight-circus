@@ -18,8 +18,8 @@ func use(player: Player) -> void :
 	var tween1 = create_tween()
 	tween1.set_parallel(true)
 	
-	tween1.tween_property(TipPoint, "position", Vector3(TipPoint.position.x + 25, TipPoint.position.y, TipPoint.position.z), 25)
-	tween1.tween_property(self, "rotation", Vector3(0, 0, -5 * PI/3), 25)
+	tween1.tween_property(TipPoint, "position", Vector3(TipPoint.position.x + 50, TipPoint.position.y, TipPoint.position.z), 50)
+	tween1.tween_property(self, "rotation", Vector3(0, 0, -50/7.5), 50)
 	await tween1.finished
 	
 	var tween2 = create_tween()

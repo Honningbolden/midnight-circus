@@ -5,8 +5,8 @@ extends Interactable
 @onready var material = mesh.get_active_material(0)
 
 func use(_player: Player) -> void:
-	if GameManager.collected_items.has("Duct Tape"):
-		GameManager.collected_items.erase("Duct Tape")
+	if GameManager.current_item == "Duct Tape":
+		GameManager.current_item = ""
 		
 		# Duplicate to not effect other objs of same material
 		var unique_material = material.duplicate()

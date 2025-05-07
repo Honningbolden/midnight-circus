@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmggmtskxxg20"
-path.s3tc="res://.godot/imported/mechanical_door-door_mechanical_door-door_bake1_PBR_Emission.jpg-861600d47c5969a1185d1d166726341c.s3tc.ctex"
+uid="uid://bsbf88yyd5pkt"
+path.s3tc="res://.godot/imported/vodka.png-0676b28e8cdef7d7559085ce714f7167.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "583c1e5264ce0e37e67e53f17f5dd3b6"
-}
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-door/mechanical_door-door_mechanical_door-door_bake1_PBR_Emission.jpg"
-dest_files=["res://.godot/imported/mechanical_door-door_mechanical_door-door_bake1_PBR_Emission.jpg-861600d47c5969a1185d1d166726341c.s3tc.ctex"]
+source_file="res://Assets/Pixel art/vodka.png"
+dest_files=["res://.godot/imported/vodka.png-0676b28e8cdef7d7559085ce714f7167.s3tc.ctex"]
 
 [params]
 

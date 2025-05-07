@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcgimfuno3f2f"
-path="res://.godot/imported/mechanical_door-frame_bake1_PBR_Emission Strength.jpg-951d6bb6f9bfe37f143a9042c5ff7818.ctex"
+path="res://.godot/imported/mechanical_door-frame_bake1_PBR_Emission Strength.jpg-985a3d833289c54be1ac78222361cffb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/3D_assets/mechanical_door-frame/mechanical_door-frame_bake1_PBR_Emission Strength.jpg"
-dest_files=["res://.godot/imported/mechanical_door-frame_bake1_PBR_Emission Strength.jpg-951d6bb6f9bfe37f143a9042c5ff7818.ctex"]
+source_file="res://Assets/3D_assets/mechanical_door/mechanical_door-frame/mechanical_door-frame_bake1_PBR_Emission Strength.jpg"
+dest_files=["res://.godot/imported/mechanical_door-frame_bake1_PBR_Emission Strength.jpg-985a3d833289c54be1ac78222361cffb.ctex"]
 
 [params]
 

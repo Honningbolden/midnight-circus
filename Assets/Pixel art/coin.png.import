@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://disl1o5pmr25g"
-path.s3tc="res://.godot/imported/ducttape.webp-b9c6371ec39dfaef63d22c93f2aed599.s3tc.ctex"
+uid="uid://o804bxa8reqx"
+path.s3tc="res://.godot/imported/coin.png-789451afaac28bf716fdd96c804d51d2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/ducttape.webp"
-dest_files=["res://.godot/imported/ducttape.webp-b9c6371ec39dfaef63d22c93f2aed599.s3tc.ctex"]
+source_file="res://Assets/Pixel art/coin.png"
+dest_files=["res://.godot/imported/coin.png-789451afaac28bf716fdd96c804d51d2.s3tc.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=31 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_33kev"]
+[ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="1_e5dp7"]
 [ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="1_kwl8l"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="1_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://mdrq4gut8d0p" path="res://Scenes/Objects/Interactables/vending_machine.tscn" id="3_5nsto"]
@@ -8,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_p70al"]
 [ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_45d1s"]
 [ext_resource type="PackedScene" uid="uid://cjm5wehesvmoi" path="res://Scenes/Objects/fence.tscn" id="7_q2d71"]
-[ext_resource type="Script" uid="uid://dolr0auqg3f2b" path="res://Scripts/Objects/fence.gd" id="8_uo7di"]
 [ext_resource type="PackedScene" uid="uid://ums44tggyg3q" path="res://Scenes/Objects/Interactables/roller_coaster.tscn" id="9_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://bqyfg3hxj1nu6" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
 [ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
@@ -20,13 +20,12 @@
 [ext_resource type="Script" uid="uid://bdevs1a7tdteg" path="res://Scripts/Objects/Collectibles/fuse.gd" id="14_xiqgv"]
 [ext_resource type="PackedScene" uid="uid://bywfgwxn45poc" path="res://Scenes/Objects/Interactables/carousel.tscn" id="16_mvfa8"]
 [ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="17_r0dna"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="18_0bcf6"]
 [ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="18_b5aes"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="18_y1bqn"]
 [ext_resource type="PackedScene" uid="uid://dsqvn5kq07odm" path="res://Scenes/Objects/Interactables/steam_engine.tscn" id="19_mvfa8"]
 [ext_resource type="PackedScene" uid="uid://cay65qnwy7s8f" path="res://Scenes/Objects/Interactables/canon.tscn" id="20_r0dna"]
 [ext_resource type="PackedScene" uid="uid://c6647pnq3lgvh" path="res://Scenes/Objects/speaker.tscn" id="25_l11rc"]
 [ext_resource type="PackedScene" uid="uid://n2mq7gsykghl" path="res://Scenes/Objects/Interactables/tightrope.tscn" id="26_w86vl"]
-[ext_resource type="ArrayMesh" uid="uid://dvchcib6cod7i" path="res://Assets/asset-creation.obj" id="28_0bcf6"]
 [ext_resource type="PackedScene" uid="uid://y7ryxlwa3yn6" path="res://Scenes/Objects/Interactables/mechanical door.tscn" id="28_g01fq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
@@ -60,20 +59,24 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_6hh0k")
 
-[node name="keys" parent="." instance=ExtResource("18_y1bqn")]
+[node name="keys" parent="." instance=ExtResource("18_0bcf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
 
 [node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 1.49735, -136.053)
 
 [node name="Olaf" parent="." instance=ExtResource("4_gjpho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0511284, 1.31863, -140.953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.36269, -141)
+
+[node name="Player" parent="." instance=ExtResource("1_e5dp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7336, 1.35, -89.4836)
+collision_mask = 30
 
 [node name="Ladder" parent="." instance=ExtResource("5_p70al")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 2.55378, -138.152)
 
 [node name="BreakableWall" parent="." instance=ExtResource("6_45d1s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -142.387)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1393, 0.778, -90.4224)
 
 [node name="Fence" parent="." instance=ExtResource("7_q2d71")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17691, 0.5, -126.784)
@@ -82,8 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17691, 0.5, -126.784)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3993, 1.26646, -149.955)
 
 [node name="CircusDoor" parent="." instance=ExtResource("13_op4cu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.656, 0.5, -137.849)
-script = ExtResource("8_uo7di")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.042, 2.362, -77.07)
 
 [node name="Safe" parent="." instance=ExtResource("9_uo7di")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37323, 1.53034, -144.432)
@@ -93,8 +95,8 @@ script = ExtResource("10_kn06e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -143.932)
 script = ExtResource("12_rwt1y")
 
-[node name="DuctTape" parent="." instance=ExtResource("18_y1bqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.421, 1.955, -91.34)
+[node name="DuctTape" parent="." instance=ExtResource("18_0bcf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4206, 1.955, -91.3402)
 
 [node name="SteamEngine" parent="." instance=ExtResource("19_mvfa8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.549, 1, -91.5841)
@@ -176,8 +178,16 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_33kev")
 
 [node name="MechanicalDoor" parent="." instance=ExtResource("28_g01fq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.441, 2.275, -93.162)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.51, 2.275, -95.604)
 
-[node name="Asset-creation" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7548, 1.90965, -98.3684)
-mesh = ExtResource("28_0bcf6")
+[node name="MechanicalDoor2" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.508, 2.275, -95.4495)
+
+[node name="MechanicalDoor3" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.93708, 2.275, -93.2965)
+
+[node name="MechanicalDoor4" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.738, 2.275, -82.4136)
+
+[node name="MechanicalDoor5" parent="." instance=ExtResource("28_g01fq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.315, 2.275, -86.713)

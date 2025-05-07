@@ -4,6 +4,7 @@ extends Interactable
 @onready var puzzle = $Lock
 @onready var player = get_node("../Player")
 @onready var puzzle_complete = false
+@export var coin : Node3D
 
 func use(_player: Player) -> void:
 	if puzzle_complete: 
@@ -21,6 +22,4 @@ func puzzle_end(puzzle_status) -> void:
 	player.can_turn = true
 	player.visible = true
 	puzzle_complete = puzzle_status
-
-
-# add code to prevent user from being able to interact with safe again after finishing puzzle
+	coin.position = self.global_position

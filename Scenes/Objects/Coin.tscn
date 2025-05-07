@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb1kuluhgtyty"]
+
+[ext_resource type="Script" uid="uid://bfbcssasrl5kw" path="res://Scripts/Objects/Collectibles/coin.gd" id="1_ive63"]
+[ext_resource type="Texture2D" uid="uid://o804bxa8reqx" path="res://Assets/Pixel art/coin.png" id="2_6kkok"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xse5p"]
+
+[node name="Coin" type="Node3D"]
+script = ExtResource("1_ive63")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_xse5p")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0.331, 0)
+visible = false
+texture_filter = 0
+text = "Pick Up"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.001
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_6kkok")

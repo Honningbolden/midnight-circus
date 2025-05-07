@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dycbducrcgfr3"
-path.s3tc="res://.godot/imported/fuse.webp-64c9ae2a1290f2a5a88a162577228e80.s3tc.ctex"
+uid="uid://3hnk1ort5mq5"
+path.s3tc="res://.godot/imported/tape.png-9350efdcf27622050fa1eb14a909b70c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/fuse.webp"
-dest_files=["res://.godot/imported/fuse.webp-64c9ae2a1290f2a5a88a162577228e80.s3tc.ctex"]
+source_file="res://Assets/Pixel art/tape.png"
+dest_files=["res://.godot/imported/tape.png-9350efdcf27622050fa1eb14a909b70c.s3tc.ctex"]
 
 [params]
 

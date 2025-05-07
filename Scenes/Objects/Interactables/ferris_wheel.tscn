@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bsaem14g30p7m"]
 
-[ext_resource type="Script" path="res://Scripts/Objects/Interactables/ferris_wheel.gd" id="1_3xtoa"]
+[ext_resource type="Script" uid="uid://bs5qcqnrys8ex" path="res://Scripts/Objects/Interactables/ferris_wheel.gd" id="1_3xtoa"]
 [ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Scripts/Objects/Interactables/Greybox Material.tres" id="2_kwtke"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ukao"]
@@ -33,15 +33,15 @@ radius = 7.5
 [node name="TipPoint" type="Node3D"]
 
 [node name="FerrisWheel" type="Node3D" parent="." node_paths=PackedStringArray("TipPoint", "wheel", "area")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, -1)
 script = ExtResource("1_3xtoa")
 TipPoint = NodePath("..")
 wheel = NodePath("Wheel")
 area = NodePath("Area3D")
 
 [node name="Area3D" type="Area3D" parent="FerrisWheel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -7, -4)
-collision_layer = 24
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -7.5, -4)
+collision_layer = 8
 collision_mask = 0
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="FerrisWheel/Area3D"]
