@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bxmf4df801t3s"
+path="res://.godot/imported/cage_tall_cage_tall_bake1_PBR_Specular.jpg-8f0d7e89aebc9c956a5d9cd7f7c257c6.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "18395caa8fbbeb9f8f1b94636d157c25"
+}
+
+[deps]
+
+source_file="res://Assets/3D_assets/cages/cage_tall/cage_tall_cage_tall_bake1_PBR_Specular.jpg"
+dest_files=["res://.godot/imported/cage_tall_cage_tall_bake1_PBR_Specular.jpg-8f0d7e89aebc9c956a5d9cd7f7c257c6.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
