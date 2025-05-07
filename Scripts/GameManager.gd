@@ -4,7 +4,7 @@
 extends Node
 
 var total_items = []  # all available items
-var current_item = ""  # can only have 1 item equipped at a time
+var current_item = "Circus Key"  # can only have 1 item equipped at a time
 
 
 func _ready() -> void:  # when the node is ready

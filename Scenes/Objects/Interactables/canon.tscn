@@ -13,7 +13,6 @@ height = 2.01465
 script = ExtResource("1_fxg21")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_42iov")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="MeshInstance3D"]
