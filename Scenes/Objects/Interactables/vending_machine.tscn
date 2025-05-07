@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://mdrq4gut8d0p"]
+[gd_scene load_steps=8 format=3 uid="uid://mdrq4gut8d0p"]
 
 [ext_resource type="Script" uid="uid://dn0lbm7kyqubt" path="res://Scripts/Objects/Interactables/vending_machine.gd" id="1_1bqfr"]
+[ext_resource type="AudioStream" uid="uid://bnogs46h4w14i" path="res://Assets/SFX/Hallway/vending_machine_hum_f.wav" id="2_vkryi"]
+[ext_resource type="AudioStream" uid="uid://b7dnw7ogrkico" path="res://Assets/SFX/Hallway/coin_accept_f.wav" id="3_5kd7y"]
+[ext_resource type="AudioStream" uid="uid://cw4heggfufrdv" path="res://Assets/SFX/Hallway/coin_deny.wav" id="4_4gjv6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_btick"]
 size = Vector3(1, 2, 1)
@@ -37,3 +40,17 @@ transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 
 visible = false
 texture_filter = 0
 text = "Deposit Coin"
+
+[node name="Humming (default)" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_vkryi")
+autoplay = true
+max_distance = 150.0
+
+[node name="CoinAccept" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_5kd7y")
+volume_db = 4.0
+max_db = 4.5
+
+[node name="CoinDeny" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_4gjv6")
+max_db = 1.5

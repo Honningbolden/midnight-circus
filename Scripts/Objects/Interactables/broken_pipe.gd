@@ -13,7 +13,8 @@ func use(_player: Player) -> void:
 		unique_material.albedo_color = Color(0, 1, 0)  # Green
 		mesh.set_surface_override_material(0, unique_material)
 		
+		$Leak.stop() # Stops the sound of steam leaking from the pipe
+		$DuctTape.play()
 		$Label3D.queue_free()
 		
 		# TASK: Add an animation for fixing pipe
-		# TASK: Add a sound effect for fixing pipe

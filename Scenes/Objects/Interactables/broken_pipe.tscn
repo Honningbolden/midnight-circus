@@ -1,4 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfj5roc8dpnmg"]
+[gd_scene load_steps=7 format=3 uid="uid://cfj5roc8dpnmg"]
+
+[ext_resource type="AudioStream" uid="uid://drrk0tmbkq6ir" path="res://Assets/SFX/steam_leak_L.wav" id="1_xu5ra"]
+[ext_resource type="AudioStream" uid="uid://dtd60vnw2ut0m" path="res://Assets/SFX/Hallway/duct_tape.wav" id="2_wflb0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd0c8"]
 albedo_color = Color(1, 0, 0, 1)
@@ -42,3 +45,14 @@ shape = SubResource("CylinderShape3D_vho7g")
 transform = Transform3D(-4.37114e-08, -0.422618, 0.906308, 0, 0.906308, 0.422618, -1, 1.84732e-08, -3.9616e-08, 0.254342, -0.0137535, 0.0112229)
 visible = false
 text = "Fix Broken Pipe"
+
+[node name="Leak" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_xu5ra")
+volume_db = -10.0
+max_db = -6.0
+autoplay = true
+max_distance = 150.0
+
+[node name="DuctTape" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wflb0")
+volume_db = -3.5

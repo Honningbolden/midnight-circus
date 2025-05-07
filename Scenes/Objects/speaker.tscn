@@ -10,7 +10,7 @@ material = SubResource("StandardMaterial3D_k2f70")
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Speaker" type="Node3D"]
-editor_description = "will have to instatiate 4 times in the world.
+editor_description = "will have to instatiate 4 times in the world. Make it turn on after steam_engine is working.
 "
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
