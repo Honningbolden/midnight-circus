@@ -4,11 +4,7 @@
 extends Node
 
 var total_items = []  # all available items
-<<<<<<< HEAD
 var current_item = "Circus Key"  # can only have 1 item equipped at a time
-=======
-var collected_items = ["Coin"]  # picked up items
->>>>>>> 79563d2 (added audio to steam pipe, steam engine, and vending machine)
 
 
 func _ready() -> void:  # when the node is ready
