@@ -72,9 +72,10 @@ script = ExtResource("7_ji083")
 player = NodePath("../..")
 camera = NodePath("../../Camera3D")
 
-[node name="Canon State" type="Node" parent="State Machine" node_paths=PackedStringArray("player")]
+[node name="Canon State" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "camera")]
 script = ExtResource("6_fk5o5")
 player = NodePath("../..")
+camera = NodePath("../../Camera3D")
 
 [node name="Hands" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
