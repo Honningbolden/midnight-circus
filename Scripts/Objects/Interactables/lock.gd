@@ -3,6 +3,7 @@ extends Node2D
 var pin_code = [1, 0, 1, 3, 2, 0, 0, 1]  #10/13/2001
 var fix = ["start", "start"]; var dir = "start"
 var rot = 0; var key = []; var code = []
+var first_turn_done := false
 @onready var dial = $Dial
 @onready var turn_audio = $LockTurnAudio
 @onready var inputted_code = $Inputs
@@ -25,10 +26,12 @@ func _input(_event):
 		return
 		
 	if Input.is_key_pressed(KEY_D):
-		if dir == fix[0]:
+		if first_turn_done and dir == fix[0]:
 			code.push_back(key[0])
-			dir = "right"
-			fix = ["left", "right"]
+		else:
+			first_turn_done = true
+		dir = "right"
+		fix = ["left", "right"]
 		key.push_back(key[0])
 		key.pop_front()
 		rot -= deg_to_rad(36)
@@ -37,10 +40,12 @@ func _input(_event):
 		start_input_cooldown()
 
 	elif Input.is_key_pressed(KEY_A):
-		if dir == fix[1]:
+		if first_turn_done and dir == fix[1]:
 			code.push_back(key[0])
-			dir = "left"
-			fix = ["left", "right"]
+		else:
+			first_turn_done = true
+		dir = "left"
+		fix = ["left", "right"]
 		key.push_front(key[9])
 		key.pop_back()
 		rot += deg_to_rad(36)
