@@ -1,45 +1,34 @@
+## tightrope.gd
+
 extends Node
 
 
 @export var pathfollow : PathFollow3D
+@export var tightrope_area : Area3D
 @export var start_marker : Marker3D
 @export var end_marker : Marker3D
-@export var timer : Timer
+@export var cooldown_timer : Timer
 
-var world : Node3D = null
-var active : bool = false
-var last_progress : float = 0.0
-
-
-func _process(delta: float) -> void:
-	if pathfollow.progress_ratio != last_progress:
-		if pathfollow.progress_ratio in [0.0, 1.0]:
-			_on_tightrope_body_exited(pathfollow.get_child(0))
-	last_progress = pathfollow.progress_ratio
+@onready var world : Node3D = get_parent()
+var player : Player = null
 
 
 func _on_tightrope_body_entered(body: Node3D) -> void:
-	if body is Player and timer.is_stopped():
-		timer.start()
+	if body is Player and cooldown_timer.is_stopped():
+		cooldown_timer.start()
+		var tightrope_state = body.statemachine.get_node("Tightrope State")
+		tightrope_area.set_deferred("monitoring", false)
+		
 		adjust_pathfollow(body)
+		tightrope_state.rope_direction = 1.0 if is_near_end(body) else -1.0
+		tightrope_state.tightrope = self
+		tightrope_state.tightrope_pathfollow = pathfollow
+		player = body
 		body.reparent(pathfollow)
-		world = body.get_parent()
-		if pathfollow.has_node("Player"):
-			var tightrope_state = body.statemachine.get_node("Tightrope State")
-			if is_near_end(body):
-				tightrope_state.rope_direction = 1.0
-			else:
-				tightrope_state.rope_direction = -1.0
-			tightrope_state.tightrope_pathfollow = pathfollow
-			body.statemachine.change_state("Tightrope State")
+		body.statemachine.change_state("Tightrope State")
 
 
-func _on_tightrope_body_exited(body: Node3D) -> void:
-	if body is Player and timer.is_stopped():
-		body.reparent(world)
-		body.statemachine.change_state("Exploration State")
-
-
+## Detects if the player is closer to the beginning or end of the tightrope
 func is_near_end(player: Player) -> bool:
 	var dist_to_start = player.global_position.distance_to(start_marker.global_position)
 	var dist_to_end = player.global_position.distance_to(end_marker.global_position)
@@ -48,8 +37,16 @@ func is_near_end(player: Player) -> bool:
 	return false
 
 
+## Adjust the pathfollow progress to closest side of the player
 func adjust_pathfollow(player: Player) -> void:
 	if is_near_end(player):
 		pathfollow.progress_ratio = 0.0
 	else:
 		pathfollow.progress_ratio = 1.0
+
+
+func tightrope_finished() -> void:
+	cooldown_timer.start()
+	pathfollow.rotation.z = 0.0
+	tightrope_area.set_deferred("monitoring", true)
+	player.call_deferred("reparent", world)

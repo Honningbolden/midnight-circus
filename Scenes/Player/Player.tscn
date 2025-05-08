@@ -48,6 +48,10 @@ collide_with_bodies = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_rf68g")
 
+[node name="TightRopeTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("3_h54ih")
 current_state = NodePath("Exploration State")
@@ -62,10 +66,11 @@ script = ExtResource("5_t26db")
 player = NodePath("../..")
 camera = NodePath("../../Camera3D")
 
-[node name="Tightrope State" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "camera")]
+[node name="Tightrope State" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "camera", "tightrope_timer")]
 script = ExtResource("6_825xp")
 player = NodePath("../..")
 camera = NodePath("../../Camera3D")
+tightrope_timer = NodePath("../../TightRopeTimer")
 
 [node name="Coaster State" type="Node" parent="State Machine" node_paths=PackedStringArray("player", "camera")]
 script = ExtResource("7_ji083")
