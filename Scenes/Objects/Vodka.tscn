@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7hjyxxwkyuu4"]
+[gd_scene load_steps=4 format=3 uid="uid://c7hjyxxwkyuu4"]
 
+[ext_resource type="Script" uid="uid://dvyxihveit4jg" path="res://Scripts/Objects/Collectibles/vodka.gd" id="1_2o5gj"]
 [ext_resource type="Texture2D" uid="uid://bsbf88yyd5pkt" path="res://Assets/Pixel art/vodka.png" id="1_54kfa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0p11m"]
 
 [node name="Vodka" type="Node3D"]
+script = ExtResource("1_2o5gj")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 4
@@ -21,6 +23,7 @@ texture_filter = 0
 text = "Pick Up"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.0005
 billboard = 2
 texture_filter = 0
 texture = ExtResource("1_54kfa")

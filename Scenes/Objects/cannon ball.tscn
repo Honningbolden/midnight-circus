@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpf3tsmhk3xjo"]
 
 [ext_resource type="Script" uid="uid://6mfw5x6p3lam" path="res://Scripts/Objects/Collectibles/cannon_ball.gd" id="1_q4ruw"]
-[ext_resource type="Texture2D" uid="uid://heo05k06mk5n" path="res://Assets/Pixel art/key.png" id="2_ubj37"]
+[ext_resource type="Texture2D" uid="uid://djuik2o3q3wko" path="res://Assets/Pixel art/cannonball.png" id="2_q4ruw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6yv3q"]
 
@@ -23,6 +23,7 @@ texture_filter = 0
 text = "Pick Up"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.001
 billboard = 2
 texture_filter = 0
-texture = ExtResource("2_ubj37")
+texture = ExtResource("2_q4ruw")

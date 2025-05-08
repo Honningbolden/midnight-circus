@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Midnight Circus"
-run/main_scene="uid://bmu4rchcyd4kp"
+run/main_scene="uid://dvl6lb4k6gp1i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

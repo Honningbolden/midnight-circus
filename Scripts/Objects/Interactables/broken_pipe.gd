@@ -5,7 +5,7 @@ extends Interactable
 @onready var material = mesh.get_active_material(0)
 
 func use(_player: Player) -> void:
-	if GameManager.current_item == "Duct Tape":
+	if GameManager.current_item == "DuctTape":
 		GameManager.current_item = ""
 		
 		# Duplicate to not effect other objs of same material

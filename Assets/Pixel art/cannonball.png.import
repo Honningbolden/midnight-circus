@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ghbjx3fswnjx"
-path.s3tc="res://.godot/imported/map_rust_with_paint_metallic-rust_with_paint_roughness.jpg-e81f5aada353678bba68e2ea831464d1.s3tc.ctex"
+uid="uid://djuik2o3q3wko"
+path.s3tc="res://.godot/imported/cannonball.png-8abfce2acc0ef6fd5a96fe94eb6fbcd2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "8913f141a555641f18f91a769c347bb7"
-}
 
 [deps]
 
-source_file="res://Assets/3D_assets/map_rust_with_paint_metallic-rust_with_paint_roughness.jpg"
-dest_files=["res://.godot/imported/map_rust_with_paint_metallic-rust_with_paint_roughness.jpg-e81f5aada353678bba68e2ea831464d1.s3tc.ctex"]
+source_file="res://Assets/Pixel art/cannonball.png"
+dest_files=["res://.godot/imported/cannonball.png-8abfce2acc0ef6fd5a96fe94eb6fbcd2.s3tc.ctex"]
 
 [params]
 

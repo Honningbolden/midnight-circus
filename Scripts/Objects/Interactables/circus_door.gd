@@ -8,7 +8,7 @@ extends Interactable
 
 
 func use (player: Player) -> void:
-	if GameManager.current_item == "Circus Key":
+	if GameManager.current_item == "keys":
 		GameManager.current_item = ""
 		open_door()
 		
