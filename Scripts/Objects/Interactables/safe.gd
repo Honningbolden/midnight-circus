@@ -22,4 +22,5 @@ func puzzle_end(puzzle_status) -> void:
 	player.can_turn = true
 	player.visible = true
 	puzzle_complete = puzzle_status
-	coin.position = self.global_position
+	if puzzle_complete:
+		coin.global_position = self.global_position + Vector3(0, 0.5, 0)
