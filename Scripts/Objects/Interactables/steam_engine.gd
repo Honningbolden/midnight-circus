@@ -5,8 +5,10 @@ extends Interactable
 
 
 func use(_player: Player) -> void:
+	
 	if GameManager.current_item == "Steam Engine Valve":
 		GameManager.current_item = ""
+		$IdleSound.play()
 		valve.visible = true
 		var tween = create_tween()
 		tween.tween_property(valve, "rotation_degrees", Vector3(0,90,0), 1)
