@@ -9,4 +9,7 @@ func use(player: Player) -> void:
 	canon_state.canon = canon
 	player.reparent(canon)
 	player.statemachine.change_state("Canon State")
-	ray.visible = true
+
+func fire() -> void:
+	var explosion = canon.get_node("Explosion")
+	explosion.explode()

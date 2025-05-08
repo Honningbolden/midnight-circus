@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cay65qnwy7s8f"]
+[gd_scene load_steps=8 format=3 uid="uid://cay65qnwy7s8f"]
 
 [ext_resource type="Script" uid="uid://mjs8jhr1vqn2" path="res://Scripts/Objects/Interactables/canon.gd" id="1_fxg21"]
-[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Assets/Greybox Material.tres" id="2_42iov"]
+[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Scripts/Objects/Interactables/Greybox Material.tres" id="2_42iov"]
 [ext_resource type="Script" uid="uid://baw7q6ko2gl2b" path="res://Scripts/Objects/Interactables/canon_ray.gd" id="3_5npy8"]
+[ext_resource type="PackedScene" uid="uid://5dvdq7lpwa2o" path="res://Scenes/Objects/explosion.tscn" id="4_78jmt"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_42iov"]
 
@@ -43,3 +44,6 @@ visible = false
 target_position = Vector3(0, 200, 0)
 collision_mask = 8
 script = ExtResource("3_5npy8")
+
+[node name="Explosion" parent="." instance=ExtResource("4_78jmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02298, 0.600626, 0)
