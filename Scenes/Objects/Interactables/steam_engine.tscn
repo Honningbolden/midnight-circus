@@ -50,5 +50,4 @@ shape = SubResource("BoxShape3D_kbm6m")
 
 [node name="IdleSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_55xv3")
-autoplay = true
 max_distance = 150.0
