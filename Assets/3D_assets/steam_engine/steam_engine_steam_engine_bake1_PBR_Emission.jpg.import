@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cad0qgeeaoo54"
+path.s3tc="res://.godot/imported/steam_engine_steam_engine_bake1_PBR_Emission.jpg-fc63a121eb907568ed6307fba229f1a1.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "5460fe388011ce09c6b1aa9832445ff1"
+}
+
+[deps]
+
+source_file="res://Assets/3D_assets/steam_engine/steam_engine_steam_engine_bake1_PBR_Emission.jpg"
+dest_files=["res://.godot/imported/steam_engine_steam_engine_bake1_PBR_Emission.jpg-fc63a121eb907568ed6307fba229f1a1.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
