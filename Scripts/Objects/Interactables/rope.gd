@@ -1,6 +1,6 @@
 extends Interactable
 
-@export var cannonBall : Node3D
+@export var cannonball : Node3D
 
 var usable = true
 
@@ -8,4 +8,7 @@ func use(_player: Player) -> void:
 	if usable:
 		usable = false
 		var tween = create_tween()
-		tween.tween_property(cannonBall, "position", Vector3(self.position.x, self.position.y - 15.1, self.position.z), 2)
+		var x = cannonball.global_position.x
+		var y = 0.5
+		var z = cannonball.global_position.z
+		tween.tween_property(cannonball, "global_position", Vector3(x, y, z), 2)

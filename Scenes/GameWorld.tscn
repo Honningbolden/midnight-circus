@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=44 format=3 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://mdxtbwnm2hq3" path="res://Scenes/Levels/map.tscn" id="1_jh678"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://d4g470bx2vwcs" path="res://Scenes/Objects/Cages/cages_4_stack.tscn" id="27_m5hn3"]
 [ext_resource type="PackedScene" uid="uid://n2mq7gsykghl" path="res://Scenes/Objects/Interactables/tightrope.tscn" id="28_e25jp"]
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="30_t0mrf"]
+[ext_resource type="PackedScene" uid="uid://bpf3tsmhk3xjo" path="res://Scenes/Objects/cannon ball.tscn" id="31_nkbim"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_k0w3b"]
 top_radius = 0.05
@@ -172,8 +173,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.256, -38.774, -100.509)
 [node name="Vodka" parent="." instance=ExtResource("20_gyj8w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.638, -39.995, -97.313)
 
-[node name="Rope" parent="." instance=ExtResource("21_ff2gi")]
+[node name="Rope" parent="." node_paths=PackedStringArray("cannonball") instance=ExtResource("21_ff2gi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768845, 11.4847, -46.4954)
+cannonball = NodePath("../CannonBall")
 
 [node name="Valve" parent="." instance=ExtResource("23_fpis8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2317, 1.0575, -91.9276)
@@ -329,6 +331,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="End Marker" parent="Tightrope3" index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="CannonBall" parent="." instance=ExtResource("31_nkbim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 16, -48)
 
 [editable path="Tightrope"]
 [editable path="Tightrope2"]

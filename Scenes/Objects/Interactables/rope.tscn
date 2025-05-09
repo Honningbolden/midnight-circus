@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://crqxt65vwyxpy"]
+[gd_scene load_steps=4 format=3 uid="uid://crqxt65vwyxpy"]
 
-[ext_resource type="PackedScene" uid="uid://bpf3tsmhk3xjo" path="res://Scenes/Objects/cannon ball.tscn" id="1_34mxs"]
 [ext_resource type="Script" uid="uid://boqcei0r0pwb6" path="res://Scripts/Objects/Interactables/rope.gd" id="1_54jqw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b8gpw"]
@@ -11,9 +10,8 @@ top_radius = 0.1
 bottom_radius = 0.1
 height = 5.0
 
-[node name="Rope" type="Node3D" node_paths=PackedStringArray("cannonBall")]
+[node name="Rope" type="Node3D"]
 script = ExtResource("1_54jqw")
-cannonBall = NodePath("CannonBall")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 8
@@ -25,6 +23,3 @@ shape = SubResource("CylinderShape3D_b8gpw")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mesh = SubResource("CylinderMesh_34mxs")
-
-[node name="CannonBall" parent="." instance=ExtResource("1_34mxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82451, 4.1, 0)
