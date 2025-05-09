@@ -1,6 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqs07bb504yqg"]
+[gd_scene load_steps=10 format=3 uid="uid://bqs07bb504yqg"]
 
 [ext_resource type="Script" uid="uid://dd88q4phekbiq" path="res://Scripts/Objects/Interactables/olaf.gd" id="1_48o71"]
+[ext_resource type="AudioStream" uid="uid://g2ssld356g2p" path="res://Assets/SFX/Stables/olaf_snore.wav" id="2_usqja"]
+[ext_resource type="AudioStream" uid="uid://cyrm3nn8yq1u4" path="res://Assets/SFX/Stables/olaf_mumble_1.wav" id="3_dbglt"]
+[ext_resource type="AudioStream" uid="uid://bspbu1io0prgr" path="res://Assets/SFX/Stables/keys.wav" id="3_fyn83"]
+[ext_resource type="AudioStream" uid="uid://k3c4d66orqmx" path="res://Assets/SFX/Stables/olaf_mumble_2.wav" id="4_27f2d"]
+[ext_resource type="AudioStream" uid="uid://na44u07mqcep" path="res://Assets/SFX/Stables/olaf_mumble_3.wav" id="5_2djjh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c20hu"]
 height = 1.7
@@ -37,3 +42,29 @@ transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 
 visible = false
 texture_filter = 0
 text = "Talk to Olaf"
+
+[node name="Snore" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_usqja")
+max_db = 1.5
+autoplay = true
+max_distance = 10.0
+bus = &"SFX"
+
+[node name="Mumble1" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_dbglt")
+max_db = -3.0
+bus = &"SFX"
+
+[node name="Mumble2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_27f2d")
+max_db = -3.0
+bus = &"SFX"
+
+[node name="Mumble3" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_2djjh")
+max_db = -3.0
+bus = &"SFX"
+
+[node name="Keys" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_fyn83")
+bus = &"SFX"
