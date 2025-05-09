@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=27 format=3 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_ui0sf"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="21_ff2gi"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="22_fpis8"]
 [ext_resource type="PackedScene" uid="uid://b38go68phffxd" path="res://Scenes/Objects/valve.tscn" id="23_fpis8"]
+[ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="23_vg07e"]
+[ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="24_jh678"]
+[ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="25_vkc4h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywpc4"]
 size = Vector3(100, 1, 200)
@@ -41,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.00598, 0)
 shape = SubResource("BoxShape3D_ywpc4")
 
 [node name="Player" parent="." instance=ExtResource("2_tnnpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75181, 5.28927, -12.8754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0326, 5.28927, -90.533)
 
 [node name="CircusDoor" parent="." instance=ExtResource("3_k07wl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.042, 2.362, -77.07)
@@ -87,18 +90,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3006, 0.5, 29.5206)
 [node name="Carousel" parent="." instance=ExtResource("15_cllky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9536, 0.789282, -19.6886)
 
-[node name="RingMasterStatue" parent="." instance=ExtResource("16_30f34")]
+[node name="RingMasterStatue" parent="." node_paths=PackedStringArray("key", "roller_coaster", "carousel") instance=ExtResource("16_30f34")]
 transform = Transform3D(0.0562956, 0, -1.8207, 0, 1.82157, 0, 1.8207, 0, 0.0562956, 2.65228, 1.6812, -6.30972)
+key = NodePath("../keys")
+roller_coaster = NodePath("../RollerCoaster")
+carousel = NodePath("../Carousel")
 
 [node name="VendingMachine" parent="." node_paths=PackedStringArray("vodka") instance=ExtResource("17_4qruq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77695, 1.49735, -96.881)
 vodka = NodePath("../Vodka")
 
-[node name="BrokenPipe" parent="." instance=ExtResource("18_0alvi")]
+[node name="BrokenPipe" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.6148, 1.92036, -97.1332)
+door1 = NodePath("../MechanicalDoor2")
+door2 = NodePath("../MechanicalDoor2")
+door3 = NodePath("../MechanicalDoor2")
+player = NodePath("../Player")
 
-[node name="BrokenPipe2" parent="." instance=ExtResource("18_0alvi")]
+[node name="BrokenPipe2" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3687, 1.92036, -97.1332)
+door1 = NodePath("../MechanicalDoor")
+door2 = NodePath("../MechanicalDoor4")
+door3 = NodePath("../MechanicalDoor5")
+player = NodePath("../Player")
 
 [node name="Coin" parent="." instance=ExtResource("20_0alvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.256, -38.774, -100.509)
@@ -114,3 +128,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.421, 1.04931, -91.34)
 
 [node name="Valve" parent="." instance=ExtResource("23_fpis8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5553, 1.0575, -89.4149)
+
+[node name="ReplacementPipe" parent="." instance=ExtResource("23_vg07e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2704, 0.898471, -92.0288)
+
+[node name="keys" parent="." instance=ExtResource("22_fpis8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
+
+[node name="HorseTag1" parent="." instance=ExtResource("24_jh678")]
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -14.1089, 0.936855, -17.6807)
+script = ExtResource("25_vkc4h")
+color = Color(1, 0, 0, 1)
+
+[node name="HorseTag2" parent="." instance=ExtResource("24_jh678")]
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -13.7471, 0.936855, -17.6807)
+script = ExtResource("25_vkc4h")
+number = 2
+color = Color(0, 1, 0, 1)
+
+[node name="HorseTag3" parent="." instance=ExtResource("24_jh678")]
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -13.3655, 0.936855, -17.6807)
+script = ExtResource("25_vkc4h")
+number = 3
+color = Color(0, 0, 1, 1)
+
+[node name="HorseTag4" parent="." instance=ExtResource("24_jh678")]
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -12.9412, 0.936855, -17.6807)
+script = ExtResource("25_vkc4h")
+number = 4
+color = Color(0.95, 1, 0, 1)
+
+[node name="HorseTag5" parent="." instance=ExtResource("24_jh678")]
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -12.464, 0.936855, -17.6807)
+script = ExtResource("25_vkc4h")
+number = 5
+color = Color(1, 0, 0.95, 1)
+
+[node name="HorseTag6" parent="." instance=ExtResource("24_jh678")]
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -11.9492, 0.936855, -17.6807)
+script = ExtResource("25_vkc4h")
+number = 6
+color = Color(0, 0.933333, 1, 1)
+
+[node name="HorseTag7" parent="." instance=ExtResource("24_jh678")]
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -11.484, 0.936855, -17.6807)
+script = ExtResource("25_vkc4h")
+number = 7
+color = Color(1, 1, 1, 1)
+
+[node name="HorseTag8" parent="." instance=ExtResource("24_jh678")]
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -10.9594, 0.936855, -17.6807)
+script = ExtResource("25_vkc4h")
+number = 8

@@ -13,7 +13,7 @@ func use(_player: Player) -> void:
 	# player cant mess with pedestals after finishing the puzzle
 	if not puzzle_activated:
 		return
-	# state 1 if no tag, allow player to place any horse tag they havew (users can only have 1 item at a time apparently
+	# state 1 if no tag, allow player to place any horse tag they have (users can only have 1 item at a time apparently)
 	if not has_tag:
 		if GameManager.current_item.substr(0, 8) == "HorseTag":
 			current_tag = GameManager.current_item
@@ -64,7 +64,9 @@ func taglight(switch: bool) -> void:
 		#print(tag)
 		
 		# get color from placed horsetag
-		material.albedo_color = get_tree().current_scene.find_child(current_tag, true, false).get_node("Sprite3D").modulate
+		print(get_tree().current_scene)
+		print(current_tag)
+		#material.albedo_color = get_tree().current_scene.find_child(current_tag, true, false).get_node("Sprite3D").modulate
 		mesh.set_surface_override_material(0, material)
 		$TagIndicator.show()
 	else:

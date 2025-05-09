@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=33 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="1_kwl8l"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="1_ti1bm"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="28_y1bqn"]
 [ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="29_0bcf6"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="29_7dsfl"]
+[ext_resource type="Script" uid="uid://dr21c7hq5248" path="res://Scripts/Objects/Collectibles/DuctTape.gd" id="29_mq4nq"]
 [ext_resource type="PackedScene" uid="uid://c7hjyxxwkyuu4" path="res://Scenes/Objects/Vodka.tscn" id="29_y1bqn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
@@ -192,6 +193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79833, -161.959)
 
 [node name="Duct Tape" parent="." instance=ExtResource("29_7dsfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.606771, 0.75, -119.235)
+script = ExtResource("29_mq4nq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.577174, 0.816621, 0, -0.816621, 0.577174, 0, 51.0178, 0)
