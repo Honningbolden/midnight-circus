@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=33 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="1_kwl8l"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="1_ti1bm"]
@@ -22,11 +22,12 @@
 [ext_resource type="PackedScene" uid="uid://cay65qnwy7s8f" path="res://Scenes/Objects/Interactables/canon.tscn" id="20_r0dna"]
 [ext_resource type="PackedScene" uid="uid://c6647pnq3lgvh" path="res://Scenes/Objects/speaker.tscn" id="25_l11rc"]
 [ext_resource type="PackedScene" uid="uid://n2mq7gsykghl" path="res://Scenes/Objects/Interactables/tightrope.tscn" id="26_w86vl"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="27_33kev"]
 [ext_resource type="PackedScene" uid="uid://b38go68phffxd" path="res://Scenes/Objects/valve.tscn" id="28_0bcf6"]
 [ext_resource type="PackedScene" uid="uid://y7ryxlwa3yn6" path="res://Scenes/Objects/Interactables/mechanical door.tscn" id="28_g01fq"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="28_y1bqn"]
 [ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="29_0bcf6"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="29_7dsfl"]
+[ext_resource type="Script" uid="uid://dr21c7hq5248" path="res://Scripts/Objects/Collectibles/DuctTape.gd" id="29_mq4nq"]
 [ext_resource type="PackedScene" uid="uid://c7hjyxxwkyuu4" path="res://Scenes/Objects/Vodka.tscn" id="29_y1bqn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
@@ -57,7 +58,7 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_6hh0k")
 
-[node name="keys" parent="." instance=ExtResource("27_33kev")]
+[node name="keys" parent="." instance=ExtResource("29_7dsfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
 
 [node name="VendingMachine" parent="." node_paths=PackedStringArray("vodka") instance=ExtResource("3_5nsto")]
@@ -94,7 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -143.932)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36361, 1.334, -143.932)
 
 [node name="SteamEngine" parent="." instance=ExtResource("19_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0094, 1, -122.854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0878, 0.526056, -152.719)
 
 [node name="RMFuse2" parent="." instance=ExtResource("13_8ldnt")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.99517, 0.602047, -151.408)
@@ -181,9 +182,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6312, 2.275, -122.991)
 [node name="Player" parent="." instance=ExtResource("28_y1bqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75181, 5.28927, -150.595)
 
-[node name="Duct Tape" parent="." instance=ExtResource("27_33kev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01971, -119.545)
-
 [node name="Valve" parent="." instance=ExtResource("28_0bcf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41416, -158.172)
 
@@ -192,3 +190,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41653, -151.161)
 
 [node name="ReplacementPipe" parent="." instance=ExtResource("29_0bcf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79833, -161.959)
+
+[node name="Duct Tape" parent="." instance=ExtResource("29_7dsfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.606771, 0.75, -119.235)
+script = ExtResource("29_mq4nq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.577174, 0.816621, 0, -0.816621, 0.577174, 0, 51.0178, 0)
