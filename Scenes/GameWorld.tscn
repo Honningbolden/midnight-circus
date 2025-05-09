@@ -1,5 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bmu4rchcyd4kp"]
-[gd_scene load_steps=27 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=28 format=3 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_ui0sf"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -21,11 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://bb1kuluhgtyty" path="res://Scenes/Objects/Coin.tscn" id="20_0alvi"]
 [ext_resource type="PackedScene" uid="uid://c7hjyxxwkyuu4" path="res://Scenes/Objects/Vodka.tscn" id="20_gyj8w"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="21_ff2gi"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="22_fpis8"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="22_fpis8"]
 [ext_resource type="PackedScene" uid="uid://b38go68phffxd" path="res://Scenes/Objects/valve.tscn" id="23_fpis8"]
 [ext_resource type="PackedScene" uid="uid://c6647pnq3lgvh" path="res://Scenes/Objects/speaker.tscn" id="23_vg07e"]
-[ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="23_vg07e"]
 [ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="24_jh678"]
+[ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="24_vg07e"]
 [ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="25_vkc4h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywpc4"]
@@ -131,11 +130,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.421, 1.04931, -91.34)
 [node name="Valve" parent="." instance=ExtResource("23_fpis8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5553, 1.0575, -89.4149)
 
-
 [node name="Speaker" parent="." instance=ExtResource("23_vg07e")]
 transform = Transform3D(0.745476, 0.172511, -0.643821, 1.17635e-09, 0.965926, 0.258819, 0.666532, -0.192943, 0.720075, -5.45683, 9.32557, -36.432)
 
-[node name="ReplacementPipe" parent="." instance=ExtResource("23_vg07e")]
+[node name="ReplacementPipe" parent="." instance=ExtResource("24_vg07e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2704, 0.898471, -92.0288)
 
 [node name="keys" parent="." instance=ExtResource("22_fpis8")]

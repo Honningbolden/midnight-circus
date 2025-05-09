@@ -12,6 +12,6 @@ func use(_player: Player) -> void:
 		GameManager.current_item = ""
 		$IdleSound.play()
 		valve.visible = true
-		var tween = create_tween()
-		tween.tween_property(valve, "rotation_degrees", Vector3(0,90,0), 1)
+		var tween2 = create_tween()
+		tween2.tween_property(valve, "rotation_degrees", Vector3(0,90,0), 1)
 		speaker.play()
