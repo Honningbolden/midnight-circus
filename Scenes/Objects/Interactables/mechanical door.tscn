@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://y7ryxlwa3yn6"]
+[gd_scene load_steps=8 format=3 uid="uid://y7ryxlwa3yn6"]
 
 [ext_resource type="Script" uid="uid://dielau1ioq5x5" path="res://Scripts/Objects/Interactables/mechanical_door.gd" id="1_b116m"]
 [ext_resource type="PackedScene" uid="uid://7duqip70tn7t" path="res://Assets/3D_assets/mechanical_door/mechanical_door-frame/mechanical_door-frame.glb" id="2_4oqru"]
 [ext_resource type="PackedScene" uid="uid://dvs2ld1mnniq7" path="res://Assets/3D_assets/mechanical_door/mechanical_door-door/mechanical_door-door.glb" id="3_p8j44"]
 [ext_resource type="PackedScene" uid="uid://c5s4mkbbdcuci" path="res://Assets/3D_assets/mechanical_door/mechanical_door-light/mechanical_door-light.glb" id="4_fmcuu"]
+[ext_resource type="AudioStream" uid="uid://b8s52j0vmbk44" path="res://Assets/SFX/electric_gate_open.wav" id="5_x5mgb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8j44"]
 size = Vector3(2.7, 3.55, 0.25)
@@ -37,3 +38,7 @@ shape = SubResource("BoxShape3D_4oqru")
 [node name="mechanical_door-door" parent="." instance=ExtResource("3_p8j44")]
 
 [node name="mechanical_door-light" parent="." instance=ExtResource("4_fmcuu")]
+
+[node name="DoorOpen" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_x5mgb")
+max_db = -3.0

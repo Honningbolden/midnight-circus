@@ -11,6 +11,7 @@ func use (player: Player) -> void:
 	if GameManager.current_item == "keys":
 		GameManager.current_item = ""
 		open_door()
+		$DoorOpen.play()
 		
 		# TASK: Add an animation showing the door opening
 		# TASK: Add a sound effect for the door opening

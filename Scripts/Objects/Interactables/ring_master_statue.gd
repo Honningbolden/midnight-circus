@@ -33,7 +33,7 @@ func _process(_delta):
 		leftFoot.get_node("Label3D").queue_free(); leftArm.get_node("Label3D").queue_free(); rightArm.get_node("Label3D").queue_free()
 		leftFoot.enabled = false; rightArm.enabled = false; leftArm.enabled = false
 		$FuseSlot1.show(); $FuseSlot2.show()
-		roller_coaster.active = true; #carousel.active = true
+		roller_coaster.active = true; #carousel now active as well 
 		
 	if not check2 and $FuseSlot1.enabled == true and $FuseSlot2.enabled == true:
 		check2 = true

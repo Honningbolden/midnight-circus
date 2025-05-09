@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://crujbebn6sn1t"
+path.s3tc="res://.godot/imported/pipe_system-broken_pipe-broken_pipe_system_broken-pipe_bake1_PBR_Metalness-pipe_system_broken-pipe_bake1_PBR_Roughness.jpg-ab958264d3efa1b64af6df8fe65edc0e.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "e9aeab2e34da8ffc4c107542f5d80b81"
+}
+
+[deps]
+
+source_file="res://Assets/3D_assets/pipe_system/pipe_system-broken_pipe-broken_pipe_system_broken-pipe_bake1_PBR_Metalness-pipe_system_broken-pipe_bake1_PBR_Roughness.jpg"
+dest_files=["res://.godot/imported/pipe_system-broken_pipe-broken_pipe_system_broken-pipe_bake1_PBR_Metalness-pipe_system_broken-pipe_bake1_PBR_Roughness.jpg-ab958264d3efa1b64af6df8fe65edc0e.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
