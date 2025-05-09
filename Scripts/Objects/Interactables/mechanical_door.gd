@@ -9,6 +9,7 @@ var open = false
 func use (_player : Player) -> void:
 	if not open:
 		open = true
+		$DoorOpen.play()
 		var tween = create_tween()
 		tween.set_parallel(true)
 		tween.tween_property(door, "position", Vector3(door.position.x, door.position.y + 3.55, door.position.z), 2)

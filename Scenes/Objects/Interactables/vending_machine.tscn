@@ -43,14 +43,17 @@ text = "Deposit Coin"
 
 [node name="Humming (default)" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_vkryi")
+max_db = -10.0
 autoplay = true
-max_distance = 150.0
+max_distance = 15.0
 
 [node name="CoinAccept" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_5kd7y")
 volume_db = 4.0
 max_db = 4.5
+max_distance = 1.0
 
 [node name="CoinDeny" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_4gjv6")
-max_db = 1.5
+max_db = 1.0
+max_distance = 1.0

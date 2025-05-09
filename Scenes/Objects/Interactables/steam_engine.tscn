@@ -50,4 +50,6 @@ shape = SubResource("BoxShape3D_kbm6m")
 
 [node name="IdleSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_55xv3")
-max_distance = 150.0
+max_db = 0.5
+stream_paused = true
+max_distance = 50.0
