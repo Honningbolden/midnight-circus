@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var check1 = false
 @onready var check2 = false
+var active = false
 func _process(_delta):
 	#only allow puzzle to be started when ring master statue puzzle is solved
 	if not check1 and get_node("../RingMasterStatue").check1 == true:

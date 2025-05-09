@@ -6,7 +6,7 @@ extends Interactable
 
 func use(_player: Player) -> void:
 	
-	if GameManager.current_item == "Steam Engine Valve":
+	if GameManager.current_item == "Valve":
 		GameManager.current_item = ""
 		$IdleSound.play()
 		valve.visible = true

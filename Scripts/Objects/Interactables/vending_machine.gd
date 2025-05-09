@@ -8,7 +8,7 @@ func wait(seconds: float) -> void:        # Thanks to GBWD on the Godot forum
 	await get_tree().create_timer(seconds).timeout
 
 func use(_player: Player) -> void:
-	if GameManager.current_item == "Vodka":
+	if GameManager.current_item == "Coin":
 		GameManager.current_item = ""
 		$CoinAccept.play()
 		

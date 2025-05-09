@@ -20,8 +20,6 @@ collision_mask = 14
 script = ExtResource("1_k20og")
 raycast = NodePath("Interaction RayCast3D")
 statemachine = NodePath("State Machine")
-walking_threshold = 0.6
-acceleration = 0.8
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player", "listener", "raycast", "hands")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

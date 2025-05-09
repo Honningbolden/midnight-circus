@@ -9,26 +9,27 @@ extends Interactable
 var maxSpeed = 5
 var speed = 0
 var acc = 0.1 # acceleration
+var active = false
 var started = false
 var finished = false
 
 func use(_player: Player) -> void:
-	# TASK: Make this usable after the ringmaster statue has been completed
-	if not started:
-		started = true
-		player = _player
-		player.reparent(Car)
-		var coaster_state = player.statemachine.get_node("Coaster State")
-		coaster_state.Car = Car
-		player.statemachine.change_state("Coaster State")
-		await wait(1)
-		Area.queue_free()
-		# TASK: Make a sound effect for the ride turning on
-	elif not finished:
-		GameManager.collected_items.append("Coaster Fuse")
-		finished = true
-		await wait(3)
-		player.statemachine.change_state("Exploration State")
+	if active:
+		if not started:
+			started = true
+			player = _player
+			player.reparent(Car)
+			var coaster_state = player.statemachine.get_node("Coaster State")
+			coaster_state.Car = Car
+			player.statemachine.change_state("Coaster State")
+			await wait(1)
+			Area.queue_free()
+			# TASK: Make a sound effect for the ride turning on
+		elif not finished:
+			GameManager.collected_items.append("Coaster Fuse")
+			finished = true
+			await wait(3)
+			player.statemachine.change_state("Exploration State")
 
 func _physics_process(delta: float) -> void:
 	if(finished):

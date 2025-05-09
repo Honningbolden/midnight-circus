@@ -17,11 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="16_30f34"]
 [ext_resource type="PackedScene" uid="uid://mdrq4gut8d0p" path="res://Scenes/Objects/Interactables/vending_machine.tscn" id="17_4qruq"]
 [ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="18_0alvi"]
-[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="19_gyj8w"]
 [ext_resource type="PackedScene" uid="uid://bb1kuluhgtyty" path="res://Scenes/Objects/Coin.tscn" id="20_0alvi"]
 [ext_resource type="PackedScene" uid="uid://c7hjyxxwkyuu4" path="res://Scenes/Objects/Vodka.tscn" id="20_gyj8w"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="21_ff2gi"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="22_fpis8"]
+[ext_resource type="PackedScene" uid="uid://b38go68phffxd" path="res://Scenes/Objects/valve.tscn" id="23_fpis8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ywpc4"]
 size = Vector3(100, 1, 200)
@@ -54,9 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.16, 3.04, -95.604)
 
 [node name="MechanicalDoor2" parent="." instance=ExtResource("5_w0qho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.838, 3.04, -95.45)
-
-[node name="MechanicalDoor3" parent="." instance=ExtResource("5_w0qho")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.937, 3.04, -93.637)
 
 [node name="MechanicalDoor4" parent="." instance=ExtResource("5_w0qho")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.108, 3.04, -82.414)
@@ -99,16 +96,21 @@ vodka = NodePath("../Vodka")
 
 [node name="BrokenPipe" parent="." instance=ExtResource("18_0alvi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.6148, 1.92036, -97.1332)
-script = ExtResource("19_gyj8w")
+
+[node name="BrokenPipe2" parent="." instance=ExtResource("18_0alvi")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3687, 1.92036, -97.1332)
 
 [node name="Coin" parent="." instance=ExtResource("20_0alvi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.256, 38.774, -100.509)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.256, -38.774, -100.509)
 
 [node name="Vodka" parent="." instance=ExtResource("20_gyj8w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.6384, 39.9951, -97.3131)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.638, -39.995, -97.313)
 
 [node name="Rope" parent="." instance=ExtResource("21_ff2gi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85951, -142.754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768845, 11.4847, -46.4954)
 
 [node name="DuctTape" parent="." instance=ExtResource("22_fpis8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.421, 1.955, -91.34)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.421, 1.04931, -91.34)
+
+[node name="Valve" parent="." instance=ExtResource("23_fpis8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5553, 1.0575, -89.4149)

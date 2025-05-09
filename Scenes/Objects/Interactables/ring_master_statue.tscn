@@ -238,33 +238,3 @@ shape = SubResource("CylinderShape3D_itrgk")
 transform = Transform3D(-7.34497e-08, 0.474427, -1.61197, 0, 0.921101, 0.271095, 1.60028, 1.97499e-08, -6.71043e-08, -0.69685, 0.379818, 0.0631124)
 visible = false
 text = "Enter Fuse"
-
-[node name="FuseSlot3" type="Node3D" parent="."]
-transform = Transform3D(0.238048, 0, 0, 0, 0.416594, 0, 0, 0, 0.249957, -0.62, -0.5, 0.341)
-visible = false
-script = ExtResource("3_calyj")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="FuseSlot3"]
-mesh = SubResource("CylinderMesh_w8itn")
-
-[node name="Area3D" type="Area3D" parent="FuseSlot3"]
-collision_layer = 8
-collision_mask = 0
-monitoring = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuseSlot3/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0098877, 0)
-shape = SubResource("CylinderShape3D_0t0p8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="FuseSlot3"]
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FuseSlot3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0761602, 0)
-shape = SubResource("CylinderShape3D_itrgk")
-
-[node name="Label3D" type="Label3D" parent="FuseSlot3"]
-transform = Transform3D(-7.34497e-08, 0.474427, -1.61197, 0, 0.921101, 0.271095, 1.60028, 1.97499e-08, -6.71043e-08, -0.69685, 0.379818, 0.0631124)
-visible = false
-text = "Enter Fuse"
