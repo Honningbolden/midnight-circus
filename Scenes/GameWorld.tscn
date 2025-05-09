@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=43 format=3 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://mdxtbwnm2hq3" path="res://Scenes/Levels/map.tscn" id="1_jh678"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -66,13 +66,28 @@ size = Vector3(0.5, 11, 0.1)
 
 [sub_resource type="Curve3D" id="Curve3D_nkbim"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -4, 3, 0, 0, 0, 0, 0, 0, 0, 5.5, -1.5),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -4, 3, 0, 0, 0, 0, 0, 0, 0, 6.5, -2.5),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t0mrf"]
 size = Vector3(1, 11, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_t0mrf"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 12.0
+
+[sub_resource type="Curve3D" id="Curve3D_eckg6"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wvwpp"]
+size = Vector3(12, 0.5, 0.5)
 
 [node name="GameWorld" type="Node3D"]
 
@@ -273,7 +288,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.478, 0.680375, -83.9426)
 
 [node name="Ladder" parent="." instance=ExtResource("30_t0mrf")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.04914, 5.53396, -64.4908)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.6749, 5.54303, -64.4825)
 
 [node name="MeshInstance3D" parent="Ladder" index="0"]
 mesh = SubResource("BoxMesh_nkbim")
@@ -282,7 +297,7 @@ mesh = SubResource("BoxMesh_nkbim")
 curve = SubResource("Curve3D_nkbim")
 
 [node name="PathFollow3D" parent="Ladder/Path3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.428083, -0.903731, 0, 0.903731, 0.428083, 0, -4, 3)
+transform = Transform3D(1, 0, 0, 0, 0.464, -0.885819, 0, 0.885819, 0.464, 0, -4, 3)
 
 [node name="Area3D" parent="Ladder" index="2"]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -0.406367, 0.605505)
@@ -294,6 +309,28 @@ shape = SubResource("BoxShape3D_t0mrf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.30647, 2.5766)
 visible = true
 
+[node name="Tightrope3" parent="." instance=ExtResource("28_e25jp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.21206, 10.5674, -54.3918)
+
+[node name="MeshInstance3D" parent="Tightrope3" index="0"]
+mesh = SubResource("CylinderMesh_t0mrf")
+
+[node name="Path3D" parent="Tightrope3" index="1"]
+curve = SubResource("Curve3D_eckg6")
+
+[node name="PathFollow3D" parent="Tightrope3/Path3D" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 0)
+
+[node name="CollisionShape3D" parent="Tightrope3/Area3D" index="0"]
+shape = SubResource("BoxShape3D_wvwpp")
+
+[node name="Start Marker" parent="Tightrope3" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="End Marker" parent="Tightrope3" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
 [editable path="Tightrope"]
 [editable path="Tightrope2"]
 [editable path="Ladder"]
+[editable path="Tightrope3"]

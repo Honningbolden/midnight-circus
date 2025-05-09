@@ -3,6 +3,7 @@
 extends Interactable
 @onready var mesh = $MeshInstance3D
 @onready var material = mesh.get_active_material(0)
+
 @export var engine : Node3D
 @export var door1 : Node3D
 @export var door2 : Node3D

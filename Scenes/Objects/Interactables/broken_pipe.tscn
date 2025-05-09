@@ -62,10 +62,8 @@ radius = 0.2
 [node name="BrokenPipe" type="Node3D"]
 script = ExtResource("1_vho7g")
 
-[node name="pipe_system-leaking_pipe-tape" type="Node3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="pipe_system_leaking-pipe_duct_tape_Baked" type="MeshInstance3D" parent="pipe_system-leaking_pipe-tape"]
 mesh = SubResource("ArrayMesh_y7lbs")
 skeleton = NodePath("")
 
