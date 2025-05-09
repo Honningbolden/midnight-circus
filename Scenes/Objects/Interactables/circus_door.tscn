@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://x5fy16j868fr"]
+[gd_scene load_steps=6 format=3 uid="uid://x5fy16j868fr"]
 
 [ext_resource type="Script" uid="uid://bfop568udcn3v" path="res://Scripts/Objects/Interactables/circus_door.gd" id="1_snptj"]
 [ext_resource type="PackedScene" uid="uid://jh5n388jbctm" path="res://Assets/3D_assets/backstage_circus_doors/backstage_circus_doors_left.glb" id="2_d3upv"]
-[ext_resource type="AudioStream" uid="uid://dkypsc8k5x7gy" path="res://Assets/SFX/metal_door_open.wav" id="2_kvv8l"]
 [ext_resource type="PackedScene" uid="uid://cml54sd1nxv3i" path="res://Assets/3D_assets/backstage_circus_doors/backstage_circus_doors_right.glb" id="3_ep2h5"]
+[ext_resource type="AudioStream" uid="uid://dkypsc8k5x7gy" path="res://Assets/SFX/metal_door_open.wav" id="2_kvv8l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3tjo2"]
 size = Vector3(5.36, 3.54, 0.316)
@@ -55,8 +55,8 @@ shape = SubResource("BoxShape3D_yonl8")
 
 [node name="backstage_circus_doors_right" parent="Pivot2/Door2" instance=ExtResource("3_ep2h5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, 0)
-
 [node name="DoorOpen" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_kvv8l")
 max_db = -1.5
 max_distance = 25.0
+
