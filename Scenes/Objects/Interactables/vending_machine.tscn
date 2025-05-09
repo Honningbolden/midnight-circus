@@ -56,9 +56,6 @@ max_distance = 1.0
 [node name="CoinDeny" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_4gjv6")
 max_db = 1.0
-<<<<<<< HEAD
 bus = &"SFX"
-
-=======
 max_distance = 1.0
->>>>>>> parent of dba7a46 (added sounds to olaf, updated SteamEngine script, and fixed issue with vending machine)
+
