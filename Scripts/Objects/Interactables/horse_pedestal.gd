@@ -7,11 +7,11 @@ extends Interactable
 @export var current_tag = "None"
 @export var has_correct_tag = false
 
-var puzzle_finished = false
+var puzzle_activated = false
 
 func use(_player: Player) -> void:
 	# player cant mess with pedestals after finishing the puzzle
-	if puzzle_finished:
+	if not puzzle_activated:
 		return
 	# state 1 if no tag, allow player to place any horse tag they havew (users can only have 1 item at a time apparently
 	if not has_tag:

@@ -2,12 +2,19 @@ extends Node3D
 
 @onready var check1 = false
 @onready var check2 = false
-var active = false
+
 func _process(_delta):
 	#only allow puzzle to be started when ring master statue puzzle is solved
 	if not check1 and get_node("../RingMasterStatue").check1 == true:
 		check1 = true
-		self.show()
+		$HorsePedestal1.puzzle_activated = true
+		$HorsePedestal2.puzzle_activated = true
+		$HorsePedestal3.puzzle_activated = true
+		$HorsePedestal4.puzzle_activated = true
+		$HorsePedestal5.puzzle_activated = true
+		$HorsePedestal6.puzzle_activated = true
+		$HorsePedestal7.puzzle_activated = true
+		$HorsePedestal8.puzzle_activated = true
 		
 	# continously check if all pedestals have their correct tag
 	if not check2 and $HorsePedestal1.has_correct_tag and $HorsePedestal2.has_correct_tag and $HorsePedestal3.has_correct_tag \
@@ -21,12 +28,12 @@ func _process(_delta):
 		$CarouselLight.set_surface_override_material(0, material)
 		$RMFuse1.show()
 		
-		$HorsePedestal1.puzzle_finished = true
-		$HorsePedestal2.puzzle_finished = true
-		$HorsePedestal3.puzzle_finished = true
-		$HorsePedestal4.puzzle_finished = true
-		$HorsePedestal5.puzzle_finished = true
-		$HorsePedestal6.puzzle_finished = true
-		$HorsePedestal7.puzzle_finished = true
-		$HorsePedestal8.puzzle_finished = true
+		$HorsePedestal1.puzzle_activated = false
+		$HorsePedestal2.puzzle_activated = false
+		$HorsePedestal3.puzzle_activated = false
+		$HorsePedestal4.puzzle_activated = false
+		$HorsePedestal5.puzzle_activated = false
+		$HorsePedestal6.puzzle_activated = false
+		$HorsePedestal7.puzzle_activated = false
+		$HorsePedestal8.puzzle_activated = false
 	
