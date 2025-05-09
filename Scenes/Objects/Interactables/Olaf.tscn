@@ -34,6 +34,5 @@ shape = SubResource("CapsuleShape3D_wxdqk")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -0.0792241, 0.636229)
-visible = false
 texture_filter = 0
 text = "Talk to Olaf"

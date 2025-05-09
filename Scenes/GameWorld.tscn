@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=40 format=3 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://mdxtbwnm2hq3" path="res://Scenes/Levels/map.tscn" id="1_jh678"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -20,12 +20,59 @@
 [ext_resource type="PackedScene" uid="uid://bb1kuluhgtyty" path="res://Scenes/Objects/Coin.tscn" id="20_0alvi"]
 [ext_resource type="PackedScene" uid="uid://c7hjyxxwkyuu4" path="res://Scenes/Objects/Vodka.tscn" id="20_gyj8w"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="21_ff2gi"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="22_fpis8"]
 [ext_resource type="PackedScene" uid="uid://b38go68phffxd" path="res://Scenes/Objects/valve.tscn" id="23_fpis8"]
 [ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="23_vg07e"]
 [ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="24_jh678"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="24_vkc4h"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="24_vkc4h"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="25_jh678"]
 [ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="25_vkc4h"]
+[ext_resource type="PackedScene" uid="uid://c7cisk44ynjsm" path="res://Scenes/Objects/Cages/cages_stack_largest.tscn" id="26_vkc4h"]
+[ext_resource type="PackedScene" uid="uid://d4g470bx2vwcs" path="res://Scenes/Objects/Cages/cages_4_stack.tscn" id="27_m5hn3"]
+[ext_resource type="PackedScene" uid="uid://n2mq7gsykghl" path="res://Scenes/Objects/Interactables/tightrope.tscn" id="28_e25jp"]
+[ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="30_t0mrf"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_k0w3b"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 6.0
+
+[sub_resource type="Curve3D" id="Curve3D_t0mrf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, -3, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nkbim"]
+size = Vector3(6, 0.5, 0.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e25jp"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 9.0
+
+[sub_resource type="Curve3D" id="Curve3D_e25jp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.5, 0, 0, 0, 0, 0, 0, 0, 0, -4.5, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e25jp"]
+size = Vector3(9, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nkbim"]
+size = Vector3(0.5, 11, 0.1)
+
+[sub_resource type="Curve3D" id="Curve3D_nkbim"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -4, 3, 0, 0, 0, 0, 0, 0, 0, 5.5, -1.5),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0mrf"]
+size = Vector3(1, 11, 1)
 
 [node name="GameWorld" type="Node3D"]
 
@@ -53,15 +100,19 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.108,
 [node name="MechanicalDoor5" parent="." instance=ExtResource("5_w0qho")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.615, 3.04, -86.713)
 
-[node name="Olaf" parent="." instance=ExtResource("6_4sjua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1719, 7.30899, -78.891)
+[node name="Olaf" parent="." node_paths=PackedStringArray("key") instance=ExtResource("6_4sjua")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -18.4602, 5.84453, -78.891)
+key = NodePath("../keys")
 
 [node name="Safe" parent="." node_paths=PackedStringArray("coin") instance=ExtResource("7_hfae5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.951, 1.5, -93.573)
 coin = NodePath("../Coin")
 
-[node name="SteamEngine" parent="." instance=ExtResource("9_clku2")]
+[node name="SteamEngine" parent="." node_paths=PackedStringArray("broken_pipe", "door", "player") instance=ExtResource("9_clku2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.1177, 0.489275, -93.1068)
+broken_pipe = NodePath("../BrokenPipe")
+door = NodePath("../MechanicalDoor2")
+player = NodePath("../Player")
 
 [node name="Canon" parent="." instance=ExtResource("10_oavat")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.19145, 1.61227, -63.3083)
@@ -86,15 +137,15 @@ transform = Transform3D(0.0562956, 0, -1.8207, 0, 1.82157, 0, 1.8207, 0, 0.05629
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77695, 1.49735, -96.881)
 vodka = NodePath("../Vodka")
 
-[node name="BrokenPipe" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.6148, 1.92036, -97.1332)
+[node name="BrokenPipe" parent="." node_paths=PackedStringArray("engine", "door1", "player") instance=ExtResource("18_0alvi")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.6148, 1.92036, -97.1332)
+engine = NodePath("../SteamEngine")
 door1 = NodePath("../MechanicalDoor2")
-door2 = NodePath("../MechanicalDoor2")
-door3 = NodePath("../MechanicalDoor2")
 player = NodePath("../Player")
 
-[node name="BrokenPipe2" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3687, 1.92036, -97.1332)
+[node name="BrokenPipe2" parent="." node_paths=PackedStringArray("engine", "door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10.3687, 1.92036, -97.1332)
+engine = NodePath("../SteamEngine")
 door1 = NodePath("../MechanicalDoor")
 door2 = NodePath("../MechanicalDoor4")
 door3 = NodePath("../MechanicalDoor5")
@@ -110,19 +161,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.638, -39.995, -97.313)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768845, 11.4847, -46.4954)
 
 [node name="Valve" parent="." instance=ExtResource("23_fpis8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5553, 1.0575, -89.4149)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2317, 1.0575, -91.9276)
 
 [node name="Speaker" parent="." instance=ExtResource("23_vg07e")]
 transform = Transform3D(0.745476, 0.172511, -0.643821, 1.17635e-09, 0.965926, 0.258819, 0.666532, -0.192943, 0.720075, -5.45683, 9.32557, -36.432)
 
 [node name="ReplacementPipe" parent="." instance=ExtResource("23_vg07e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2704, 0.898471, -92.0288)
-
-[node name="keys" parent="." instance=ExtResource("22_fpis8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
-
-[node name="Duct Tape" parent="." instance=ExtResource("24_vkc4h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8314, 1.23268, -92.141)
 
 [node name="HorseTag1" parent="." instance=ExtResource("24_jh678")]
 transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -14.1089, 0.936855, -17.6807)
@@ -172,3 +217,83 @@ number = 8
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.912427, 0.382052, -0.146671, 0, 0.358401, 0.933568, 0.409238, -0.851813, 0.327015, 0, 14.5076, -87.4886)
+
+[node name="Duct Tape" parent="." instance=ExtResource("25_jh678")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5658, 0.757557, -92.5017)
+
+[node name="cages_stack_largest" parent="." instance=ExtResource("26_vkc4h")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -16.285, 3.05585, -80.7758)
+
+[node name="cages_4_stack" parent="." instance=ExtResource("27_m5hn3")]
+transform = Transform3D(0.981256, 0, -0.19271, 0, 1, 0, 0.19271, 0, 0.981256, -3.65135, 1.21753, -90.8213)
+
+[node name="Tightrope" parent="." instance=ExtResource("28_e25jp")]
+transform = Transform3D(0.887011, 0.461749, 0, -0.461749, 0.887011, 0, 0, 0, 1, -7.12247, 3.86505, -90.5717)
+
+[node name="MeshInstance3D" parent="Tightrope" index="0"]
+mesh = SubResource("CylinderMesh_k0w3b")
+
+[node name="Path3D" parent="Tightrope" index="1"]
+curve = SubResource("Curve3D_t0mrf")
+
+[node name="PathFollow3D" parent="Tightrope/Path3D" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, 0)
+
+[node name="CollisionShape3D" parent="Tightrope/Area3D" index="0"]
+shape = SubResource("BoxShape3D_nkbim")
+
+[node name="Start Marker" parent="Tightrope" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="End Marker" parent="Tightrope" index="5"]
+transform = Transform3D(0.887011, -0.461749, 0, 0.461749, 0.887011, 0, 0, 0, 1, -3.41855, -0.447056, 0)
+
+[node name="Tightrope2" parent="." instance=ExtResource("28_e25jp")]
+transform = Transform3D(0.255969, 0, 0.966685, 0, 1, 0, -0.966685, 0, 0.255969, -14.9384, 5.03805, -84.2921)
+
+[node name="MeshInstance3D" parent="Tightrope2" index="0"]
+mesh = SubResource("CylinderMesh_e25jp")
+
+[node name="Path3D" parent="Tightrope2" index="1"]
+curve = SubResource("Curve3D_e25jp")
+
+[node name="PathFollow3D" parent="Tightrope2/Path3D" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 0, 0)
+
+[node name="CollisionShape3D" parent="Tightrope2/Area3D" index="0"]
+shape = SubResource("BoxShape3D_e25jp")
+
+[node name="Start Marker" parent="Tightrope2" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+
+[node name="End Marker" parent="Tightrope2" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0)
+
+[node name="keys" parent="." instance=ExtResource("24_vkc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.478, 0.680375, -83.9426)
+
+[node name="Ladder" parent="." instance=ExtResource("30_t0mrf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.04914, 5.53396, -64.4908)
+
+[node name="MeshInstance3D" parent="Ladder" index="0"]
+mesh = SubResource("BoxMesh_nkbim")
+
+[node name="Path3D" parent="Ladder" index="1"]
+curve = SubResource("Curve3D_nkbim")
+
+[node name="PathFollow3D" parent="Ladder/Path3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.428083, -0.903731, 0, 0.903731, 0.428083, 0, -4, 3)
+
+[node name="Area3D" parent="Ladder" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -0.406367, 0.605505)
+
+[node name="CollisionShape3D" parent="Ladder/Area3D" index="0"]
+shape = SubResource("BoxShape3D_t0mrf")
+
+[node name="Label3D" parent="Ladder" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.30647, 2.5766)
+visible = true
+
+[editable path="Tightrope"]
+[editable path="Tightrope2"]
+[editable path="Ladder"]
