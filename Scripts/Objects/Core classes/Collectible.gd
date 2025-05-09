@@ -13,6 +13,7 @@ func _ready():  # when the node is ready
 func collect():
 	if GameManager.current_item == "":
 		GameManager.pickup(name)
+		print(GameManager.current_item)
 		await wait(0.01)
 		queue_free()  # delete the item
 

@@ -59,3 +59,4 @@ bus = &"SFX"
 stream = ExtResource("4_4gjv6")
 max_db = 1.0
 bus = &"SFX"
+

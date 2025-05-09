@@ -4,8 +4,12 @@ extends Interactable
 @onready var mesh = $MeshInstance3D
 @onready var material = mesh.get_active_material(0)
 
+@export var door1 : Node3D
+@export var door2 : Node3D
+@export var door3 : Node3D
+@export var player : Player
+
 func use(_player: Player) -> void:
-	print(GameManager.current_item)
 	if GameManager.current_item == "DuctTape" or GameManager.current_item == "ReplacementPipe":
 		GameManager.current_item = ""
 		
@@ -13,6 +17,9 @@ func use(_player: Player) -> void:
 		var unique_material = material.duplicate()
 		unique_material.albedo_color = Color(0, 1, 0)  # Green
 		mesh.set_surface_override_material(0, unique_material)
+		door1.use(player)
+		door2.use(player)
+		door3.use(player)
 		
 		$Leak.stop() # Stops the sound of steam leaking from the pipe
 		$DuctTape.play()

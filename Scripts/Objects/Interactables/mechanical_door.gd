@@ -2,7 +2,6 @@ extends Interactable
 
 @export var door : Node3D
 @export var body : StaticBody3D
-@export var pipe : Node3D
 
 var open = false
 
