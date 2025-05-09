@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0adbyu6yw0xr"]
+
+[ext_resource type="Script" uid="uid://dr7mnevmehj2n" path="res://Scripts/Objects/Collectibles/replacement_pipe.gd" id="1_uix86"]
+[ext_resource type="Texture2D" uid="uid://bqmpbspscjtwa" path="res://Assets/Pixel art/replacement_pipe.png" id="2_uix86"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a068w"]
+
+[node name="ReplacementPipe" type="Node3D"]
+script = ExtResource("1_uix86")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.001
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_uix86")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_a068w")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0.331, 0)
+visible = false
+texture_filter = 0
+text = "Pick Up"

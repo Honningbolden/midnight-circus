@@ -20,6 +20,10 @@ extends Node3D
 @onready var check1 = false
 @onready var check2 = false
 
+@export var key : Node3D
+@export var roller_coaster : Node3D
+@export var carousel : Node3D
+
 
 func _process(_delta):
 	if not check1 and rightArm.state == 2 and leftArm.state == 2 and leftFoot.state == 2:
@@ -28,13 +32,14 @@ func _process(_delta):
 		mesh.set_surface_override_material(0, material); RFmesh.set_surface_override_material(0, material) 
 		leftFoot.get_node("Label3D").queue_free(); leftArm.get_node("Label3D").queue_free(); rightArm.get_node("Label3D").queue_free()
 		leftFoot.enabled = false; rightArm.enabled = false; leftArm.enabled = false
-		$FuseSlot1.show(); $FuseSlot2.show(); $FuseSlot3.show()
+		$FuseSlot1.show(); $FuseSlot2.show()
+		roller_coaster.active = true; #carousel.active = true
 		
-	if not check2 and $FuseSlot1.enabled == true and $FuseSlot2.enabled == true and $FuseSlot3.enabled == true:
+	if not check2 and $FuseSlot1.enabled == true and $FuseSlot2.enabled == true:
 		check2 = true
 		material.albedo_color = Color(0, 0, 1)  # Blue
 		mesh.set_surface_override_material(0, material)
 		LFmesh.set_surface_override_material(0, material); RFmesh.set_surface_override_material(0, material)
 		LAmesh.set_surface_override_material(0, material); RAmesh.set_surface_override_material(0, material) 
-		$FuseSlot1.queue_free(); $FuseSlot2.queue_free(); $FuseSlot3.queue_free()
-		
+		$FuseSlot1.queue_free(); $FuseSlot2.queue_free()
+		key.position = self.global_position + Vector3(1, 0, 0)

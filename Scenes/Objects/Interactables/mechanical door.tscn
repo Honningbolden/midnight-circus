@@ -18,7 +18,7 @@ body = NodePath("StaticBody3D")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.325, 0, 0)
-collision_layer = 8
+collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]

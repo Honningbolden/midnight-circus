@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://opxfp8huyr4"
-path.s3tc="res://.godot/imported/Key.png-1373e9958c96a8fefb4e51103eeddf37.s3tc.ctex"
+uid="uid://bqmpbspscjtwa"
+path.s3tc="res://.godot/imported/replacement_pipe.png-08553a26bbd8d4c48716cba7583ca184.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Pixel art/Key.png"
-dest_files=["res://.godot/imported/Key.png-1373e9958c96a8fefb4e51103eeddf37.s3tc.ctex"]
+source_file="res://Assets/Pixel art/replacement_pipe.png"
+dest_files=["res://.godot/imported/replacement_pipe.png-08553a26bbd8d4c48716cba7583ca184.s3tc.ctex"]
 
 [params]
 

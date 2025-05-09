@@ -1,13 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5ehyeft6ncvg"]
 
 [ext_resource type="Script" uid="uid://y7lfqq2ixj82" path="res://Scripts/Objects/Interactables/lock.gd" id="1_d8yqy"]
-[ext_resource type="Texture2D" uid="uid://b0s4w883obcc5" path="res://Assets/safeLockPlaceHolder.png" id="2_0u7s0"]
+[ext_resource type="Texture2D" uid="uid://oafgq8b2sfb4" path="res://Assets/Pixel art/lock.png" id="2_fbqs2"]
 [ext_resource type="Texture2D" uid="uid://c2n8e0k5fgglv" path="res://Assets/lockMarkPlaceHolder.png" id="3_fbqs2"]
 [ext_resource type="AudioStream" uid="uid://c1se2w0hm3j56" path="res://Assets/SFX/turningLock2.mp3" id="4_fbqs2"]
 
 [node name="Lock" type="Node2D"]
 visible = false
-scale = Vector2(1.32525, 1.32525)
 script = ExtResource("1_d8yqy")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -26,7 +25,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Dial" type="Sprite2D" parent="."]
 position = Vector2(727.41, 451.249)
-texture = ExtResource("2_0u7s0")
+texture = ExtResource("2_fbqs2")
 
 [node name="Pointer" type="Sprite2D" parent="."]
 position = Vector2(727.41, 135.249)

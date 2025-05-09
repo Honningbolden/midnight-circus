@@ -1,6 +1,5 @@
 [gd_scene load_steps=32 format=3 uid="uid://dvl6lb4k6gp1i"]
 
-[ext_resource type="PackedScene" uid="uid://bbd7lcnoip88o" path="res://Assets/3D_assets/map.glb" id="1_33kev"]
 [ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="1_kwl8l"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="1_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://mdrq4gut8d0p" path="res://Scenes/Objects/Interactables/vending_machine.tscn" id="3_5nsto"]
@@ -8,11 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="5_p70al"]
 [ext_resource type="PackedScene" uid="uid://fywxd2eeltwp" path="res://Scenes/Objects/Interactables/breakable_wall.tscn" id="6_45d1s"]
 [ext_resource type="PackedScene" uid="uid://cjm5wehesvmoi" path="res://Scenes/Objects/fence.tscn" id="7_q2d71"]
-[ext_resource type="Script" uid="uid://dolr0auqg3f2b" path="res://Scripts/Objects/fence.gd" id="8_uo7di"]
+[ext_resource type="Script" uid="uid://bfop568udcn3v" path="res://Scripts/Objects/Interactables/circus_door.gd" id="8_g01fq"]
 [ext_resource type="PackedScene" uid="uid://ums44tggyg3q" path="res://Scenes/Objects/Interactables/roller_coaster.tscn" id="9_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://bqyfg3hxj1nu6" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
 [ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="12_8l3nt"]
-[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="12_rwt1y"]
 [ext_resource type="PackedScene" uid="uid://bojlcywc1io63" path="res://Scenes/Objects/Fuse.tscn" id="13_8ldnt"]
 [ext_resource type="PackedScene" uid="uid://x5fy16j868fr" path="res://Scenes/Objects/Interactables/circus_door.tscn" id="13_op4cu"]
 [ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="14_kwl8l"]
@@ -20,14 +18,16 @@
 [ext_resource type="PackedScene" uid="uid://bywfgwxn45poc" path="res://Scenes/Objects/Interactables/carousel.tscn" id="16_mvfa8"]
 [ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="17_r0dna"]
 [ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="18_b5aes"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="18_y1bqn"]
 [ext_resource type="PackedScene" uid="uid://dsqvn5kq07odm" path="res://Scenes/Objects/Interactables/steam_engine.tscn" id="19_mvfa8"]
 [ext_resource type="PackedScene" uid="uid://cay65qnwy7s8f" path="res://Scenes/Objects/Interactables/canon.tscn" id="20_r0dna"]
 [ext_resource type="PackedScene" uid="uid://c6647pnq3lgvh" path="res://Scenes/Objects/speaker.tscn" id="25_l11rc"]
 [ext_resource type="PackedScene" uid="uid://n2mq7gsykghl" path="res://Scenes/Objects/Interactables/tightrope.tscn" id="26_w86vl"]
-[ext_resource type="ArrayMesh" uid="uid://dvchcib6cod7i" path="res://Assets/asset-creation.obj" id="28_0bcf6"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="27_33kev"]
+[ext_resource type="PackedScene" uid="uid://b38go68phffxd" path="res://Scenes/Objects/valve.tscn" id="28_0bcf6"]
 [ext_resource type="PackedScene" uid="uid://y7ryxlwa3yn6" path="res://Scenes/Objects/Interactables/mechanical door.tscn" id="28_g01fq"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="28_y1bqn"]
+[ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="29_0bcf6"]
+[ext_resource type="PackedScene" uid="uid://c7hjyxxwkyuu4" path="res://Scenes/Objects/Vodka.tscn" id="29_y1bqn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_uoh0x"]
 size = Vector3(50, 1, 50)
@@ -39,9 +39,6 @@ size = Vector3(50, 1, 50)
 size = Vector3(100, 1, 200)
 
 [node name="World" type="Node3D"]
-
-[node name="map" parent="." instance=ExtResource("1_33kev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71.295)
 
 [node name="Rope" parent="." instance=ExtResource("1_ti1bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85951, -142.754)
@@ -60,21 +57,23 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_6hh0k")
 
-[node name="keys" parent="." instance=ExtResource("18_y1bqn")]
+[node name="keys" parent="." instance=ExtResource("27_33kev")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
 
-[node name="VendingMachine" parent="." instance=ExtResource("3_5nsto")]
+[node name="VendingMachine" parent="." node_paths=PackedStringArray("vodka") instance=ExtResource("3_5nsto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3946, 1.49735, -136.053)
+vodka = NodePath("../Vodka")
 
 [node name="Olaf" parent="." node_paths=PackedStringArray("key") instance=ExtResource("4_gjpho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0511284, 1.31863, -140.953)
 key = NodePath("../keys")
 
 [node name="Ladder" parent="." instance=ExtResource("5_p70al")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.72155, 2.55378, -138.152)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.5472, 1.79163, -138.152)
 
 [node name="BreakableWall" parent="." instance=ExtResource("6_45d1s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1776, 0.778315, -142.387)
+script = ExtResource("8_g01fq")
 
 [node name="Fence" parent="." instance=ExtResource("7_q2d71")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17691, 0.5, -126.784)
@@ -84,78 +83,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3993, 1.26646, -149.955)
 
 [node name="CircusDoor" parent="." instance=ExtResource("13_op4cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.656, 0.5, -137.849)
-script = ExtResource("8_uo7di")
 
 [node name="Safe" parent="." instance=ExtResource("9_uo7di")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37323, 1.53034, -144.432)
 
 [node name="BrokenPipe" parent="." instance=ExtResource("12_8l3nt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.334, -143.932)
-script = ExtResource("12_rwt1y")
 
-[node name="DuctTape" parent="." instance=ExtResource("18_y1bqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.421, 1.955, -91.34)
+[node name="BrokenPipe2" parent="." instance=ExtResource("12_8l3nt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36361, 1.334, -143.932)
 
 [node name="SteamEngine" parent="." instance=ExtResource("19_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.549, 1, -91.5841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0094, 1, -122.854)
 
 [node name="RMFuse2" parent="." instance=ExtResource("13_8ldnt")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.99517, 0.602047, -21.6151)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.99517, 0.602047, -151.408)
 script = ExtResource("14_xiqgv")
 
-[node name="RMFuse3" parent="." instance=ExtResource("13_8ldnt")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.64245, 0.602047, -21.6151)
+[node name="RMFuse1" parent="." instance=ExtResource("13_8ldnt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 6.64245, 0.602047, -151.408)
 script = ExtResource("14_xiqgv")
 
-[node name="RingMasterStatue" parent="." instance=ExtResource("14_kwl8l")]
-transform = Transform3D(0.0562956, 0, -1.8207, 0, 1.82157, 0, 1.8207, 0, 0.0562956, 2.65228, 1.6812, -22.638)
+[node name="RingMasterStatue" parent="." node_paths=PackedStringArray("key", "roller_coaster", "carousel") instance=ExtResource("14_kwl8l")]
+transform = Transform3D(0.0562956, 0, -1.8207, 0, 1.82157, 0, 1.8207, 0, 0.0562956, 2.65228, 1.6812, -138.318)
+key = NodePath("../keys")
+roller_coaster = NodePath("../RollerCoaster")
+carousel = NodePath("../Carousel")
 
 [node name="Carousel" parent="." instance=ExtResource("16_mvfa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3051, 0.789282, -28.0114)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.134, 0.789282, -132.35)
 
 [node name="HorseTag1" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 16.7304, 0.936855, -25.3214)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 16.7304, 0.936855, -158.863)
 script = ExtResource("18_b5aes")
 color = Color(1, 0, 0, 1)
 
 [node name="HorseTag2" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 17.0922, 0.936855, -25.3214)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 17.0922, 0.936855, -158.863)
 script = ExtResource("18_b5aes")
 number = 2
 color = Color(0, 1, 0, 1)
 
 [node name="HorseTag3" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 17.4738, 0.936855, -25.3214)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 17.4738, 0.936855, -158.863)
 script = ExtResource("18_b5aes")
 number = 3
 color = Color(0, 0, 1, 1)
 
 [node name="HorseTag4" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 17.8981, 0.936855, -25.3214)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 17.8981, 0.936855, -158.863)
 script = ExtResource("18_b5aes")
 number = 4
 color = Color(0.95, 1, 0, 1)
 
 [node name="HorseTag5" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 18.3753, 0.936855, -25.3214)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 18.3753, 0.936855, -158.863)
 script = ExtResource("18_b5aes")
 number = 5
 color = Color(1, 0, 0.95, 1)
 
 [node name="HorseTag6" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 18.8901, 0.936855, -25.3214)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 18.8901, 0.936855, -158.863)
 script = ExtResource("18_b5aes")
 number = 6
 color = Color(0, 0.933333, 1, 1)
 
 [node name="HorseTag7" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 19.3553, 0.936855, -25.3214)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 19.3553, 0.936855, -158.863)
 script = ExtResource("18_b5aes")
 number = 7
 color = Color(1, 1, 1, 1)
 
 [node name="HorseTag8" parent="." instance=ExtResource("17_r0dna")]
-transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 19.8799, 0.936855, -25.3214)
+transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, 19.8799, 0.936855, -158.863)
 script = ExtResource("18_b5aes")
 number = 8
 
@@ -176,11 +176,19 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_33kev")
 
 [node name="MechanicalDoor" parent="." instance=ExtResource("28_g01fq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.441, 2.275, -93.162)
-
-[node name="Asset-creation" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7548, 1.90965, -98.3684)
-mesh = ExtResource("28_0bcf6")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6312, 2.275, -122.991)
 
 [node name="Player" parent="." instance=ExtResource("28_y1bqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.75181, 5.28927, -150.595)
+
+[node name="Duct Tape" parent="." instance=ExtResource("27_33kev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01971, -119.545)
+
+[node name="Valve" parent="." instance=ExtResource("28_0bcf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41416, -158.172)
+
+[node name="Vodka" parent="." instance=ExtResource("29_y1bqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41653, -151.161)
+
+[node name="ReplacementPipe" parent="." instance=ExtResource("29_0bcf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79833, -161.959)

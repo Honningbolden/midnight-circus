@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfj5roc8dpnmg"]
+[gd_scene load_steps=8 format=3 uid="uid://cfj5roc8dpnmg"]
 
+[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="1_vho7g"]
 [ext_resource type="AudioStream" uid="uid://drrk0tmbkq6ir" path="res://Assets/SFX/steam_leak_L.wav" id="1_xu5ra"]
 [ext_resource type="AudioStream" uid="uid://dtd60vnw2ut0m" path="res://Assets/SFX/Hallway/duct_tape.wav" id="2_wflb0"]
 
@@ -19,6 +20,7 @@ radius = 0.2
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vho7g"]
 
 [node name="BrokenPipe" type="Node3D"]
+script = ExtResource("1_vho7g")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000679255, 0.00374562, -0.000242233)
