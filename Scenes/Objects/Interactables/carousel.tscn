@@ -378,6 +378,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51695, 0)
 mesh = SubResource("TorusMesh_yjhv4")
 surface_material_override/0 = SubResource("StandardMaterial3D_8lu07")
 
-[node name="RMFuse1" parent="." instance=ExtResource("3_jy2vb")]
+[node name="RMFuse" parent="." instance=ExtResource("3_jy2vb")]
 visible = false
 script = ExtResource("4_es4lw")

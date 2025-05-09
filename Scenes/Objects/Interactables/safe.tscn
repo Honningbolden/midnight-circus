@@ -45,3 +45,4 @@ text = "Interact with Safe"
 [node name="Lock" parent="." instance=ExtResource("1_k2f70")]
 
 [node name="Coin" parent="." instance=ExtResource("3_uixfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)

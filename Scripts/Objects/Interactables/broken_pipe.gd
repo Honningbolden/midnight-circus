@@ -10,7 +10,7 @@ extends Interactable
 @export var player : Player
 
 func use(_player: Player) -> void:
-	if GameManager.current_item == "DuctTape" or GameManager.current_item == "ReplacementPipe":
+	if GameManager.current_item == "Duct Tape" or GameManager.current_item == "ReplacementPipe":
 		GameManager.current_item = ""
 		
 		# Duplicate to not effect other objs of same material

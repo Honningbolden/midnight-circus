@@ -14,7 +14,7 @@ func use(_player: Player) -> void:
 		
 		await wait(1) #waits 1 second before giving you item
 		vodka.position = self.global_position
-		vodka.position.x += 1
+		vodka.position.z += 1
 		# TASK: Add an animation showing the vodka being ejected
 				
 	else:

@@ -2,10 +2,11 @@
 
 extends Interactable
 
-@export var Car : MeshInstance3D
+@export var Car : Node3D
 @export var CoasterPath : PathFollow3D
 @export var Area : Area3D
 @export var player : Player
+
 var maxSpeed = 5
 var speed = 0
 var acc = 0.1 # acceleration
@@ -14,7 +15,7 @@ var started = false
 var finished = false
 
 func use(_player: Player) -> void:
-	if active:
+	if active and GameManager.current_item == "":
 		if not started:
 			started = true
 			player = _player
@@ -22,12 +23,12 @@ func use(_player: Player) -> void:
 			var coaster_state = player.statemachine.get_node("Coaster State")
 			coaster_state.Car = Car
 			player.statemachine.change_state("Coaster State")
-			await wait(1)
+			await wait(0.1)
 			Area.queue_free()
 			# TASK: Make a sound effect for the ride turning on
 		elif not finished:
-			GameManager.collected_items.append("Coaster Fuse")
 			finished = true
+			GameManager.pickup("GMFuse")
 			await wait(3)
 			player.statemachine.change_state("Exploration State")
 

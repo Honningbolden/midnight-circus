@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=27 format=3 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://mdxtbwnm2hq3" path="res://Scenes/Levels/map.tscn" id="1_jh678"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://b38go68phffxd" path="res://Scenes/Objects/valve.tscn" id="23_fpis8"]
 [ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="23_vg07e"]
 [ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="24_jh678"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="24_vkc4h"]
 [ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="25_vkc4h"]
 
 [node name="GameWorld" type="Node3D"]
@@ -85,11 +86,19 @@ transform = Transform3D(0.0562956, 0, -1.8207, 0, 1.82157, 0, 1.8207, 0, 0.05629
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77695, 1.49735, -96.881)
 vodka = NodePath("../Vodka")
 
-[node name="BrokenPipe" parent="." instance=ExtResource("18_0alvi")]
+[node name="BrokenPipe" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.6148, 1.92036, -97.1332)
+door1 = NodePath("../MechanicalDoor2")
+door2 = NodePath("../MechanicalDoor2")
+door3 = NodePath("../MechanicalDoor2")
+player = NodePath("../Player")
 
-[node name="BrokenPipe2" parent="." instance=ExtResource("18_0alvi")]
+[node name="BrokenPipe2" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3687, 1.92036, -97.1332)
+door1 = NodePath("../MechanicalDoor")
+door2 = NodePath("../MechanicalDoor4")
+door3 = NodePath("../MechanicalDoor5")
+player = NodePath("../Player")
 
 [node name="Coin" parent="." instance=ExtResource("20_0alvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.256, -38.774, -100.509)
@@ -99,9 +108,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.638, -39.995, -97.313)
 
 [node name="Rope" parent="." instance=ExtResource("21_ff2gi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.768845, 11.4847, -46.4954)
-
-[node name="DuctTape" parent="." instance=ExtResource("22_fpis8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.421, 1.04931, -91.34)
 
 [node name="Valve" parent="." instance=ExtResource("23_fpis8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5553, 1.0575, -89.4149)
@@ -114,6 +120,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2704, 0.898471, -92.0288)
 
 [node name="keys" parent="." instance=ExtResource("22_fpis8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
+
+[node name="Duct Tape" parent="." instance=ExtResource("24_vkc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8314, 1.23268, -92.141)
 
 [node name="HorseTag1" parent="." instance=ExtResource("24_jh678")]
 transform = Transform3D(0.499143, 0, 0, 0, 0.499143, 0, 0, 0, 0.499143, -14.1089, 0.936855, -17.6807)

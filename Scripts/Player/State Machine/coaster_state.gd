@@ -1,5 +1,5 @@
 extends StateMachineState
-@export var Car : MeshInstance3D
+@export var Car : Node3D
 @export var player : Player
 @export var world : Node3D
 @export var camera : Camera3D
@@ -12,7 +12,7 @@ func on_ready() -> void:
 func on_enter() -> void:
 	player.can_move = false
 	player.velocity = Vector3.ZERO
-	player.position = Vector3.ZERO
+	player.position = Car.position + Vector3(0, 0, -0.5)
 	
 func on_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:  # if mouse moved

@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ums44tggyg3q"]
+[gd_scene load_steps=10 format=3 uid="uid://ums44tggyg3q"]
 
 [ext_resource type="Script" uid="uid://r16c6h2hdmhx" path="res://Scripts/Objects/Interactables/roller_coaster.gd" id="1_cu6p2"]
-[ext_resource type="Material" uid="uid://dycxwxr6vjc28" path="res://Scripts/Objects/Interactables/Greybox Material.tres" id="4_63i3m"]
+[ext_resource type="PackedScene" uid="uid://cikeqyrtr13ed" path="res://Assets/3D_assets/roller_coaster/rollercoaster_cart.glb" id="2_63i3m"]
+[ext_resource type="Texture2D" uid="uid://dxoegkj6qnnqs" path="res://Assets/Pixel art/fuse.png" id="3_cu6p2"]
+[ext_resource type="PackedScene" uid="uid://3gg6xkbrmhjf" path="res://Assets/3D_assets/roller_coaster/rollercoaster_track.glb" id="3_um861"]
 
 [sub_resource type="Curve3D" id="Curve3D_gs7h4"]
 closed = true
@@ -12,12 +14,8 @@ _data = {
 }
 point_count = 13
 
-[sub_resource type="BoxMesh" id="BoxMesh_63i3m"]
-material = ExtResource("4_63i3m")
-size = Vector3(1, 0.75, 1.25)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_63i3m"]
-size = Vector3(1, 0.75, 1.25)
+size = Vector3(2.5, 0.75, 1.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_02ssl"]
 size = Vector3(1, 0.75, 1.25)
@@ -30,7 +28,7 @@ size = Vector3(0.35, 0.5, 0.5)
 
 [node name="RollerCoaster" type="Node3D" node_paths=PackedStringArray("Car", "CoasterPath", "Area")]
 script = ExtResource("1_cu6p2")
-Car = NodePath("Path3D/Coaster Path/Car")
+Car = NodePath("Path3D/Coaster Path/rollercoaster_cart")
 CoasterPath = NodePath("Path3D/Coaster Path")
 Area = NodePath("Area1")
 
@@ -42,15 +40,19 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 0.999995, 0, 0, 0, 0, 0)
 rotation_mode = 4
 loop = false
 
-[node name="Car" type="MeshInstance3D" parent="Path3D/Coaster Path"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0.5)
-mesh = SubResource("BoxMesh_63i3m")
-skeleton = NodePath("")
+[node name="rollercoaster_cart" parent="Path3D/Coaster Path" instance=ExtResource("2_63i3m")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.375, 0.5)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Path3D/Coaster Path/Car"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Path3D/Coaster Path/rollercoaster_cart"]
+collision_layer = 8
+collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/Coaster Path/Car/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/Coaster Path/rollercoaster_cart/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 shape = SubResource("BoxShape3D_63i3m")
+
+[node name="rollercoaster_track" parent="Path3D" instance=ExtResource("3_um861")]
+transform = Transform3D(1, 0, 4.37114e-08, 0, 1, 0, -4.37112e-08, 0, 0.999995, -0.5, 0.375, 0)
 
 [node name="Area1" type="Area3D" parent="."]
 transform = Transform3D(-4.37108e-08, -2.3434e-10, -1, -0.00536108, 0.999986, 0, 0.999986, 0.00536108, -4.37114e-08, -0.5, 0.375, 0)
@@ -61,7 +63,7 @@ collision_mask = 0
 shape = SubResource("BoxShape3D_02ssl")
 
 [node name="Area2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5, 6, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.5, 7, -5)
 collision_layer = 8
 collision_mask = 0
 
@@ -71,3 +73,8 @@ shape = SubResource("BoxShape3D_klk0b")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area2"]
 mesh = SubResource("BoxMesh_um861")
 skeleton = NodePath("../..")
+
+[node name="Sprite3D" type="Sprite3D" parent="Area2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246317, 0, 0)
+pixel_size = 0.0005
+texture = ExtResource("3_cu6p2")
