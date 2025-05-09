@@ -9,14 +9,19 @@ extends Interactable
 @export var door3 : Node3D
 @export var player : Player
 
+func _ready():
+	mesh.visible = false
+
 func use(_player: Player) -> void:
 	if GameManager.current_item == "Duct Tape" or GameManager.current_item == "ReplacementPipe":
 		GameManager.current_item = ""
 		
+		mesh.visible = true
+		
 		# Duplicate to not effect other objs of same material
-		var unique_material = material.duplicate()
-		unique_material.albedo_color = Color(0, 1, 0)  # Green
-		mesh.set_surface_override_material(0, unique_material)
+		#var unique_material = material.duplicate()
+		#unique_material.albedo_color = Color(0, 1, 0)  # Green
+		#mesh.set_surface_override_material(0, unique_material)
 		door1.use(player)
 		door2.use(player)
 		door3.use(player)

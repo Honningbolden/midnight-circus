@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=38 format=4 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://mdxtbwnm2hq3" path="res://Scenes/Levels/map.tscn" id="1_jh678"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -17,15 +17,73 @@
 [ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="16_30f34"]
 [ext_resource type="PackedScene" uid="uid://mdrq4gut8d0p" path="res://Scenes/Objects/Interactables/vending_machine.tscn" id="17_4qruq"]
 [ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="18_0alvi"]
+[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="18_t0mrf"]
+[ext_resource type="Texture2D" uid="uid://cyqcohw53ovdu" path="res://Assets/3D_assets/pipe_system/pipe_system-broken_pipe-replacement_pipe_system_broken-pipe-replaced_bake1_PBR_Diffuse.jpg" id="19_eckg6"]
 [ext_resource type="PackedScene" uid="uid://bb1kuluhgtyty" path="res://Scenes/Objects/Coin.tscn" id="20_0alvi"]
+[ext_resource type="AudioStream" uid="uid://drrk0tmbkq6ir" path="res://Assets/SFX/steam_leak_L.wav" id="20_eckg6"]
 [ext_resource type="PackedScene" uid="uid://c7hjyxxwkyuu4" path="res://Scenes/Objects/Vodka.tscn" id="20_gyj8w"]
+[ext_resource type="Texture2D" uid="uid://qtohicq6xngu" path="res://Assets/3D_assets/pipe_system/pipe_system-broken_pipe-replacement_pipe_system_broken-pipe-replaced_bake1_PBR_Metalness-pipe_system_broken-pipe-replaced_bake1_PBR_Roughness.jpg" id="20_wvwpp"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="21_ff2gi"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="22_fpis8"]
+[ext_resource type="Texture2D" uid="uid://c4amgj06wmrsg" path="res://Assets/3D_assets/pipe_system/pipe_system-broken_pipe-replacement_pipe_system_broken-pipe-replaced_bake1_PBR_Normal.jpg" id="21_i0r8o"]
+[ext_resource type="AudioStream" uid="uid://dtd60vnw2ut0m" path="res://Assets/SFX/Hallway/duct_tape.wav" id="21_wvwpp"]
 [ext_resource type="PackedScene" uid="uid://b38go68phffxd" path="res://Scenes/Objects/valve.tscn" id="23_fpis8"]
 [ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="23_vg07e"]
 [ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="24_jh678"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="24_vkc4h"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="24_vkc4h"]
 [ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="25_vkc4h"]
+[ext_resource type="PackedScene" uid="uid://pdk0erxmitym" path="res://Assets/3D_assets/pipe_system/pipe_system-skeleton.glb" id="26_vkc4h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djcv5"]
+resource_name = "pipe_system_broken-pipe-replaced_Baked"
+cull_mode = 2
+albedo_texture = ExtResource("19_eckg6")
+metallic = 1.0
+metallic_texture = ExtResource("20_wvwpp")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("20_wvwpp")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("21_i0r8o")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gmq68"]
+_surfaces = [{
+"aabb": AABB(-0.115112, -0.586547, -0.109041, 0.230494, 1.17302, 0.225304),
+"format": 34896613377,
+"index_count": 378,
+"index_data": PackedByteArray("HQATABQAFAATAB4AHQAfABMAFAAxAB0AIAATAB8AGAAfAB0AMgATACAAMgAeABMAIAAfADMAIgAeADIAFwAyACAAIQAiADIAIQAyABcAFwAKACEAIQAKAAsAFwAJAAoAIQALADQANAAiACEANAALABIAFwAgADUANQAJABcANQAgADMANQABAAkANgABADUANQAzADYANgAEAAEANAASADcANwASABEANwA4ADQANAA4ACIANwARADkAOQARAAgANwAmADgAOQAmADcAOAAWACIAIgAWAB4AJgAjADgAOAAjABYAOQAIADoAOgAIAAYAOQAnACYAOgAnADkAJgAcACMAJwAcACYAOgAGADsAOwAGAAQAOwAEADYAOwA8ADoAOgA8ACcANgA9ADsAOwA9ADwANgAzAD0APAAqACcAJwAqABwAPQAoADwAPAAoACoAMwAZAD0APQAZACgAMwAfABkAGAAZAB8AGgAoABkAGgAZABgAPgAqACgAPgAoABoADwAqAD4ADwAcACoAGgArAD4AKQAcAA8AKQAjABwAPgA/AA8APgArAD8ADwAuACkADwA/AC4AJAAjACkAJAAWACMAKQAuAEAAKQBAACQAFQAWACQAFQAeABYAFAAeABUAJAAwABUAJABAADAAFQAlABQAFQAwACUAFAAlADEAQQAwAEAAQgAlADAAQgAwAEEAQwAxACUAQwAlAEIAAABDAEIAAABCAAMAAwBCAEEABQBDAAAAAwBBAAIABQBEAEMARAAxAEMADABEAAUAAgBBAEUAQQBAAEUAAgBFAAcARQBAAC4ABwBFAEYARQAuAEYABwBGABAARgAuAD8AEABGAEcARgA/AEcAEABHAA4ARwA/ACsADgBHABsARwArABsADgAbAA0AGwArACwAGgAsACsAGAAsABoADQAbAC8AGwAsAC8ADQAvAAwADAAvAEQALwAsAC0AGAAtACwALwAtAEQAHQAtABgARAAtADEAHQAxAC0A"),
+"lods": [0.020564, PackedByteArray("HQATABQAFAATAB4AHQAfABMAHgATACAAIAATAB8AAQAgAB8AAQAfAAQAFwAgAAEAFwAeACAAAQAJABcAFwAJAAoAFwAKACEAIQAeABcAIQAKAAsAIQAiAB4ACwAiACEACwAjACIAEgAjAAsAIgAWAB4AIwAWACIAFQAeABYAFAAeABUAFQAWACQAJAAWACMAFQAlABQAEgAmACMAEQAmABIAEQAnACYACAAnABEAJgAcACMAJwAcACYACAAoACcAKQAjABwAJAAjACkABgAoAAgAJwAqABwAKAAqACcAKQAcAA8ADwAcACoAKwAqACgADwAqACsABgAZACgABAAZAAYABAAfABkAGgAoABkAKwAoABoAGAAZAB8AGgAZABgAGAAfAB0AGgAsACsAGAAsABoADgAPACsAGAAtACwAHQAtABgAGwArACwADgArABsAEAAPAA4ADgAbAA0AEAAuAA8ADwAuACkABwAuABAAKQAuACQABwAkAC4AAgAkAAcADQAbAC8AGwAsAC8ADQAvAAwALwAsAC0ADAAvAAUALwAtAAUABQAtAB0ABQAdAAAAAgAwACQAJAAwABUAAwAwAAIAFQAwACUAAwAlADAAAAAlAAMAAAAdACUAFAAlAB0A"), 0.0438194, PackedByteArray("AAATABQAAAAUAAMAAwAUABUAAwAVAAIAAgAVAAcAFAAWABUAFQAWAAcAFAATABYAAAAEABMAAQATAAQAFwATAAEAFwAWABMAAQAJABcAFwAJAAoAFwAKAAsACwAWABcABwAWAAsAGAAEAAAABQAYAAAADAAYAAUAGAAZAAQABAAZAAYABgAZAAgAGgAZABgADAAaABgAGgAIABkAGwAaAAwADQAbAAwADgAbAA0ADgAaABsADgAPABoAEAAPAA4ABwAPABAABwALAA8ADwAcABoADwALABwAGgAcAAgAEgAcAAsACAAcABEAEQAcABIA"), 0.277621, PackedByteArray("AAABAAIAAAACAAMAAAAEAAEABQAEAAAABQAGAAQAAgABAAcACAAGAAUAAQAJAAcABwAJAAoABwAKAAsADAAIAAUADQAIAAwADgAIAA0ABwALAA8ADgAPAAgABwAPABAAEAAPAA4ACAAPABEAEgAPAAsAEQAPABIA")],
+"name": "pipe_system_broken-pipe-replaced_Baked",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("Ouz//9aOAACP4owB7kIAAFSkfv9DDgAA4d7o/3dBAADK8JcBgZAAADnGtv8X0wAA/8pCAQ3VAAD+VvH+jg0AABSDtgA68AAAN6coAeIQAADDWpsAeBEAAPkgJwBSRAAA9H0x/3XuAAAINa7+qNMAAPYNaf7ajgAAwhr+0q+MAABnG4T+c0AAACI7NwAk1QAAqhQAAGWRAACZ2Lku7UgAACrUD9TKRwAALKDE04saAABoXg8uExwAALusuxUEAgAAlL7n0xrJAABHw38ucswAAD1+iNOO4QAAuysj66beAACOH54tQY8AAC/gHdRajAAATqNzLpkbAABM5b4uy44AAAPg7Cj6QwAAlFU6FWQCAACEWgooahMAAHwqvC3tSQAAk1tg0+UZAABs3B7ac0MAAEkWfyckkQAA/juyJznTAACjghsuf+QAAJsmEtMRRwAAL0LDLRLMAAAZOP3Y49AAAMV+d9nU6gAArMTy2UPQAABaH9bYIUIAAKh9nOsf/QAA4KO92QcSAABc6TPaN44AALiljSimEgAA9+33KDmQAABiE9AUVzwAAOnvGBYOOwAA//8iFvSSAAA/BawUXpQAAAIioSehRQAASzHgFIHhAABng1QV//8AADTV1BXZ4AAAPoIlKNjtAADbyKcojtMAAG89LNOvyQAAMxK+2CKOAAA0WTvZIhEAAA2p4utlAAAAZ+tE7O05AACT+lnscJEAAF/PFuyP3gAA7VFg6wAAAAAQD/zqVzkAAAAA5OpXkQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sk7el"]
+resource_name = "pipe_system-broken_pipe-replacement_Plane_019"
+_surfaces = [{
+"aabb": AABB(-0.115112, -0.586547, -0.109041, 0.230494, 1.17302, 0.225304),
+"attribute_data": PackedByteArray("oBai6vscHWS/JHDqvhyf6sgWGmTyKivq+STyYwUrrWOwnBxkqKQjZKuoouqnoJ7qwKocZMWulOp22g3qkOoOZPvopNOk4s9jh+JS6rzoouqnXk3qq2wQZLxmZ+rnbKLqBV9W04dm12OSXsRjc1jdY0UdAXxKHW/TdSXUbuwptXtiJFDTYaCH0/6kD3yDp33T2ZhD4BJf4nusa4zTKmcS4JTh0nt22n1u2hdu07IX+3vmHKPWoSR51uIpINN5JOR7BR3veF4slm7XnRZ8eaoCfOysbNM1oKzWOZqd1safSuD2p6zWh1ll045Z9nu8Xqd4gma4eLxrEnw4Zu17jmZ51h9uRuBR3BXTtOgWfHrjXNOL42zWhOGheBbcrXtl4alu/Bam1u0W7HjhJMd4Yhz6blwV9m5cFT3goSo61kkcO+BTJRLgSCzU3+WahNMrq+14L6X2eIGs7G5fnfN4mKX+boacBm/brZ3W0ag/4LyvJ+C4WL14FF60boRs6ngfbvZuJ2fEbhdXzG4wZmbTt15h1hde/N+92yfWSunjeJvas9+R6bnWq+MM4KLqaOBy6v9ugNuFeA=="),
+"format": 34896613399,
+"index_count": 378,
+"index_data": PackedByteArray("KgAcAB0AKgArABwAHQBIACoAMAAcACsAMAArAEkAHQAcAC8ASgAcADAASgAvABwAHgBKADAASwAwAEkAHgAwAEsASwBJAEwATAABAEsATAAEAAEASwABAAYASwAGAB4AHgAGAAcAHgAHADEAHQAvACAAIAAvAB8AIAAfAC4AIAAsAB0AHQAsAEgATQBIACwALgAtACAAIAAtACwALgBOAC0ATQAsAE8ATwAsAC0AAABNAE8AAABPAAMATwAtAFAAUAAtAE4AAwBPAFAAUABOAFEAAwBQAAIAAgBQAFEAAgBRAAUAIQAiACMAIQA2AFIAIQA1ADYAJAA2ADUAIwA1ACEAJAA1ADcAIQAyACIAIwAiADMAUwAzACIAIwAzADQAUwAiAFQAVAAiADIAVQBTAFQAVAAyAFYAVQBUAFcAVwBUAFYAVwAMAFUAVwBWAFgAVwAJAAwAWAAJAFcAWAAIAAkANAA4ACMAIwA4ADUANABZADgANwA1ADgAWgA4AFkANwA4AFoACwA3AFoAWgBZAFsACwBaAAoACgBaAFsACgBbAA0AOQAlABgAOQA6ACUAOwAlADoAOwA6AFwAGAAlAD4APAAlADsAPAA+ACUAXQA7AFwAXgA+ADwAXwBeADwAXgA9AD4AXwA8AGAAYAA8ADsAYAA7AF0AYAAVAF8AYAAZABUAXQAZAGAAXQAaABkAXQBcAGEAYQAaAF0AYQAbABoAYgA+AD0AYgA9ACYAGAA+AGIAYgBjABgAYgA/AGMAZABjAD8AZAA/ACcAFABkACcAFAAnABYAFgAnAEAAFgBAABcAQQBCAEMAQQAoAEIAQwBlAEEAZgBCACgAQwBEAGUAEABEAEMAZwBlAEQAEABoAEQAZwBEAGkAaQBEAGgADgBnAGkAaQBoAGoADgBpABIAEgBpAGoAEgBqABMAZgAoAEUARQAoAEYAawBmAEUARQBGAGwAawBFAEcARwBFAGwARwBsACkARwAPAGsARwARAA8A"),
+"lods": [0.020564, PackedByteArray("KgAcAB0AKgArABwAHQAsACoAAAAqACwAAAAsAAMAAwAsAC0AAwAtAAIAAgAtAC4AAgAuAAUAIAAtACwALgAtACAAIAAsAB0AIAAfAC4AIAAvAB8AHQAvACAAHQAcAC8ALwAcADAAMAAcACsAHgAvADAAAQAwACsAHgAwAAEAAQArAAQAAQAGAB4AHgAGAAcAHgAHADEAIQAiACMAIQAyACIACQAiADIACQAyAAgADAAiAAkADAAzACIAIwAiADMAIwAzADQAIwA1ACEAIQA1ADYAJAA2ADUAJAA1ADcAIwA4ADUANAA4ACMANwA1ADgACgA4ADQANwA4AAoACgA0AA0ACwA3AAoAOQAlABgAOQA6ACUAGgA6ABsAGgA7ADoAOwAlADoAGQA7ABoAGQA8ADsAPAAlADsAFQA8ABkAFQA9ADwAPAA+ACUAPQA+ADwAGAAlAD4APwA+AD0AGAA+AD8APwA9ACYAFAAYAD8AFAA/ACcAFAAnABYAFgAnAEAAFgBAABcAQQBCAEMAQQAoAEIAQwBEAEEADgBBAEQAEABEAEMADgBEABIAEgBEABAAEgAQABMAQgAoAEUARQAoAEYADwBCAEUARwBFAEYADwBFAEcARwBGACkARwARAA8A"), 0.0438194, PackedByteArray("AAAcAB0AAAAdAAMAAAAEABwAAQAcAAQAHgAcAAEAAQAGAB4AHgAGAAcAHgAfABwAHQAcAB8AAwAdACAAHQAfACAAAwAgAAIAIAAfAAUAAgAgAAUAIQAiACMAIQAIACIACQAiAAgADAAiAAkAIwAiAAwAIwAMAA0ACgAjAA0ACwAjAAoACwAhACMAJAAhAAsAGAAbACUAGgAlABsAGQAlABoAFQAlABkAJgAlABUAGAAlACYAFAAYACYAFAAmACcAFAAnABYAFgAnABcADgAPABAADgAQABIAEgAQABMADgAoAA8ADwAoACkAKQARAA8A"), 0.277621, PackedByteArray("AAABAAIAAAACAAMAAAAEAAEAAgABAAUAAQAGAAUABQAGAAcACAAJAAoACwAIAAoACgAJAAwACgAMAA0ADgAPABAADgARAA8ADgAQABIAEgAQABMAFAAVABYAFgAVABcAFAAYABUAFQAYABkAGQAYABoAGgAYABsA")],
+"material": SubResource("StandardMaterial3D_djcv5"),
+"name": "pipe_system_broken-pipe-replaced_Baked",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 109,
+"vertex_data": PackedByteArray("Ouz//9aOv/yP4owB7kI0/VSkfv9DDsn+4d7o/3dB4/zK8JcBgZD3/P5W8f6ODdD+N6coAeIQJv/DWpsAeBH+/hSDtgA68Aj6/8pCAQ3V+Pk5xrb/F9Px+vR9Mf917jH6yvCXAYGQWvk67P//1o7a+v5W8f6ODYf/+SAnAFJEj/zCGv7Sr4x++8NamwB4ETD6ZxuE/nNAIf/2DWn+2o4u/vYNaf7ajhf6FIO2ADrwCfoINa7+qNN4+vR9Mf917iv6whr+0q+M9foiOzcAJNV0+qoUAABlkXv7+SAnAFJELfuZ2Lku7UjJ/CrUD9TKRxj9u6y7FQQCm/9oXg8uExzC/iygxNOLGg7/PX6I047h6PlHw38ucsyX+pS+59Maydb5uysj66beNf+OH54tQY8m+z1+iNOO4ej5uysj66beGf9oXg8uExxY/7usuxUEAg3+L+Ad1FqM3PxM5b4uy46e/GzcHtpzQ0374KO92QcSYf6TW2DT5Rnr/k6jcy6ZGwj+A+DsKPpDE/uUVToVZALB/6OCGy5/5MT5TOW+LsuOj/ov4B3UWow2+cV+d9nU6jz2GTj92OPQ+vWofZzrH/0K/6zE8tlD0HX2myYS0xFHGPt8Krwt7Unb+kkWfyckkZT4/juyJznT9/ajghsuf+TF+S9Cwy0SzBn6GTj92OPQE/iofZzrH/0K/5NbYNPlGSL6fCq8Le1J6f6bJhLTEUdz+1of1tghQh35hFoKKGoTYP9Oo3MumRsT/5RVOhVkAr39XOkz2jeO8vr37fcoOZDI+riljSimEsb66e8YFg47af///yIW9JJs/5P6WexwkbH/NFk72SIRSf5n60Ts7Tm//w2p4utlAP//7VFg6wAA7P9vPSzTr8nn+fft9yg5kB/328inKI7TaPf//yIW9JLY/z6CJSjY7Wr2NNXUFdngrf9ng1QV//9I/1zpM9o3jrT1X88W7I/exf6T+lnscJF+/gIioSehRS34PwWsFF6UeP8+giUo2O1y9meDVBX//0f/SzHgFIHhVf9iE9AUVzx2/289LNOvyZ/6MxK+2CKOXPYAAOTqV5H7/jRZO9kiETn4AiKhJ6FFl//tUWDrAADS/DMSvtgijoH5EA/86lc5b/0AAOTqV5Eg/mIT0BRXPM/9uKWNKKYSq/+oPWN6KvpcLGltu3j4UoZ6/PnnQX2RN3hf+JQR/wddEr3+wn70/vlcUCUtfAsGvnp4/qVEOjy5fG4HUu5UrXWFU8NnhCmTd4a8BtDTNAd4viYCX7sG/JmDIAKBoyQD7IK8w7yDx9u2gn/DR4S+rZiEalM9ehT6siwxbRh/KJLHd0P4VRIT/zCBPyULfN7+u1z93DaBIgRkvEv8wINC3dmAOpLodx9tdX/m+eZB9T0SevH2yCs09CoSNAiREQ9ud3jOVBZ3apMcf7QFfXpoPJh8b/6vRCj+eYKa3T6BKv7rgV/9l1tSrbGEkQRC0lcGh72uAwulKwOig1EC5KMD2OaHGP8AgWCStobmq6J3N63qhOar9Yf6kfBzLm4+eFOToH6t9hRA4D/odrZu93SvUUZ/JjtEfwn//USlDCAQEf+XLpL+PhN0AcoSLN0zgQk9OnscJrd6dDu4fn8HwXjMIzt+ygJnffn8O0Tm/hGjYP/OuvkGs9JDAEG66QQYhjsADYABABGiXgDh0EzbjIPGwwuEScWjgKiRu4qeqix085KygD7B3YfLrs1/YsWCf2+u1319b/pz")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gmq68")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wflb0"]
+height = 1.0
+radius = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vho7g"]
 
 [node name="GameWorld" type="Node3D"]
 
@@ -87,18 +145,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77695, 1.49735, -96.881)
 vodka = NodePath("../Vodka")
 
 [node name="BrokenPipe" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.6148, 1.92036, -97.1332)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.7179, 2.55751, -97.1016)
 door1 = NodePath("../MechanicalDoor2")
 door2 = NodePath("../MechanicalDoor2")
 door3 = NodePath("../MechanicalDoor2")
 player = NodePath("../Player")
 
-[node name="BrokenPipe2" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player") instance=ExtResource("18_0alvi")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.3687, 1.92036, -97.1332)
+[node name="BrokenPipe2" type="Node3D" parent="." node_paths=PackedStringArray("door1", "door2", "door3", "player")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.82833, 3.23852, -97.0847)
+script = ExtResource("18_t0mrf")
 door1 = NodePath("../MechanicalDoor")
 door2 = NodePath("../MechanicalDoor4")
 door3 = NodePath("../MechanicalDoor5")
 player = NodePath("../Player")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BrokenPipe2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_sk7el")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="BrokenPipe2"]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BrokenPipe2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000456691, 0, -0.00204301)
+shape = SubResource("CylinderShape3D_wflb0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BrokenPipe2"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BrokenPipe2/StaticBody3D"]
+transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, -0.6, 0, 0.6, -2.62268e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_vho7g")
+
+[node name="Label3D" type="Label3D" parent="BrokenPipe2"]
+transform = Transform3D(-4.37114e-08, -0.422618, 0.906308, 0, 0.906308, 0.422618, -1, 1.84732e-08, -3.9616e-08, 0.254342, -0.0137535, 0.0112229)
+visible = false
+text = "Fix Broken Pipe"
+
+[node name="Leak" type="AudioStreamPlayer3D" parent="BrokenPipe2"]
+stream = ExtResource("20_eckg6")
+volume_db = 2.0
+max_db = -20.0
+autoplay = true
+max_distance = 20.0
+
+[node name="DuctTape" type="AudioStreamPlayer" parent="BrokenPipe2"]
+stream = ExtResource("21_wvwpp")
+volume_db = -80.0
 
 [node name="Coin" parent="." instance=ExtResource("20_0alvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.256, -38.774, -100.509)
@@ -118,7 +215,7 @@ transform = Transform3D(0.745476, 0.172511, -0.643821, 1.17635e-09, 0.965926, 0.
 [node name="ReplacementPipe" parent="." instance=ExtResource("23_vg07e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2704, 0.898471, -92.0288)
 
-[node name="keys" parent="." instance=ExtResource("22_fpis8")]
+[node name="keys" parent="." instance=ExtResource("24_vkc4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.085, 0.832428, -124.924)
 
 [node name="Duct Tape" parent="." instance=ExtResource("24_vkc4h")]
@@ -172,3 +269,6 @@ number = 8
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.912427, 0.382052, -0.146671, 0, 0.358401, 0.933568, 0.409238, -0.851813, 0.327015, 0, 14.5076, -87.4886)
+
+[node name="pipe_system-skeleton" parent="." instance=ExtResource("26_vkc4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71.295)
