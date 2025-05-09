@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=40 format=3 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://mdxtbwnm2hq3" path="res://Scenes/Levels/map.tscn" id="1_jh678"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -70,6 +70,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0mrf"]
+size = Vector3(1, 11, 1)
 
 [node name="GameWorld" type="Node3D"]
 
@@ -280,6 +283,16 @@ curve = SubResource("Curve3D_nkbim")
 
 [node name="PathFollow3D" parent="Ladder/Path3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.428083, -0.903731, 0, 0.903731, 0.428083, 0, -4, 3)
+
+[node name="Area3D" parent="Ladder" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, -0.406367, 0.605505)
+
+[node name="CollisionShape3D" parent="Ladder/Area3D" index="0"]
+shape = SubResource("BoxShape3D_t0mrf")
+
+[node name="Label3D" parent="Ladder" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.30647, 2.5766)
+visible = true
 
 [editable path="Tightrope"]
 [editable path="Tightrope2"]
