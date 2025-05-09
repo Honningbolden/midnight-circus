@@ -12,7 +12,7 @@ func use(_player: Player) -> void:
 		GameManager.current_item = ""
 		$CoinAccept.play()
 		
-		await wait(1) #waits 1 second before giving you item
+		await wait(1) # waits 1 second before giving you item
 		vodka.position = self.global_position
 		vodka.position.z += 1
 		# TASK: Add an animation showing the vodka being ejected

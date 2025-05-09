@@ -6,6 +6,7 @@ extends Interactable
 @onready var puzzle_complete = false
 @export var coin : Node3D
 
+
 func use(_player: Player) -> void:
 	if puzzle_complete: 
 		return
@@ -14,7 +15,7 @@ func use(_player: Player) -> void:
 	player.can_move = false
 	player.can_turn = false
 	player.visible = false
-	
+
 
 func puzzle_end(puzzle_status) -> void:
 	puzzle.hide()

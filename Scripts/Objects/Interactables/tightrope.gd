@@ -50,3 +50,6 @@ func tightrope_finished() -> void:
 	pathfollow.rotation.z = 0.0
 	tightrope_area.set_deferred("monitoring", true)
 	player.call_deferred("reparent", world)
+	
+	var new_pos = start_marker.global_position if is_near_end(player) else end_marker.global_position
+	player.global_position = new_pos + (Vector3.UP * 0.85)

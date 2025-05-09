@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b38go68phffxd"]
 
 [ext_resource type="Script" uid="uid://d0a8duygpsw7v" path="res://Scripts/Objects/Collectibles/valve.gd" id="1_7wi2e"]
-[ext_resource type="Texture2D" uid="uid://i20jyd30rbeo" path="res://Assets/Pixel art/valve.png" id="2_7wi2e"]
+[ext_resource type="Texture2D" uid="uid://dfnajhdia4it8" path="res://Assets/Pixel art/valve.png" id="2_7wi2e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j8wj4"]
 

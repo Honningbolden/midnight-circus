@@ -9,8 +9,8 @@ func use(_player: Player) -> void:
 	if GameManager.current_item == "Vodka":
 		GameManager.current_item = ""
 		await wait(1) #waits 1 second before giving you item
-		key.position = self.global_position
-		key.position.x += 1
+		key.global_position = self.global_position
+		key.global_position.x += 1
 		# TASK: Add an animation Giving the Vodka to Olaf
 		# TASK: Add a sound effect for Olaf gving the key
 	else:

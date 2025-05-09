@@ -14,22 +14,22 @@ auto_translate_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 126.769
-offset_top = 39.2379
-offset_right = 1326.77
-offset_bottom = 739.238
+offset_right = 1200.0
+offset_bottom = 700.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.959257, 0.959257)
 color = Color(0.560955, 0.560955, 0.560955, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Dial" type="Sprite2D" parent="."]
-position = Vector2(727.41, 451.249)
+position = Vector2(600.641, 345)
+scale = Vector2(0.959257, 0.959257)
 texture = ExtResource("2_fbqs2")
 
 [node name="Pointer" type="Sprite2D" parent="."]
-position = Vector2(727.41, 135.249)
-scale = Vector2(0.0933331, 0.0976526)
+position = Vector2(600.641, 96.0111)
+scale = Vector2(0.0895305, 0.093674)
 texture = ExtResource("3_fbqs2")
 
 [node name="LockTurnAudio" type="AudioStreamPlayer2D" parent="."]
@@ -43,12 +43,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 849.41
-offset_top = 82.2488
-offset_right = 1219.41
-offset_bottom = 179.249
+offset_left = 722.641
+offset_top = 43.0109
+offset_right = 1092.64
+offset_bottom = 140.011
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.959257, 0.959257)
 theme_override_colors/font_color = Color(0.890943, 0.67779, 0.623626, 1)
 theme_override_font_sizes/font_size = 55
 editable = false

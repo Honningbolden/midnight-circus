@@ -125,7 +125,6 @@ func attempt_state_change(state: String) -> void:
 
 
 func on_exit() -> void:
-	print("EXIT")
 	tightrope.tightrope_finished()
 
 
