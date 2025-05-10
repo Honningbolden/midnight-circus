@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bmu4rchcyd4kp"]
+[gd_scene load_steps=45 format=3 uid="uid://bmu4rchcyd4kp"]
 
 [ext_resource type="PackedScene" uid="uid://mdxtbwnm2hq3" path="res://Scenes/Levels/map.tscn" id="1_jh678"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="2_tnnpc"]
@@ -24,13 +24,14 @@
 [ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="23_vg07e"]
 [ext_resource type="PackedScene" uid="uid://fhqs276e3l8u" path="res://Scenes/Objects/horse_tag.tscn" id="24_jh678"]
 [ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="24_vkc4h"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/DuctTape.tscn" id="25_jh678"]
 [ext_resource type="Script" uid="uid://l61qjiqdh0mv" path="res://Scripts/Objects/Collectibles/horse_tag.gd" id="25_vkc4h"]
 [ext_resource type="PackedScene" uid="uid://c7cisk44ynjsm" path="res://Scenes/Objects/Cages/cages_stack_largest.tscn" id="26_vkc4h"]
 [ext_resource type="PackedScene" uid="uid://d4g470bx2vwcs" path="res://Scenes/Objects/Cages/cages_4_stack.tscn" id="27_m5hn3"]
 [ext_resource type="PackedScene" uid="uid://n2mq7gsykghl" path="res://Scenes/Objects/Interactables/tightrope.tscn" id="28_e25jp"]
 [ext_resource type="PackedScene" uid="uid://60xksnd6tgq5" path="res://Scenes/Objects/Interactables/ladder.tscn" id="30_t0mrf"]
+[ext_resource type="PackedScene" uid="uid://i7rerrtqyamt" path="res://Assets/3D_assets/landscape.glb" id="31_eckg6"]
 [ext_resource type="PackedScene" uid="uid://bpf3tsmhk3xjo" path="res://Scenes/Objects/cannon ball.tscn" id="31_nkbim"]
+[ext_resource type="PackedScene" uid="uid://pdk0erxmitym" path="res://Assets/3D_assets/pipe_system/pipe_system-skeleton.glb" id="32_eckg6"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_k0w3b"]
 top_radius = 0.05
@@ -153,8 +154,11 @@ transform = Transform3D(0.0562956, 0, -1.8207, 0, 1.82157, 0, 1.8207, 0, 0.05629
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77695, 1.49735, -96.881)
 vodka = NodePath("../Vodka")
 
+[node name="Canon2" parent="." instance=ExtResource("10_oavat")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.0982, 1.52303, -53.2376)
+
 [node name="BrokenPipe" parent="." node_paths=PackedStringArray("engine", "door1", "player") instance=ExtResource("18_0alvi")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.6148, 1.92036, -97.1332)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.6979, 2.54855, -97.1332)
 engine = NodePath("../SteamEngine")
 door1 = NodePath("../MechanicalDoor2")
 player = NodePath("../Player")
@@ -235,7 +239,7 @@ number = 8
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.912427, 0.382052, -0.146671, 0, 0.358401, 0.933568, 0.409238, -0.851813, 0.327015, 0, 14.5076, -87.4886)
 
-[node name="Duct Tape" parent="." instance=ExtResource("25_jh678")]
+[node name="Duct Tape" parent="." instance=ExtResource("24_vkc4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5658, 0.757557, -92.5017)
 
 [node name="cages_stack_largest" parent="." instance=ExtResource("26_vkc4h")]
@@ -333,6 +337,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
 [node name="CannonBall" parent="." instance=ExtResource("31_nkbim")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 16, -48)
+
+[node name="landscape" parent="." instance=ExtResource("31_eckg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71.295)
+
+[node name="pipe_system-skeleton" parent="." instance=ExtResource("32_eckg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71.295)
 
 [editable path="Tightrope"]
 [editable path="Tightrope2"]
