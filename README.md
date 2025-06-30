@@ -12,10 +12,10 @@ During the game jam (3 months) we worked in weekly sprints–performing weekly c
 Since this is a voluntary project we aim to have all team members work with what they're most motivated to learn, which makes everyone very driven!
 
 ### Team Members
-* (Honningbolden)[https://github.com/Honningbolden]
-* (Vindictivity)[https://github.com/Vindictivity]
-* (angeloose)[https://github.com/angeloose]
-* (AWZREX)[https://github.com/AWZREX]
-* (D1MES)[https://github.com/D1MES]
-* (CohenK)[https://github.com/CohenK]
+* [Honningbolden](https://github.com/Honningbolden)
+* [Vindictivity](https://github.com/Vindictivity)
+* [angeloose](https://github.com/angeloose)
+* [AWZREX](https://github.com/AWZREX)
+* [D1MES](https://github.com/D1MES)
+* [CohenK](https://github.com/CohenK)
 * piknight (Artist | No GitHub account)
