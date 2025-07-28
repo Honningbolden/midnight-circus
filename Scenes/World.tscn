@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dvl6lb4k6gp1i"]
+[gd_scene load_steps=32 format=3 uid="uid://dvl6lb4k6gp1i"]
 
 [ext_resource type="PackedScene" uid="uid://bsaem14g30p7m" path="res://Scenes/Objects/Interactables/ferris_wheel.tscn" id="1_kwl8l"]
 [ext_resource type="PackedScene" uid="uid://crqxt65vwyxpy" path="res://Scenes/Objects/Interactables/rope.tscn" id="1_ti1bm"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://ums44tggyg3q" path="res://Scenes/Objects/Interactables/roller_coaster.tscn" id="9_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://bqyfg3hxj1nu6" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
 [ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="12_8l3nt"]
+[ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
+[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="12_rwt1y"]
+[ext_resource type="PackedScene" uid="uid://bojlcywc1io63" path="res://Scenes/Objects/Fuse.tscn" id="13_8ldnt"]
 [ext_resource type="PackedScene" uid="uid://x5fy16j868fr" path="res://Scenes/Objects/Interactables/circus_door.tscn" id="13_op4cu"]
 [ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="14_kwl8l"]
 [ext_resource type="PackedScene" uid="uid://bywfgwxn45poc" path="res://Scenes/Objects/Interactables/carousel.tscn" id="16_mvfa8"]
@@ -66,6 +69,10 @@ vodka = NodePath("../Vodka")
 [node name="Olaf" parent="." node_paths=PackedStringArray("key") instance=ExtResource("4_gjpho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0511284, 1.31863, -140.953)
 key = NodePath("../keys")
+
+[node name="Player" parent="." instance=ExtResource("1_e5dp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5412, 1.35, -136.662)
+collision_mask = 30
 
 [node name="Ladder" parent="." instance=ExtResource("5_p70al")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.5472, 1.79163, -138.152)
@@ -151,7 +158,7 @@ script = ExtResource("18_b5aes")
 number = 8
 
 [node name="Canon" parent="." instance=ExtResource("20_r0dna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.726, 1.61227, -133.706)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.726, 1.04578, -133.706)
 
 [node name="Tightrope" parent="." instance=ExtResource("26_w86vl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606151, 1.51765, -132.752)
@@ -181,7 +188,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41653, -151.161)
 [node name="ReplacementPipe" parent="." instance=ExtResource("29_0bcf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79833, -161.959)
 
-[node name="Duct Tape" parent="." instance=ExtResource("29_7dsfl")]
+[node name="Duct Tape" parent="." instance=ExtResource("29_mq4nq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.606771, 0.75, -119.235)
 script = ExtResource("29_mq4nq")
 
