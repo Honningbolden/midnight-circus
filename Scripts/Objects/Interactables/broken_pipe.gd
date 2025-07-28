@@ -13,7 +13,7 @@ extends Interactable
 var fixed : bool = false
 
 func use(_player: Player) -> void:
-	if GameManager.current_item == "Duct Tape" or GameManager.current_item == "ReplacementPipe":
+	if GameManager.current_item == "DuctTape" or GameManager.current_item == "ReplacementPipe":
 		GameManager.current_item = ""
 		
 		mesh.visible = true
