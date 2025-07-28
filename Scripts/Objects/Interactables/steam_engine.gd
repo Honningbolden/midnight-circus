@@ -23,3 +23,9 @@ func use(_player: Player) -> void:
 		
 		if broken_pipe.fixed:
 			door.use(player)
+		
+		#FIX OR REMOVE ME vvvv	
+			
+		#var tween2 = create_tween()
+		#tween2.tween_property(valve, "rotation_degrees", Vector3(0,90,0), 1)
+		#speaker.play()
