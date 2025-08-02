@@ -13,7 +13,7 @@ extends Interactable
 var fixed : bool = false
 
 func use(_player: Player) -> void:
-	if GameManager.current_item == "DuctTape" or GameManager.current_item == "ReplacementPipe":
+	if GameManager.current_item == "DuctTape":
 		GameManager.current_item = ""
 		
 		mesh.visible = true
@@ -33,4 +33,3 @@ func use(_player: Player) -> void:
 		$DuctTape.play()
 		$Label3D.queue_free()
 		
-		# TASK: Add an animation for fixing pipe

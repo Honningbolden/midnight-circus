@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://bt1uhyojvoto4"]
+
+[ext_resource type="Script" uid="uid://daejqajcgg4s5" path="res://Scripts/Objects/Interactables/broken_pipe2.gd" id="1_j0xbi"]
+[ext_resource type="PackedScene" uid="uid://esg8poeea187" path="res://Assets/3D_assets/pipe_system/pipe_system-broken_pipe-broken.glb" id="2_khjah"]
+[ext_resource type="AudioStream" uid="uid://drrk0tmbkq6ir" path="res://Assets/SFX/steam_leak_L.wav" id="3_3gtho"]
+[ext_resource type="PackedScene" uid="uid://bvn3p1hi1bhoe" path="res://Assets/3D_assets/pipe_system/pipe_system-broken_pipe-replacement.glb" id="3_khjah"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ihus2"]
+height = 1.0
+radius = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_isda5"]
+
+[node name="BrokenPipe2" type="Node3D" node_paths=PackedStringArray("broken_pipe", "fixed_pipe")]
+script = ExtResource("1_j0xbi")
+broken_pipe = NodePath("pipe_system-broken_pipe-broken")
+fixed_pipe = NodePath("pipe_system-broken_pipe-replacement")
+
+[node name="pipe_system-broken_pipe-broken" parent="." instance=ExtResource("2_khjah")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="pipe_system-broken_pipe-replacement" parent="." instance=ExtResource("3_khjah")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+visible = false
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.000456691, 0, -0.00204301)
+shape = SubResource("CylinderShape3D_ihus2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, -0.6, 0, 0.6, -2.62268e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_isda5")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.422618, 0.906308, 0, 0.906308, 0.422618, -1, 1.84732e-08, -3.9616e-08, 0.254342, -0.0137535, 0.0112229)
+visible = false
+text = "Fix Broken Pipe"
+
+[node name="Leak" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_3gtho")
+volume_db = 2.0
+max_db = -20.0
+autoplay = true
+max_distance = 20.0

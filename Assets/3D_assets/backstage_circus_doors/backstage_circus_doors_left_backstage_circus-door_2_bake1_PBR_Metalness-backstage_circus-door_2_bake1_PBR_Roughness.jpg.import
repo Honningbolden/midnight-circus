@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc01sg3xwu0vt"
+uid="uid://bknjr6duhj3j8"
 path.s3tc="res://.godot/imported/backstage_circus_doors_left_backstage_circus-door_2_bake1_PBR_Metalness-backstage_circus-door_2_bake1_PBR_Roughness.jpg-944f134362a57db69d35bf3c82ad1030.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "6e54bf81f3b150211e49ea64e60b17d9"
 }
 
 [deps]

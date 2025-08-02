@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8pgjxgg5sfw7"
+uid="uid://c315lfnqc1vfm"
 path.s3tc="res://.godot/imported/cages_stack_largest_cages_stack_largest_bake1_PBR_Normal.jpg-620c6668a5ef3846e4c92b07d6306dbc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "a74ec8ea45c865cdf4c33846f159e912"
 }
 
 [deps]
