@@ -3,22 +3,23 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2xrj8vqhpcf5"
-path="res://.godot/imported/painting_3_Base Color_old copper.jpg-04853fbb225a4ca0be21773efdfdd5a7.ctex"
+path.s3tc="res://.godot/imported/painting_3_Base Color_old copper.jpg-04853fbb225a4ca0be21773efdfdd5a7.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "1bc18f94cce0940aa7b6e7063b1e0293"
+"md5": "33dc133f45e7b4cd8d40eb4e90c004d7"
 }
 
 [deps]
 
 source_file="res://Assets/3D_assets/paintings/painting_3_Base Color_old copper.jpg"
-dest_files=["res://.godot/imported/painting_3_Base Color_old copper.jpg-04853fbb225a4ca0be21773efdfdd5a7.ctex"]
+dest_files=["res://.godot/imported/painting_3_Base Color_old copper.jpg-04853fbb225a4ca0be21773efdfdd5a7.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -34,4 +35,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

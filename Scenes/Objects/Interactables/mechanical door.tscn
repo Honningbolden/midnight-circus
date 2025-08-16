@@ -35,10 +35,23 @@ shape = SubResource("BoxShape3D_4oqru")
 
 [node name="mechanical_door-frame" parent="." instance=ExtResource("2_4oqru")]
 
+[node name="Cube_001" parent="mechanical_door-frame" index="1"]
+visible = false
+
 [node name="mechanical_door-door" parent="." instance=ExtResource("3_p8j44")]
 
+[node name="Cube_001" parent="mechanical_door-door" index="1"]
+visible = false
+
 [node name="mechanical_door-light" parent="." instance=ExtResource("4_fmcuu")]
+
+[node name="Cube_001" parent="mechanical_door-light" index="1"]
+visible = false
 
 [node name="DoorOpen" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_x5mgb")
 max_db = -3.0
+
+[editable path="mechanical_door-frame"]
+[editable path="mechanical_door-door"]
+[editable path="mechanical_door-light"]

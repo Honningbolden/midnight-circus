@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drm0t106ml8pr"
-path="res://.godot/imported/painting_3_painting_statue.png-034a03796da375c9e58bdae6d2bd5fcc.ctex"
+path.s3tc="res://.godot/imported/painting_3_painting_statue.png-034a03796da375c9e58bdae6d2bd5fcc.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
 "md5": "64b4da918b34a3b23ea7afb32a657b0f"
@@ -14,11 +15,11 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/3D_assets/paintings/painting_3_painting_statue.png"
-dest_files=["res://.godot/imported/painting_3_painting_statue.png-034a03796da375c9e58bdae6d2bd5fcc.ctex"]
+dest_files=["res://.godot/imported/painting_3_painting_statue.png-034a03796da375c9e58bdae6d2bd5fcc.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -34,4 +35,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

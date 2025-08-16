@@ -17,6 +17,9 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cages_stack_largest_Baked/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_br5ai")
 
+[node name="Cube_001" parent="." index="1"]
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" index="0"]
 collision_layer = 2
 collision_mask = 0
