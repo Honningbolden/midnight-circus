@@ -14,6 +14,7 @@ var player : Player = null
 
 
 func _on_tightrope_body_entered(body: Node3D) -> void:
+	print("rope entered")
 	if body is Player and cooldown_timer.is_stopped():
 		cooldown_timer.start()
 		var tightrope_state = body.statemachine.get_node("Tightrope State")

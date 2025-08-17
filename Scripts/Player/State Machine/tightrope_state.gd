@@ -9,10 +9,10 @@ extends StateMachineState
 @export var tightrope_timer : Timer
 
 @export_category("Tightrope Constants")
-@export var climb_speed : float = 0.01
-@export var sway_speed : float = 3.0
-@export var sway_limit : float = 6.0
-@export var balance_sensitivity : float = 20.0
+@export var climb_speed : float = 0.01 # how fast you move along it
+@export var sway_speed : float = 3.0 # how fast you rotate left and right
+@export var sway_limit : float = 6.0 # how far you rotate
+@export var balance_sensitivity : float = 20.0 # how quickly A and D adjusts tilt
 @export var max_tilt_threshold : float = 20.0  # lean before fall in degrees
 
 var tightrope : Node3D = null

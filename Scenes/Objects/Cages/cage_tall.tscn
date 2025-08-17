@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0rem2ktd1n71"]
+
+[ext_resource type="PackedScene" uid="uid://jypvsaqfmojl" path="res://Assets/3D_assets/cages/cage_tall/cage_tall.glb" id="1_g15pf"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eqr37"]
+data = PackedVector3Array(-0.5, -1.0101, 0.5, -0.5, 1.0101, -0.5, -0.5, 1.0101, 0.5, -0.5, -1.0101, 0.5, -0.5, -1.0101, -0.5, -0.5, 1.0101, -0.5, -0.5, -1.0101, -0.5, 0.5, 1.0101, -0.5, -0.5, 1.0101, -0.5, -0.5, -1.0101, -0.5, 0.5, -1.0101, -0.5, 0.5, 1.0101, -0.5, 0.5, -1.0101, -0.5, 0.5, 1.0101, 0.5, 0.5, 1.0101, -0.5, 0.5, -1.0101, -0.5, 0.5, -1.0101, 0.5, 0.5, 1.0101, 0.5, 0.5, -1.0101, 0.5, -0.5, 1.0101, 0.5, 0.5, 1.0101, 0.5, 0.5, -1.0101, 0.5, -0.5, -1.0101, 0.5, -0.5, 1.0101, 0.5, -0.5, -1.0101, -0.5, 0.5, -1.0101, 0.5, 0.5, -1.0101, -0.5, -0.5, -1.0101, -0.5, -0.5, -1.0101, 0.5, 0.5, -1.0101, 0.5, 0.5, 1.0101, -0.5, -0.5, 1.0101, 0.5, -0.5, 1.0101, -0.5, 0.5, 1.0101, -0.5, 0.5, 1.0101, 0.5, -0.5, 1.0101, 0.5)
+
+[node name="cage_tall" instance=ExtResource("1_g15pf")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cage_tall_Baked" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cage_tall_Baked/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_eqr37")
+
+[node name="Cube_001" parent="." index="1"]
+visible = false
