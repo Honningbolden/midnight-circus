@@ -2,14 +2,14 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rj8mc6guibpc"
+uid="uid://ciyqonmuq0i4"
 path.s3tc="res://.godot/imported/safe_Safe_hatch_safe_frame_PBR_Diffuse.jpg-29351d1e4db3fcf1b35ca1ed303d2339.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "aec4ced3e8f8fbdd776f6e751e4f707a"
+"md5": "e219772b70b2aa6bc586e8c100dd1860"
 }
 
 [deps]
