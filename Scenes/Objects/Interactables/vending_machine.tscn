@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://mdrq4gut8d0p"]
+[gd_scene load_steps=30 format=4 uid="uid://mdrq4gut8d0p"]
 
 [ext_resource type="Script" uid="uid://dn0lbm7kyqubt" path="res://Scripts/Objects/Interactables/vending_machine.gd" id="1_1bqfr"]
 [ext_resource type="AudioStream" uid="uid://bnogs46h4w14i" path="res://Assets/SFX/Hallway/vending_machine_hum_f.wav" id="2_vkryi"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c3tv5gosyk1sv" path="res://Assets/3D_assets/vending-machine/vending-machine_window.jpg" id="14_x6fuc"]
 [ext_resource type="Texture2D" uid="uid://brtkwpx3tlsok" path="res://Assets/3D_assets/vending-machine/vending-machine_window-window_13.jpg" id="15_fhkma"]
 [ext_resource type="Texture2D" uid="uid://ixi4sf8go4b0" path="res://Assets/3D_assets/vending-machine/vending-machine_window_11.jpg" id="16_44wlb"]
+[ext_resource type="AudioStream" uid="uid://kag17hq4kybf" path="res://Assets/SFX/Vending Machine/vending-machine-purchase.mp3" id="18_q1tg7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hwwt"]
 resource_name = "Vending Machine_Baked"
@@ -167,10 +168,13 @@ size = Vector3(1.3, 1.85, 0.9)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ch68x"]
 size = Vector3(1.3, 1.85, 0.9)
 
-[node name="VendingMachine" type="Node3D" node_paths=PackedStringArray("accept_player", "deny_player")]
+[node name="VendingMachine" type="Node3D" node_paths=PackedStringArray("accept_player", "deny_player", "purchase_player", "area", "label")]
 script = ExtResource("1_1bqfr")
 accept_player = NodePath("CoinAccept")
 deny_player = NodePath("CoinDeny")
+purchase_player = NodePath("Purchase")
+area = NodePath("Area3D")
+label = NodePath("Label3D")
 vodka_scene = ExtResource("2_yxqnr")
 
 [node name="Vending Machine Model" type="Node3D" parent="."]
@@ -212,12 +216,12 @@ visible = false
 texture_filter = 0
 text = "Deposit Coin"
 
-[node name="Humming (default)" type="AudioStreamPlayer3D" parent="."]
+[node name="Humming" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_vkryi")
 volume_db = 5.0
 max_db = -10.0
 autoplay = true
-max_distance = 15.0
+max_distance = 3.0
 
 [node name="CoinAccept" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_5kd7y")
@@ -230,3 +234,6 @@ stream = ExtResource("4_4gjv6")
 volume_db = -5.0
 max_db = 1.0
 max_distance = 15.0
+
+[node name="Purchase" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("18_q1tg7")

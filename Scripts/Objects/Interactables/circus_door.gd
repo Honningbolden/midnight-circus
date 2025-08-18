@@ -8,7 +8,7 @@ extends Interactable
 
 
 func use (player: Player) -> void:
-	if GameManager.current_item == "keys":
+	if GameManager.current_item == "Keys":
 		GameManager.current_item = ""
 		open_door()
 		$DoorOpen.play()

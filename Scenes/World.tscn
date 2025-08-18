@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://y7ryxlwa3yn6" path="res://Scenes/Objects/Interactables/mechanical door.tscn" id="28_g01fq"]
 [ext_resource type="PackedScene" uid="uid://2hdgywoyjhx6" path="res://Scenes/Player/Player.tscn" id="28_y1bqn"]
 [ext_resource type="PackedScene" uid="uid://b0adbyu6yw0xr" path="res://Scenes/Objects/replacement pipe.tscn" id="29_0bcf6"]
-[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/keys.tscn" id="29_7dsfl"]
+[ext_resource type="PackedScene" uid="uid://bn2jk150sxr2f" path="res://Scenes/Objects/Keys.tscn" id="29_7dsfl"]
 [ext_resource type="Script" uid="uid://dr21c7hq5248" path="res://Scripts/Objects/Collectibles/DuctTape.gd" id="29_mq4nq"]
 [ext_resource type="PackedScene" uid="uid://c7hjyxxwkyuu4" path="res://Scenes/Objects/Vodka.tscn" id="29_y1bqn"]
 

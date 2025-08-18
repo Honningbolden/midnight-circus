@@ -157,9 +157,12 @@ shadow_mesh = SubResource("ArrayMesh_lxjjr")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v70hv"]
 
-[node name="Safe" type="Node3D" node_paths=PackedStringArray("puzzle")]
+[node name="Safe" type="Node3D" node_paths=PackedStringArray("puzzle", "safe_door", "area", "label")]
 script = ExtResource("1_v70hv")
 puzzle = NodePath("Lock")
+safe_door = NodePath("safe/Door")
+area = NodePath("Area3D")
+label = NodePath("Label3D")
 
 [node name="safe" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.451884, -0.430684, 0.412158)

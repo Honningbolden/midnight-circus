@@ -2,16 +2,20 @@
 
 [ext_resource type="Script" uid="uid://boqcei0r0pwb6" path="res://Scripts/Objects/Interactables/rope.gd" id="1_54jqw"]
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_34mxs"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 5.0
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b8gpw"]
 radius = 0.1
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_34mxs"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 5.0
-
 [node name="Rope" type="Node3D"]
 script = ExtResource("1_54jqw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("CylinderMesh_34mxs")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 8
@@ -19,7 +23,3 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CylinderShape3D_b8gpw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-mesh = SubResource("CylinderMesh_34mxs")

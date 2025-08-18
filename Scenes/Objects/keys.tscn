@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bn2jk150sxr2f"]
 
-[ext_resource type="Script" uid="uid://cstqjmmsfnak7" path="res://Scripts/Objects/Collectibles/key.gd" id="1_qfusy"]
-[ext_resource type="Texture2D" uid="uid://opxfp8huyr4" path="res://Assets/Pixel art/key.png" id="2_ay8iq"]
+[ext_resource type="Script" uid="uid://cstqjmmsfnak7" path="res://Scripts/Objects/Collectibles/key.gd" id="1_4nhal"]
+[ext_resource type="Texture2D" uid="uid://opxfp8huyr4" path="res://Assets/Pixel art/key.png" id="2_g7sq4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_terbh"]
 
-[node name="keys" type="Node3D"]
-script = ExtResource("1_qfusy")
+[node name="Keys" type="Node3D"]
+script = ExtResource("1_4nhal")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 pixel_size = 0.001
 billboard = 2
 texture_filter = 0
-texture = ExtResource("2_ay8iq")
+texture = ExtResource("2_g7sq4")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 4

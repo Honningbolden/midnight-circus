@@ -17,13 +17,10 @@ editor_description = "will have to instatiate 4 times in the world. Make it turn
 mesh = SubResource("BoxMesh_81tt1")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 0, 0, 0)
 stream = ExtResource("1_xp5f8")
 unit_size = 7.0
 max_distance = 100.0
 emission_angle_enabled = true
-emission_angle_degrees = 87.0
+emission_angle_degrees = 70.0
 emission_angle_filter_attenuation_db = -20.0
-
-[node name="Label3D" type="Label3D" parent="."]
-offset = Vector2(0, 75)
-text = "Speaker"

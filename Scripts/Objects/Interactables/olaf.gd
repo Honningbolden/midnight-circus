@@ -7,8 +7,9 @@ extends Interactable
 @export var keys_player : AudioStreamPlayer3D
 @export var snore_player : AudioStreamPlayer3D
 @export var mumble_player : AudioStreamPlayer3D
+@export var area : Area3D
+@export var label : Label3D
 @export var key_scene : PackedScene
-
 @export var mumble_audio1 : AudioStream
 @export var mumble_audio2 : AudioStream
 @export var mumble_audio3 : AudioStream
@@ -21,9 +22,11 @@ func use(_player: Player) -> void:
 		var key = key_scene.instantiate()
 		gameworld.add_child(key)
 		key.global_position = self.global_position + Vector3(1, 0, 0)
+		key.rotation_degrees.y = 90.0
 		
 		keys_player.play()
 		snore_player.stop()
+		disable_interactable()
 	else:
 		var mumbles = [ mumble_audio1, mumble_audio2, mumble_audio3 ]
 		var idx = randi() % mumbles.size()
@@ -31,6 +34,11 @@ func use(_player: Player) -> void:
 		mumble_player.stop()
 		mumble_player.stream = mumbles[idx]
 		mumble_player.play()
+
+
+func disable_interactable() -> void:
+	area.queue_free()
+	label.queue_free()
 
 
 ## Wait x seconds
