@@ -1,9 +1,11 @@
 extends Node3D
 
+
 @onready var rightArm = $RightArm
 @onready var leftArm = $LeftArm
 @onready var leftFoot = $LeftFoot
 @onready var rightFoot = $RightFoot
+
 
 @onready var mesh = $MeshInstance3D
 @onready var material = mesh.get_active_material(0)

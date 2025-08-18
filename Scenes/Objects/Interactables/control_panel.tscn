@@ -1,0 +1,109 @@
+[gd_scene load_steps=13 format=4 uid="uid://yn01e0id8s0i"]
+
+[ext_resource type="Texture2D" uid="uid://baomvbhgxx7x0" path="res://Assets/3D_assets/control-tower/control-panel_control panel_control-tower_platform-floor_PBR_Diffuse.jpg" id="1_fo5or"]
+[ext_resource type="Texture2D" uid="uid://dqwgmpey43r7m" path="res://Assets/3D_assets/control-tower/control-panel_control panel_control-tower_platform-floor_PBR_Emission.jpg" id="2_bdqaj"]
+[ext_resource type="Texture2D" uid="uid://bn4jhbdtqvirs" path="res://Assets/3D_assets/control-tower/control-panel_control panel_control-tower_platform-floor_PBR_Roughness.jpg" id="3_aif5n"]
+[ext_resource type="Texture2D" uid="uid://dvfmfdv2336d5" path="res://Assets/3D_assets/control-tower/control-panel_control panel_control-tower_platform-floor_PBR_Normal.jpg" id="4_ygn15"]
+[ext_resource type="Texture2D" uid="uid://dykb5v8rh2tw3" path="res://Assets/3D_assets/control-tower/control-panel_control panel top_control-tower_platform-floor_PBR_Diffuse-control panel top_control-tower_platform-floor_PBR_Alpha.png" id="5_eyjy8"]
+[ext_resource type="Texture2D" uid="uid://6p3lft85f56f" path="res://Assets/3D_assets/control-tower/control-panel_control panel top_control-tower_platform-floor_PBR_Metalness-control panel top_control-tower_platform-floor_PBR_Roughness.jpg" id="6_u14nb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7xve7"]
+resource_name = "control panel_Baked"
+cull_mode = 2
+albedo_texture = ExtResource("1_fo5or")
+metallic_texture = ExtResource("3_aif5n")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_aif5n")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_texture = ExtResource("2_bdqaj")
+normal_enabled = true
+normal_texture = ExtResource("4_ygn15")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_00f25"]
+_surfaces = [{
+"aabb": AABB(-1.19735, -0.1, -1.78661, 1.80929, 1.24254, 1.72425),
+"format": 34896613377,
+"index_count": 204,
+"index_data": PackedByteArray("AAAWABcAAAADABYABgAAABcAGAAWAAMAGAADAAQABAAZABgABQAZAAQAGAAaABYAGAAZABoAGwAXABYAGwAWABoABgAXABwAGwAcABcAHQAGABwAGwAdABwAHgAGAB0AGwAeAB0ABgAKAAsABgAeAAoAGwAaAAEAGQABABoACgAeAB8ADgAKAB8ADgAfAA0ADQAfAB4ACQAOAA0AGwABAAIAHgAbAAIAHgACACAAIQAgAAIAHgAgACEAAQAhAAIAHgAhACIADQAeACIAAQAjACEAIgAhACMAAQAkACMAGQAkAAEAIgAjACUAJQAjACQAJAAZACYAJQAkACYAGQAnACYAJQAmACcAGQAFACcAJwAFAAgABwAnAAgAJQAnAAcABwAIAAkACQANAAcADAAlAAcADAAiACUADwANACIADAAPACIADwAQAA0AEAAHAA0ADwATABAADAAHABEAEAARAAcADAAVAA8ADwAVABMAEQASAAwADAASABUAEAAUABEAEAATABQAEQAUABIAFAATABUAFAAVABIA"),
+"lods": [0.102852, PackedByteArray("AAABAAIAAAADAAEAAQADAAQABQABAAQABgAAAAIAAQAFAAcABwAFAAgABwAIAAkABgAKAAsABgACAAoADAACAAEADAABAAcACgACAA0ACQANAAcADgAKAA0ACQAOAA0ADwANAAIADAAPAAIAEAAHAA0ADwAQAA0ADAAHABEAEAARAAcAEQASAAwADwATABAAEAAUABEAEQAUABIAEAATABQADAASABUADAAVAA8AFAAVABIADwAVABMAFAATABUA")],
+"name": "control panel_Baked",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("RUkAAHr7AAAAACGJhAQAAAAAIYl6+wAARUkAAIQEAADlTwAAAAAAAI+3AAAAAAAA5U8AAP//AABDm///QgIAAKP9sY4AAAAA//9/k4QEAACj/bGO//8AAI+3AAD//wAAmAkymyYLAABDm///vP0AAP//f5N6+wAAmAkym9j0AACqkVv52PQAAKqRW/kmCwAAtA2ZjiYLAADHlcLs2PQAAMeVwuwmCwAAtA2Zjtj0AABFAydXhAQAAEUDJ1d6+wAAKArWVgAAAABOBAxjAAAAAAAAgGGEBAAAAACAYXr7AAAoCtZW//8AAE4EDGP//wAATgQ6kP//AABDm6z4//8AAHECY48K/gAA5AGjknr7AADjAz+XevsAAOQBo5KEBAAAcQJjj/QBAADjAz+XhAQAAE4EOpAAAAAAQ5us+AAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ti5x"]
+resource_name = "control-panel_Cube_129"
+_surfaces = [{
+"aabb": AABB(-1.19735, -0.1, -1.78661, 1.80929, 1.24254, 1.72425),
+"attribute_data": PackedByteArray("9vDNDBu0QIUbtM0M9vBAhe31QIUH8SU47fUlOAbxQIUBWoCwCAAFoi8yKH7fM/N8OjD3/wgAE9cIAHfaOlJzdwgAyXtyBXN3cgV4BbBZrnoIACIBsFk8AjpSeAWZpugKdKvjfJmm43x0q+gKYPLcskf39/9g8vf/R/fcskqv6AoLtON8Sq/jfAu06Arojff/OIzC/gu0acxEivN8EVrXpRFacqIRWuTaUPJqhhu09/8btFCFUPLc/sBZ43yJpugKiabjfMBZ6Aq6w0CFusPNDMS/zQzEv0CFhVYHACdXPAJyVTwCflf8ACdXrnp+V+97clWueoVW43zYIsL9jR7E+qkeSv5MIvf/bTK2/rkywv1uV4CwMDX5/VZ883yWeCWCs3igfuF8J3/CjCd/d4wzfnixacw6j/B+"),
+"format": 34896613399,
+"index_count": 204,
+"index_data": PackedByteArray("AAAyADMAAAADADIANAAzADIANAAyADUANAA1AAEANAABAAIABAAFAAYABAAHAAUANgA3ADgANgA5ADcANwA5ABUAEwA3ABUAEwA6ADcAOAA3ADoAEwA7ADoAPAA6ADsAOAA6ADwAPAA7AD0ADwA4ADwADwA8ABAADwAWADgADwAQABEAFgAUADgAEgARABAAFgASABQAEgAQABQADQA+AD8APwAOAA0APwBAAA4APwBBAEAAPwA+AEEAPgAMAEEAPgBCAAwACQA+AA0AQgA+AEMAPgAJAEQAPgBEAEMARQBDAEQARAAJAAoARQBEAAgACABEAAoACAAKAAsAFwAYABkAFwAaABgAGwAcAB0AGwAeABwAHwAgACEAHwAiACAARgBHAEgARgBJAEcAJwBIAEcASQAnAEcAJwAoAEgARgBKAEkASgAnAEkASgBGACYASgAmAEsAJwBKACQAJwAkACkAJABKAEwAIwAkAEwAIwBMACUAJQBMAEoAJQBKAE0AKgArACwAKgAtACsALgAvADAALgAxAC8A"),
+"lods": [0.102852, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAAKAAsADAAJAAgACQAMAA0ADAAOAA0ADwAQABEAEgARABAADwATABAAEgAQABQADwAVABMAFgASABQADwAWABUAFgAUABUAFwAYABkAFwAaABgAGwAcAB0AGwAeABwAHwAgACEAHwAiACAAIwAkACUAJAAmACUAJwAmACQAJwAoACYAJwAkACkAKgArACwAKgAtACsALgAvADAALgAxAC8A")],
+"material": SubResource("StandardMaterial3D_7xve7"),
+"name": "control panel_Baked",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 78,
+"vertex_data": PackedByteArray("RUkAAHr7lrQAACGJhATG4AAAIYl6+5XPRUkAAIQEGtaqkVv5JgsS0rQNmY4mCxLSmAkymyYLEtLHlcLsJgsS0kOb//9CAoXjj7cAAAAA//+j/bGOAADW/f//f5OEBJn2AAAhiYQEl9vlTwAAAABP/0VJAACEBK35mAkymyYLRPNDm///QgLF+KqRW/kmC0TzqpFb+dj0RPMAACGJhATw3kOb//+8/cn6AAAhiXr7hdKYCTKb2PRE86qRW/nY9MnLx5XC7CYLycuqkVv5JgvJy8eVwuzY9MnLmAkym9j0///HlcLs2PT//6qRW/nY9P//tA2Zjtj0//+YCTKbJgvJy7QNmY7Y9MnLmAkym9j0ycu0DZmOJgvJy///f5N6+2zHo/2xjv//Vr9Dm///vP2tzAAAIYl6+4nL5U8AAP//7L9FSQAAevsXx4+3AAD///+///9/k4QEutRDm///vP1EsEOb//9CAqzR//9/k3r7DLTHlcLsJgtE87QNmY7Y9ETztA2ZjiYLRPPHlcLs2PRE80UDJ1eEBPHVRQMnV3r7WrsAAIBhevsmxgAAgGGEBF7bTgQ6kP//C9jkAaOSevtD3OMDP5d6+wbncQJjjwr+B9XkAaOShAQj5XECY4/0AVno4wM/l4QE5vBOBDqQAADf9U4EDGMAALX3KArWVgAA6f9FAydXhATE+QAAgGGEBDvpcQJjj/QBTOBOBDqQAAAA7UObrPgAAMr24wM/l4QE2tAAAIBhevvNyigK1lb//8a/RQMnV3r7cMxOBAxj//8QwE4EOpD//5HDcQJjjwr+nsRDm6z4//9GweMDP5d6+8jR/j7/l/1SQbD3XVOn0y+Znf/////////////////////jrtqv/7//v3+6/bfJr0mpSNHozeJDmUQlUHBWB3ODuTC1sQUHc4O5B3ODudFUIbPBh7GuylzZpAdzg7l1R7qjdUe6o3VHuqN1R7qjbs5uTm7Obk5uzm5Obs5uTom4RFyJuERcibhEXIm4RFzlx18M3efnA7fYMCD13IDX1A+p/n05aPf/////D9OBZEvfqIcl7q9o5sQOaQdzg7kHc4O5B3ODuQdzg7kNOuOiPUdsnBFVvaHZSPOrhnInlolkbKsYcBWtQmUtoDtehrVnV6C73WcVvnNYVsfUyErGx0ZzSWPUJNTq0xPRF80yx5zBqcPZuZu5mbaDwL7RXeVRHdn/OMbs91vnfPJT+BLi6eYC2NHrFg8f9w43")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_00f25")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcf0j"]
+resource_name = "control panel top_Baked"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("5_eyjy8")
+metallic = 1.0
+metallic_texture = ExtResource("6_u14nb")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("6_u14nb")
+roughness_texture_channel = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n5eit"]
+_surfaces = [{
+"aabb": AABB(-1.12222, 0.637906, -1.71152, 0.961708, 0.457029, 1.57407),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "control panel top_Baked",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("/////wAAAAAAAAAA//8AAAAAAAAAAAAA////////AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r2kvk"]
+resource_name = "control-panel_Cube_132"
+_surfaces = [{
+"aabb": AABB(-1.12222, 0.637906, -1.71152, 0.961708, 0.457029, 1.57407),
+"attribute_data": PackedByteArray("0QErANH9TvfRAU730f0rAA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_pcf0j"),
+"name": "control panel top_Baked",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("/////wAAycsAAAAA///JywAAAAAAAMnL////////ycu6o4m4uqOJuLqjibi6o4m4")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n5eit")
+
+[node name="Control Panel" type="Node3D"]
+
+[node name="control panel_Baked" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.152518, -1.19209e-07, 0.0381246)
+mesh = SubResource("ArrayMesh_6ti5x")
+skeleton = NodePath("")
+
+[node name="control panel top_Baked" type="MeshInstance3D" parent="control panel_Baked"]
+mesh = SubResource("ArrayMesh_r2kvk")
+skeleton = NodePath("")
