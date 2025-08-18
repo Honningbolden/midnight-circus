@@ -22,12 +22,10 @@ func use(_player: Player) -> void:
 		
 		mesh.visible = true
 		fixed = true
-		# Duplicate to not effect other objs of same material
-		'''
+		
 		var unique_material = material.duplicate()
 		unique_material.albedo_color = Color(1, 0, 0)  # Red
 		mesh.set_surface_override_material(0, unique_material)
-		'''
 		
 		if engine.fixed:
 			if door: door.use(player)
