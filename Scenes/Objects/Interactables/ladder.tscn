@@ -3,20 +3,25 @@
 [ext_resource type="Script" uid="uid://fcsfeopg7ocr" path="res://Scripts/Objects/Interactables/ladder.gd" id="1_l0jmd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_efh2s"]
-size = Vector3(0.5, 2, 0.1)
+size = Vector3(0.5, 2.25, 0.1)
 
 [sub_resource type="Curve3D" id="Curve3D_efh2s"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -0.5, 1, 0, 0, 0, 0, 0, 0, 0, 2, -0.25),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efh2s"]
+size = Vector3(0.5, 2, 0.1)
 
-[node name="Ladder" type="Node3D" node_paths=PackedStringArray("pathfollow")]
+[node name="Ladder" type="Node3D" node_paths=PackedStringArray("pathfollow", "ladder_area", "start_marker", "end_marker", "cooldown_timer")]
 script = ExtResource("1_l0jmd")
 pathfollow = NodePath("Path3D/PathFollow3D")
+ladder_area = NodePath("Area3D")
+start_marker = NodePath("Start Marker")
+end_marker = NodePath("End Marker")
+cooldown_timer = NodePath("Cooldown Timer")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0)
@@ -26,20 +31,25 @@ mesh = SubResource("BoxMesh_efh2s")
 curve = SubResource("Curve3D_efh2s")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(1, 0, 0, 0, 0.447214, -0.894427, 0, 0.894427, 0.447214, 0, -1, 1)
+transform = Transform3D(1, 0, 0, 0, 0.447213, -0.894427, 0, 0.894427, 0.447213, 0, -0.5, 1)
 loop = false
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.406367, 0.605505)
-collision_layer = 8
-collision_mask = 0
-monitoring = false
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0)
+collision_layer = 0
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_efh2s")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.47283)
-visible = false
-texture_filter = 0
-text = "Climb"
+[node name="Cooldown Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Start Marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 1)
+
+[node name="End Marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.25)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_ladder_body_entered"]

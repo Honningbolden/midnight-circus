@@ -23,7 +23,7 @@ pathfollow = NodePath("Path3D/PathFollow3D")
 tightrope_area = NodePath("Area3D")
 start_marker = NodePath("Start Marker")
 end_marker = NodePath("End Marker")
-cooldown_timer = NodePath("CooldownTimer")
+cooldown_timer = NodePath("Cooldown Timer")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -43,7 +43,7 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_3okbo")
 
-[node name="CooldownTimer" type="Timer" parent="."]
+[node name="Cooldown Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
 

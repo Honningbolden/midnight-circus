@@ -1,6 +1,7 @@
 ## tightrope.gd
 
-extends Node
+
+extends Node3D
 
 
 @export var pathfollow : PathFollow3D
@@ -8,9 +9,8 @@ extends Node
 @export var start_marker : Marker3D
 @export var end_marker : Marker3D
 @export var cooldown_timer : Timer
-
-@onready var world : Node3D = get_parent()
-var player : Player = null
+@export var gameworld : Node3D
+@export var player : Player
 
 
 func _on_tightrope_body_entered(body: Node3D) -> void:
@@ -49,7 +49,7 @@ func tightrope_finished() -> void:
 	cooldown_timer.start()
 	pathfollow.rotation.z = 0.0
 	tightrope_area.set_deferred("monitoring", true)
-	player.call_deferred("reparent", world)
+	player.call_deferred("reparent", gameworld)
 	
 	var new_pos = start_marker.global_position if is_near_end(player) else end_marker.global_position
 	player.global_position = new_pos + (Vector3.UP * 0.85)
