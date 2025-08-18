@@ -1,6 +1,6 @@
 extends Node2D
 
-var pin_code = [1, 0, 1, 3, 2, 0, 0, 1]  #10/13/2001
+var pin_code = [1, 0, 1, 3]  # NOTE: 10/13 for testing  # 10/13/2001
 var fix = ["start", "start"]; var dir = "start"
 var rot = 0; var key = []; var code = []
 var first_turn_done := false
@@ -12,6 +12,7 @@ var first_turn_done := false
 var input_allowed = false
 var puzzle_started = false
 
+
 func initialize():
 	for x in range(10):
 		key.append(x)
@@ -20,6 +21,7 @@ func initialize():
 	input_delay.one_shot = true
 	set_process_input(true)
 	input_allowed = true
+
 
 func _input(_event):
 	if not input_allowed:
@@ -84,7 +86,7 @@ func _input(_event):
 func start_input_cooldown():
 	input_allowed = false
 	input_delay.start()
-	
-	
+
+
 func _on_input_cooldown_finished():
 	input_allowed = true

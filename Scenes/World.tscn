@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bqyfg3hxj1nu6" path="res://Scenes/Objects/Interactables/safe.tscn" id="9_uo7di"]
 [ext_resource type="PackedScene" uid="uid://cfj5roc8dpnmg" path="res://Scenes/Objects/Interactables/broken_pipe.tscn" id="12_8l3nt"]
 [ext_resource type="Script" uid="uid://bh2002lg4xpid" path="res://Scripts/Objects/Interactables/safe.gd" id="10_kn06e"]
-[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe.gd" id="12_rwt1y"]
+[ext_resource type="Script" uid="uid://boks3awu81vy3" path="res://Scripts/Objects/Interactables/broken_pipe1.gd" id="12_rwt1y"]
 [ext_resource type="PackedScene" uid="uid://bojlcywc1io63" path="res://Scenes/Objects/Fuse.tscn" id="13_8ldnt"]
 [ext_resource type="PackedScene" uid="uid://x5fy16j868fr" path="res://Scenes/Objects/Interactables/circus_door.tscn" id="13_op4cu"]
 [ext_resource type="PackedScene" uid="uid://cb8wad3qwif2c" path="res://Scenes/Objects/Interactables/ring_master_statue.tscn" id="14_kwl8l"]

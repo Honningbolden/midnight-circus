@@ -1,26 +1,28 @@
 [gd_scene load_steps=10 format=3 uid="uid://bqs07bb504yqg"]
 
 [ext_resource type="Script" uid="uid://dd88q4phekbiq" path="res://Scripts/Objects/Interactables/olaf.gd" id="1_48o71"]
+[ext_resource type="Texture2D" uid="uid://lf7bwry4ltov" path="res://Assets/Pixel art/Olaf.png" id="2_27f2d"]
 [ext_resource type="AudioStream" uid="uid://doh7h8yc0q28q" path="res://Assets/SFX/Stables/olaf_snore.wav" id="2_dbglt"]
 [ext_resource type="AudioStream" uid="uid://sywcscy1jcmi" path="res://Assets/SFX/Stables/keys.wav" id="3_27f2d"]
 [ext_resource type="AudioStream" uid="uid://b1jp0xkbf52dq" path="res://Assets/SFX/Stables/olaf_mumble_1.wav" id="4_2djjh"]
 [ext_resource type="AudioStream" uid="uid://bo83y1ubggcpn" path="res://Assets/SFX/Stables/olaf_mumble_2.wav" id="5_jg72c"]
 [ext_resource type="AudioStream" uid="uid://pke54vnmxkan" path="res://Assets/SFX/Stables/olaf_mumble_3.wav" id="6_7y53t"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_c20hu"]
-height = 1.7
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_48o71"]
 size = Vector3(1, 1.5, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wxdqk"]
-height = 1.7
+height = 1.30625
 
 [node name="Olaf" type="Node3D"]
 script = ExtResource("1_48o71")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_c20hu")
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0488774, 0)
+pixel_size = 0.001
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_27f2d")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 8
