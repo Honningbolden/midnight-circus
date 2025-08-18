@@ -1,15 +1,17 @@
 # safe.gd
 
 extends Interactable
-@onready var puzzle = $Lock
-@onready var player = get_node("../Player")
-@onready var puzzle_complete = false
+@export var puzzle : Node2D
+@export var player : Player
 @export var coin : Node3D
+
+var puzzle_complete = false
 
 
 func use(_player: Player) -> void:
 	if puzzle_complete: 
 		return
+	
 	puzzle.initialize()
 	puzzle.show()
 	player.can_move = false

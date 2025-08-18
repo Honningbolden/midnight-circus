@@ -15,8 +15,9 @@ size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v70hv"]
 
-[node name="Safe" type="Node3D" node_paths=PackedStringArray("coin")]
+[node name="Safe" type="Node3D" node_paths=PackedStringArray("puzzle", "coin")]
 script = ExtResource("1_v70hv")
+puzzle = NodePath("Lock")
 coin = NodePath("Coin")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
