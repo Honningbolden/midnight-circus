@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqo3p2jbo613c"]
+
+[ext_resource type="Script" uid="uid://b7lw5u3oddydo" path="res://Scripts/Objects/Interactables/plank.gd" id="1_7mt4g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7mt4g"]
+
+[sub_resource type="Curve3D" id="Curve3D_j0bj0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.5, 0, 0, 0, 0, 0, 0, 0, 0, -2.5, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3okbo"]
+size = Vector3(5, 0.5, 0.5)
+
+[node name="Plank" type="Node3D" node_paths=PackedStringArray("pathfollow", "plank_area", "start_marker", "end_marker", "cooldown_timer")]
+script = ExtResource("1_7mt4g")
+pathfollow = NodePath("Path3D/PathFollow3D")
+plank_area = NodePath("Area3D")
+start_marker = NodePath("Start Marker")
+end_marker = NodePath("End Marker")
+cooldown_timer = NodePath("CooldownTimer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-5.87704e-09, -4.92953, 0, 0.134451, -2.15477e-07, 0, 0, 0, 0.548539, 0, 0, 0)
+mesh = SubResource("BoxMesh_7mt4g")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_j0bj0")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0, 0)
+loop = false
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_3okbo")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Start Marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+
+[node name="End Marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_plank_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_plank_body_exited"]

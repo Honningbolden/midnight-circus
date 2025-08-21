@@ -1,5 +1,4 @@
-## tightrope_state.gd
-
+## plank_state.gd
 
 extends StateMachineState
 
@@ -7,19 +6,19 @@ extends StateMachineState
 @export_category("Components")
 @export var player : Player
 @export var camera : Camera3D
-@export var tightrope_timer : Timer
+@export var plank_timer : Timer
 
-@export_category("Tightrope Constants")
-@export var climb_speed : float = 0.01 # how fast you move along it
-@export var sway_speed : float = 3.0 # how fast you rotate left and right
-@export var sway_limit : float = 6.0 # how far you rotate
-@export var balance_sensitivity : float = 20.0 # how quickly A and D adjusts tilt
-@export var max_tilt_threshold : float = 20.0  # lean before fall in degrees
+@export_category("Plank Constants")
+@export var climb_speed : float = 0.05 # how fast you move along the plank
+@export var sway_speed : float = 1.0 # how fast you rotate left/right
+@export var sway_limit : float = 3.0 # how far you rotate left/right
+@export var balance_sensitivity : float = 30.0 # how quickly A/D adjusts your tilt
+@export var max_tilt_threshold : float = 15.0  # lean before fall in degrees
 
-var tightrope : Node3D = null
-var tightrope_pathfollow : PathFollow3D = null
+var plank : Node3D = null
+var plank_pathfollow : PathFollow3D = null
 
-var rope_direction : float = 1.0
+var plank_direction : float = 1.0
 var sway_angle : float = 0.0
 var sway_direction : float = 1.0
 var gust_active : bool = false
@@ -31,8 +30,8 @@ var last_progress : float = 0.0
 
 func on_enter() -> void:
 	default_variables()
-	tightrope_timer.start()
-	camera.look_at_position(tightrope.global_position)
+	plank_timer.start()
+	camera.look_at_position(plank.global_position)
 
 
 func default_variables() -> void:
@@ -52,7 +51,7 @@ func on_process(_delta: float) -> void:
 
 
 func on_physics_process(delta: float) -> void:
-	walk_tightrope()
+	walk_plank()
 	update_sway(delta)
 	update_balance(delta)
 	apply_tilt()
@@ -65,9 +64,9 @@ func on_input(event: InputEvent) -> void:
 		attempt_state_change("Exploration State")
 
 
-func walk_tightrope() -> void:
+func walk_plank() -> void:
 	var direction = player.vertical_direction
-	tightrope_pathfollow.progress += -climb_speed * direction * rope_direction
+	plank_pathfollow.progress += -climb_speed * direction * plank_direction
 
 
 func update_sway(delta: float) -> void:
@@ -96,13 +95,13 @@ func update_balance(delta: float) -> void:
 	current_tilt = move_toward(current_tilt, sway_base, 30.0 * delta)
 	current_tilt = clamp(current_tilt, -45.0, 45.0)  # prevent absurd tilt
 	
-	var balance_input = player.horizontal_direction * balance_sensitivity * -rope_direction * delta
+	var balance_input = player.horizontal_direction * balance_sensitivity * -plank_direction * delta
 	current_tilt += balance_input
 
 
-## Rotate the tightrope pathfollow
+## Rotate the plank pathfollow
 func apply_tilt() -> void:
-	tightrope_pathfollow.rotation.z = deg_to_rad(current_tilt)
+	plank_pathfollow.rotation.z = deg_to_rad(current_tilt)
 
 
 ## Check if the player has leaned too much
@@ -113,21 +112,21 @@ func check_fall() -> void:
 
 ## Check if the player has reached either end
 func check_progress() -> void:
-	if tightrope_pathfollow.progress_ratio != last_progress:
-		if tightrope_pathfollow.progress_ratio in [0.0, 1.0]:
+	if plank_pathfollow.progress_ratio != last_progress:
+		if plank_pathfollow.progress_ratio in [0.0, 1.0]:
 			attempt_state_change("Exploration State")
-	if tightrope_pathfollow:
-		last_progress = tightrope_pathfollow.progress_ratio
+	if plank_pathfollow:
+		last_progress = plank_pathfollow.progress_ratio
 
 
 func attempt_state_change(state: String) -> void:
-	if tightrope_timer.is_stopped():
+	if plank_timer.is_stopped():
 		change_state(state)
 
 
 func on_exit() -> void:
-	tightrope.tightrope_finished()
+	plank.plank_finished()
 
 
-func _on_tightrope_timer_timeout() -> void:
+func _on_plank_timer_timeout() -> void:
 	pass # Replace with function body.

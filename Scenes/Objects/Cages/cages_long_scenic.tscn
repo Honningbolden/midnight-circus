@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqqpo63dqk0uo"]
+
+[ext_resource type="PackedScene" uid="uid://bs8xhqx3apbh7" path="res://Assets/3D_assets/cages/cages_long_scenic/cages_long_scenic.glb" id="1_y4kth"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eer12"]
+data = PackedVector3Array(-0.9592, -0.5, 0.392, -0.9592, 0.5, -0.392, -0.9592, 0.5, 0.392, -0.9592, -0.5, 0.392, -0.9592, -0.5, -0.392, -0.9592, 0.5, -0.392, -0.9592, -0.5, -0.392, 0.9592, 0.5, -0.392, -0.9592, 0.5, -0.392, -0.9592, -0.5, -0.392, 0.9592, -0.5, -0.392, 0.9592, 0.5, -0.392, 0.9592, -0.5, -0.392, 0.9592, 0.5, 0.392, 0.9592, 0.5, -0.392, 0.9592, -0.5, -0.392, 0.9592, -0.5, 0.392, 0.9592, 0.5, 0.392, 0.9592, -0.5, 0.392, -0.9592, 0.5, 0.392, 0.9592, 0.5, 0.392, 0.9592, -0.5, 0.392, -0.9592, -0.5, 0.392, -0.9592, 0.5, 0.392, -0.9592, -0.5, -0.392, 0.9592, -0.5, 0.392, 0.9592, -0.5, -0.392, -0.9592, -0.5, -0.392, -0.9592, -0.5, 0.392, 0.9592, -0.5, 0.392, 0.9592, 0.5, -0.392, -0.9592, 0.5, 0.392, -0.9592, 0.5, -0.392, 0.9592, 0.5, -0.392, 0.9592, 0.5, 0.392, -0.9592, 0.5, 0.392)
+
+[node name="cages_long_scenic" instance=ExtResource("1_y4kth")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cages_long_scenic_Baked" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cages_long_scenic_Baked/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_eer12")
+
+[node name="Cube_001" parent="." index="1"]
+visible = false

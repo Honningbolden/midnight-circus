@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5tw3y8njyuio"]
+
+[ext_resource type="PackedScene" uid="uid://c3mdgpolcmfff" path="res://Assets/3D_assets/cages/cage_small/cage_small.glb" id="1_8m8vc"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nwlet"]
+data = PackedVector3Array(-0.8373, -0.5, 0.5, -0.8373, 0.5, -0.5, -0.8373, 0.5, 0.5, -0.8373, -0.5, 0.5, -0.8373, -0.5, -0.5, -0.8373, 0.5, -0.5, -0.8373, -0.5, -0.5, 0.8373, 0.5, -0.5, -0.8373, 0.5, -0.5, -0.8373, -0.5, -0.5, 0.8373, -0.5, -0.5, 0.8373, 0.5, -0.5, 0.8373, -0.5, -0.5, 0.8373, 0.5, 0.5, 0.8373, 0.5, -0.5, 0.8373, -0.5, -0.5, 0.8373, -0.5, 0.5, 0.8373, 0.5, 0.5, 0.8373, -0.5, 0.5, -0.8373, 0.5, 0.5, 0.8373, 0.5, 0.5, 0.8373, -0.5, 0.5, -0.8373, -0.5, 0.5, -0.8373, 0.5, 0.5, -0.8373, -0.5, -0.5, 0.8373, -0.5, 0.5, 0.8373, -0.5, -0.5, -0.8373, -0.5, -0.5, -0.8373, -0.5, 0.5, 0.8373, -0.5, 0.5, 0.8373, 0.5, -0.5, -0.8373, 0.5, 0.5, -0.8373, 0.5, -0.5, 0.8373, 0.5, -0.5, 0.8373, 0.5, 0.5, -0.8373, 0.5, 0.5)
+
+[node name="cage_small" instance=ExtResource("1_8m8vc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cage_small_Baked" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cage_small_Baked/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_nwlet")
+
+[node name="Cube_001" parent="." index="1"]
+visible = false
