@@ -26,10 +26,6 @@ func on_physics_process(_delta: float) -> void:
 
 # Called when there is an input event while this state is active.
 func on_input(event: InputEvent) -> void:
-	if event.is_action_pressed("sprint"):  # if 'sprint' is pressed
-		player.speed = player.running_speed  # run faster
-	if event.is_action_released("sprint"):  # if 'sprint' is released
-		player.speed = player.walking_speed  # run slower
 	if event.is_action_pressed("interact"):
 		player.interact()
 	if event is InputEventMouseMotion:  # if mouse moved

@@ -21,8 +21,7 @@ class_name Player
 
 # Character helpers
 var speed : float = 0.0  # the player's current max speed
-var walking_speed : float = 3.0  # base walking speed
-var running_speed : float = 6.0  # base running speed
+var walking_speed : float = 4.0  # base walking speed
 var forward_direction : float = 0.0  # the direction the camera is looking
 var horizontal_direction : float = 0.0  # the player's left and right input
 var vertical_direction : float = 0.0  # the player's back and forth input
