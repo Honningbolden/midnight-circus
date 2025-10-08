@@ -8,6 +8,8 @@ data = PackedVector3Array(-0.4522, -0.5527, -0.3371, -0.4522, -0.0526, -1.0029, 
 [node name="cages_2_long_stacked" instance=ExtResource("1_r8ja0")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="cages_2-long_stacked_Baked" index="0"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cages_2-long_stacked_Baked/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_3m7lx")
